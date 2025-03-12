@@ -9,6 +9,13 @@ export default function Nextra({Component, pageProps}) {
         }
       `}</style>
       <Component {...pageProps} />
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-P4K9VDMV"
+          height="0"
+          width="0"
+          style={{display: 'none', visibility: 'hidden'}}></iframe>
+      </noscript>
     </>
   );
 }
