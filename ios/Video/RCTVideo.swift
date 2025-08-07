@@ -1117,9 +1117,21 @@ class RCTVideo: UIView, RCTVideoPlayerViewControllerDelegate, RCTPlayerObserverH
             }
         } else if !fullscreen && _fullscreenPlayerPresented, let _playerViewController {
             self.videoPlayerViewControllerWillDismiss(playerViewController: _playerViewController)
-            _presentingViewController?.dismiss(animated: true, completion: { [weak self] in
+            
+            // iOS automatically pauses videos after exiting fullscreen,
+            // but it's better if we resume playback
+            let wasPlaying = _player?.timeControlStatus == .playing
+            
+            _presentingViewController?.dismiss(animated: true) { [weak self] in
                 self?.videoPlayerViewControllerDidDismiss(playerViewController: _playerViewController)
-            })
+                
+                // Wait for the dismiss animation to complete before resuming
+                if let self = self, wasPlaying {
+                    DispatchQueue.main.async {
+                        self._player?.play()
+                    }
+                }
+            }
             setControls(_controls)
 
             // ensure layout updates after exiting fullscreen
