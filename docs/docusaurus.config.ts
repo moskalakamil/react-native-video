@@ -86,10 +86,9 @@ const config: Config = {
       logo: {
         alt: 'React Native Video Logo',
         style: {
-          width: '60px',
-          height: '40px',
-          marginRight: '10px',
-          transform: 'translateY(-4px)',
+          width: '48px',
+          height: '32px',
+          marginRight: '12px',
         },
         src: 'img/twg-logo.png',
       },
@@ -98,7 +97,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Documentation',
+          label: 'Docs',
         },
         {
           type: 'docsVersionDropdown',
@@ -131,8 +130,8 @@ const config: Config = {
       versionPersistence: 'localStorage',
     },
     footer: {
-      style: 'light',
-      copyright: `Built With ❤️ By TheWidlarzGroup & React Native Video Community`,
+      style: 'dark',
+      copyright: `Built with ❤️ by TheWidlarzGroup & the React Native Video Community`,
     },
     colorMode: {
       defaultMode: 'dark',
@@ -140,7 +139,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     prism: {
-      theme: prismThemes.oneLight,
+      theme: prismThemes.oneDark,
       darkTheme: prismThemes.oneDark,
     },
   } satisfies Preset.ThemeConfig,
