@@ -12,10 +12,10 @@
   --color-accent-glow: rgba(150, 201, 235, 0.15);
   --color-accent-subtle: rgba(150, 201, 235, 0.08);
   
-  --color-secondary: #f4d970;
-  --color-secondary-dim: #f1d04f;
-  --color-secondary-glow: rgba(244, 217, 112, 0.15);
-  --color-secondary-subtle: rgba(244, 217, 112, 0.08);
+  --color-secondary: #FAD85B;
+  --color-secondary-dim: #f8d03a;
+  --color-secondary-glow: rgba(250, 216, 91, 0.15);
+  --color-secondary-subtle: rgba(250, 216, 91, 0.08);
   
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #4a4a4a;
@@ -32,13 +32,13 @@
   --ifm-color-primary-lighter: #c7e2f4;
   --ifm-color-primary-lightest: #f7fbfd;
   
-  --ifm-color-secondary: #f4d970;
-  --ifm-color-secondary-dark: #f1d04f;
-  --ifm-color-secondary-darker: #f0cc3e;
-  --ifm-color-secondary-darkest: #e7bc12;
-  --ifm-color-secondary-light: #f7e291;
-  --ifm-color-secondary-lighter: #f8e6a2;
-  --ifm-color-secondary-lightest: #fcf3d3;
+  --ifm-color-secondary: #FAD85B;
+  --ifm-color-secondary-dark: #f8d03a;
+  --ifm-color-secondary-darker: #f7ca1f;
+  --ifm-color-secondary-darkest: #e5b80a;
+  --ifm-color-secondary-light: #fce07c;
+  --ifm-color-secondary-lighter: #fde48d;
+  --ifm-color-secondary-lightest: #fef4c4;
   
   --ifm-background-color: var(--color-bg-primary);
   --ifm-background-surface-color: var(--color-bg-secondary);
@@ -129,7 +129,7 @@ body::before {
   bottom: 0;
   background: 
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(150, 201, 235, 0.03), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(244, 217, 112, 0.02), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(250, 216, 91, 0.02), transparent),
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(150, 201, 235, 0.02), transparent);
   pointer-events: none;
   z-index: -1;
@@ -138,7 +138,7 @@ body::before {
 [data-theme='dark'] body::before {
   background: 
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(150, 201, 235, 0.06), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(244, 217, 112, 0.04), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(250, 216, 91, 0.04), transparent),
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(150, 201, 235, 0.03), transparent);
 }
 
@@ -281,12 +281,6 @@ body::before {
   border-bottom-color: var(--color-accent);
 }
 
-.prism-code {
-  background: var(--color-bg-secondary) !important;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  font-size: 0.875rem;
-}
 
 div[class^='codeBlockContainer'] {
   border-radius: 12px;
@@ -415,7 +409,7 @@ code {
   background: var(--color-secondary-dim);
   color: var(--color-bg-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(244, 217, 112, 0.25);
+  box-shadow: 0 8px 30px rgba(250, 216, 91, 0.25);
 }
 
 table {
@@ -497,7 +491,7 @@ table tr:nth-child(even) {
 .theme-doc-version-badge {
   background: var(--color-secondary-subtle);
   color: var(--color-secondary);
-  border: 1px solid rgba(244, 217, 112, 0.2);
+  border: 1px solid rgba(250, 216, 91, 0.2);
   font-weight: 600;
   font-size: 0.75rem;
 }

@@ -19,7 +19,7 @@
   height: 80vw;
   max-width: 1200px;
   max-height: 1200px;
-  background: rgba(244, 217, 112, 0.05);
+  background: rgba(250, 216, 91, 0.05);
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -47,7 +47,7 @@
 }
 
 [data-theme='dark'] .hero::before {
-  background: rgba(244, 217, 112, 0.008);
+  background: rgba(250, 216, 91, 0.008);
 }
 
 [data-theme='dark'] .hero::after {
@@ -113,19 +113,19 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
-  background: rgba(244, 217, 112, 0.1);
-  border: 1px solid rgba(244, 217, 112, 0.25);
+  background: rgba(250, 216, 91, 0.1);
+  border: 1px solid rgba(250, 216, 91, 0.25);
   border-radius: 100px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #f4d970;
+  color: #FAD85B;
   animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .badgeDot {
   width: 8px;
   height: 8px;
-  background: #f4d970;
+  background: #FAD85B;
   border-radius: 50%;
   animation: blink 2s ease-in-out infinite;
 }
@@ -135,7 +135,6 @@
   50% { opacity: 0.4; }
 }
 
-/* Title */
 .title {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 800;
@@ -166,7 +165,6 @@
   background-clip: text;
 }
 
-/* Subtitle */
 .subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 400;
@@ -181,7 +179,6 @@
   color: #b4b4b4;
 }
 
-/* Buttons Container */
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -190,7 +187,6 @@
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
-/* Primary Button - Blue */
 .buttonPrimary {
   display: inline-flex;
   align-items: center;
@@ -217,7 +213,6 @@
   transform: translateY(-1px);
 }
 
-/* Secondary Button */
 .buttonSecondary {
   display: inline-flex;
   align-items: center;
@@ -252,7 +247,6 @@
   color: #fafafa;
 }
 
-/* Button Icons */
 .buttonIcon {
   width: 20px;
   height: 20px;
@@ -263,7 +257,6 @@
   transform: translateX(4px);
 }
 
-/* Stats Section */
 .stats {
   display: flex;
   gap: 4rem;
@@ -300,7 +293,6 @@
   color: #808080;
 }
 
-/* Scroll Indicator */
 .scrollIndicator {
   position: absolute;
   bottom: 0;
@@ -344,7 +336,6 @@
   }
 }
 
-/* Show decorative circles on larger screens */
 @media screen and (min-width: 769px) {
   .hero::before,
   .hero::after {
@@ -352,7 +343,6 @@
   }
 }
 
-/* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .hero {
     padding: 3rem 1.5rem;
