@@ -44,31 +44,26 @@ export default function HomepageHero(): ReactNode {
   return (
     <header className={styles.hero}>
       <div className={styles.heroContent}>
-        {/* Version Badge */}
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
           v7 Beta Available
         </div>
 
-        {/* Logo */}
         <img 
           src="./img/twg-logo.png" 
           alt="React Native Video" 
           className={styles.logo} 
         />
 
-        {/* Title */}
         <h1 className={styles.title}>
           <span className={styles.titleAccent}>Video</span> for React Native
         </h1>
 
-        {/* Subtitle */}
         <p className={styles.subtitle}>
           The most feature-rich video player for React Native. 
           Multi-platform support with DRM, subtitles, and audio tracks.
         </p>
 
-        {/* CTA Buttons */}
         <div className={styles.buttons}>
           <Link to={link} className={styles.buttonPrimary}>
             Get Started
@@ -83,7 +78,6 @@ export default function HomepageHero(): ReactNode {
           </Link>
         </div>
 
-        {/* Stats */}
         <div className={styles.stats}>
           <div className={styles.stat}>
             <span className={styles.statNumber}>7k+</span>
@@ -100,7 +94,6 @@ export default function HomepageHero(): ReactNode {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className={styles.scrollIndicator}>
         <span>Explore</span>
         <div className={styles.scrollLine} />

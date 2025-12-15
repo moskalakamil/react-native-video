@@ -7,7 +7,6 @@ type FeatureItem = {
   description: ReactNode;
 };
 
-// Modern minimalist icons as components
 const ReactIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={styles.featureIcon}>
     <circle cx="12" cy="12" r="2.5" />
@@ -99,7 +98,6 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className={styles.container}>
-        {/* Section Header */}
         <div className={styles.header}>
           <span className={styles.headerLabel}>Features</span>
           <h2 className={styles.headerTitle}>
@@ -110,7 +108,6 @@ export default function HomepageFeatures(): ReactNode {
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className={styles.grid}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
