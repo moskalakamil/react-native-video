@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --color-bg-primary: #171717;
-  --color-bg-secondary: #1e1e1e;
-  --color-bg-tertiary: #252525;
-  --color-bg-elevated: #2a2a2a;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #f1f3f5;
+  --color-bg-elevated: #ffffff;
   
   --color-accent: #96c9eb;
   --color-accent-dim: #76b8e5;
@@ -17,12 +17,12 @@
   --color-secondary-glow: rgba(244, 217, 112, 0.15);
   --color-secondary-subtle: rgba(244, 217, 112, 0.08);
   
-  --color-text-primary: #fafafa;
-  --color-text-secondary: #b4b4b4;
-  --color-text-muted: #808080;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6a6a6a;
   
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.15);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 0, 0, 0.2);
   
   --ifm-color-primary: #96c9eb;
   --ifm-color-primary-dark: #76b8e5;
@@ -42,7 +42,7 @@
   
   --ifm-background-color: var(--color-bg-primary);
   --ifm-background-surface-color: var(--color-bg-secondary);
-  --ifm-navbar-background-color: rgba(23, 23, 23, 0.85);
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.95);
   --ifm-footer-background-color: var(--color-bg-primary);
   
   --ifm-font-family-base: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -58,6 +58,7 @@
   --ifm-code-border-radius: 6px;
   --ifm-code-padding-horizontal: 0.4rem;
   --ifm-code-padding-vertical: 0.15rem;
+  --ifm-code-color: var(--color-text-primary);
   
   --ifm-link-color: var(--color-accent);
   --ifm-link-hover-color: var(--color-accent-dim);
@@ -74,14 +75,38 @@
   
   --docusaurus-highlighted-code-line-bg: rgba(150, 201, 235, 0.1);
   
-  --glass-bg: rgba(26, 26, 26, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --glow-shadow: 0 0 60px rgba(150, 201, 235, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --glow-shadow: 0 0 60px rgba(150, 201, 235, 0.08);
   
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --color-bg-primary: #171717;
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-tertiary: #252525;
+  --color-bg-elevated: #2a2a2a;
+  
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #b4b4b4;
+  --color-text-muted: #808080;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  
+  --ifm-background-color: var(--color-bg-primary);
+  --ifm-background-surface-color: var(--color-bg-secondary);
+  --ifm-navbar-background-color: rgba(23, 23, 23, 0.85);
+  --ifm-footer-background-color: var(--color-bg-primary);
+  
+  --glass-bg: rgba(26, 26, 26, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glow-shadow: 0 0 60px rgba(150, 201, 235, 0.12);
 }
 
 html {
@@ -103,11 +128,18 @@ body::before {
   right: 0;
   bottom: 0;
   background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(150, 201, 235, 0.03), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(244, 217, 112, 0.02), transparent),
+    radial-gradient(ellipse 40% 60% at 0% 100%, rgba(150, 201, 235, 0.02), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-theme='dark'] body::before {
+  background: 
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(150, 201, 235, 0.06), transparent),
     radial-gradient(ellipse 60% 40% at 100% 0%, rgba(244, 217, 112, 0.04), transparent),
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(150, 201, 235, 0.03), transparent);
-  pointer-events: none;
-  z-index: -1;
 }
 
 .navbar {
@@ -273,9 +305,13 @@ div[class^='codeBlockTitle'] {
 
 code {
   background: var(--color-bg-tertiary);
-  border: 1px solid var(--color-border);
-  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-text-primary);
   font-weight: 500;
+}
+
+[data-theme='dark'] code {
+  border: 1px solid var(--color-border);
 }
 
 .markdown h1 code,
@@ -283,10 +319,7 @@ code {
 .markdown h3 code,
 .markdown h4 code,
 .markdown h5 code,
-.markdown h6 code,
-.markdown li code,
-.table-of-contents__link code,
-.table-of-contents code {
+.markdown h6 code {
   -webkit-text-fill-color: var(--color-text-primary);
   color: var(--color-text-primary);
 }

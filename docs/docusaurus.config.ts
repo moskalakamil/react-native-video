@@ -130,16 +130,15 @@ const config: Config = {
       versionPersistence: 'localStorage',
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       copyright: `Built with ❤️ by TheWidlarzGroup & the React Native Video Community`,
     },
     colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: true,
+      defaultMode: 'light',
       respectPrefersColorScheme: false,
     },
     prism: {
-      theme: prismThemes.oneDark,
+      theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
     },
   } satisfies Preset.ThemeConfig,

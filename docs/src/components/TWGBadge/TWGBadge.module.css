@@ -1,51 +1,99 @@
 .extraContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 0.5rem;
     text-align: center;
-    background-color: var(--ifm-color-primary);
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     gap: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
+    background: var(--color-secondary-subtle);
+    overflow: hidden;
+}
+
+.extraContainer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: var(--color-secondary-glow);
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.extraContainer::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 150px;
+    height: 150px;
+    background: var(--color-secondary-glow);
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 0;
 }
 
 .extraText {
+    position: relative;
+    z-index: 1;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    font-weight: bold;
-    color: var(--ifm-background-color);
+    font-weight: 600;
     text-wrap: nowrap;
     font-size: 0.95rem;
+    color: var(--color-text-primary);
+    line-height: 1.4;
 }
 
 .extraButton {
+    position: relative;
+    z-index: 1;
     width: 90%;
-    border: none;
-    padding: 0.4rem 0.8rem;
+    border: 1.5px solid var(--color-secondary);
+    padding: 0.5rem 1rem;
     font-weight: 500;
     background-color: var(--ifm-background-color);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    color: #fff;
+    transition: all 0.3s ease;
+    color: var(--color-text-primary);
     border-radius: 0.5rem;
+    text-decoration: none;
 }
 
 .extraButton:hover {
     transform: scale(1.05);
-    background-color: #fff;
+    border-color: var(--color-secondary-dim);
+    border-width: 2px;
 }
 
-:is(html[class~=dark]) .extraContainer {
-    background-color: #87ccef;
+[data-theme='dark'] .extraContainer {
+    background: rgba(244, 217, 112, 0.12);
 }
 
-:is(html[class~=dark]) .extraText {
-    color: #171717;
+[data-theme='dark'] .extraContainer::before,
+[data-theme='dark'] .extraContainer::after {
+    background: rgba(244, 217, 112, 0.2);
 }
 
-:is(html[class~=dark]) .extraButton {
-    background-color: #171717;
+[data-theme='dark'] .extraText {
+    color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .extraButton {
+    background-color: var(--ifm-background-color);
+    border-color: var(--color-secondary);
+    color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .extraButton:hover {
+    transform: scale(1.05);
+    border-color: var(--color-secondary-dim);
+    border-width: 2px;
 }
 
 
