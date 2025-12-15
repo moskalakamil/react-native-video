@@ -63,6 +63,7 @@ export default function DocSidebarItemLink({
         })}
         {...props}>
         <LinkLabel label={label} />
+        {!isInternalLink && <IconExternalLink />}
         {isLink && (
           <>
             {customProps?.plan === 'pro' && <ProBadge />}
@@ -71,7 +72,6 @@ export default function DocSidebarItemLink({
             )}
           </>
         )}
-        {!isInternalLink && <IconExternalLink />}
       </Link>
     </li>
   );
