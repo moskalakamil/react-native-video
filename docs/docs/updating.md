@@ -109,7 +109,7 @@ Many props and methods from the v6 `<Video>` component have been moved to the `V
 | `resizeMode` | `resizeMode` prop on `<VideoView>` | This remains a prop on the UI component. |
 | `controls` | `controls` prop on `<VideoView>` | This also remains on the UI component. |
 
-see [VideoPlayer](./player/player.md) for more details.
+see [VideoPlayer](./players/player.md) for more details.
 
 #### Methods
 
@@ -123,7 +123,7 @@ Imperative methods previously called on the `<Video>` component's ref are now me
 | `pause()` | `player.pause()` | |
 | `resume()` | `player.play()` | |
 
-see [VideoPlayer](./player/player.md) for more details.
+see [VideoPlayer](./players/player.md) for more details.
 
 ### Event Handling
 
