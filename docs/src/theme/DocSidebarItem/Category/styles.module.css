@@ -1,0 +1,113 @@
+.categoryLink {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  gap: 0.1;
+  position: relative;
+}
+
+.categoryLink::after {
+  order: -1;
+  margin-left: 1rem;
+  min-width: 1rem;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  background-size: contain;
+}
+
+.categoryLinkLabel {
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--color-text-primary);
+}
+
+.categoryLinkRoot {
+  padding-left: 1.5rem;
+}
+
+/* Root category container with full-height border */
+.rootCategoryContainer {
+  position: relative;
+  margin-left: 1rem;
+}
+
+/* Circle outline at the top */
+.rootCategoryContainer::before {
+  content: '';
+  position: absolute;
+  left: calc(0.5rem - 4px);
+  top: 0.85rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--ifm-toc-border-color);
+  background-color: var(--ifm-background-color);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Vertical line starting from the circle */
+.rootCategoryContainer::after {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: calc(0.85rem + 8px);
+  bottom: 0;
+  width: 1px;
+  background-color: var(--ifm-toc-border-color);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.categoryLinkLabelRoot {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.categoryLinkLabelNested {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.categoryList {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Reset margin for nested lists inside root category */
+.categoryList :global(.menu__list) {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Border indicator on items */
+.rootCategoryContainer :global(.menu__link) {
+  position: relative;
+}
+
+.rootCategoryContainer :global(.menu__link)::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: transparent;
+  z-index: 2;
+  transition: background-color 0.15s ease;
+}
+
+.rootCategoryContainer :global(.menu__link:hover:not([aria-current="page"]))::before {
+  background-color: var(--ifm-color-primary-light);
+}
+
+.rootCategoryContainer :global(.menu__link[aria-current="page"])::before {
+  background-color: var(--ifm-color-primary);
+}

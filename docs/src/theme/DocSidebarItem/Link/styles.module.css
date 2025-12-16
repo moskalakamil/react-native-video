@@ -2,10 +2,15 @@
   align-items: center;
 }
 
+.menuLink {
+  padding-left: 2rem;
+}
+
 .linkLabel {
   overflow: hidden;
   display: -webkit-box;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  font-size: 0.85rem;
 }

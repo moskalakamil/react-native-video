@@ -50,6 +50,7 @@ export default function DocSidebarItemLink({
       <Link
         className={clsx(
           'menu__link',
+          styles.menuLink,
           !isInternalLink && styles.menuExternalLink,
           {
             'menu__link--active': isActive,
