@@ -6,27 +6,26 @@ This file contains links to documentation sections following the llmstxt.org sta
 
 ## Table of Contents
 
-- [Google IMA](https://moskalakamil.github.io/react-native-video/docs/v7/ads/google-ima): Free Google IMA SDK integration for React Native Video
-- [Class: VideoPlayer](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/classes/VideoPlayer): Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-nat...
+- [Class: VideoPlayer](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/classes/VideoPlayer): Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-nat...
 - [Function: useEvent()](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/functions/useEvent): ```ts
 - [Function: useVideoPlayer()](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/functions/useVideoPlayer): ```ts
 - [API Reference](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference): - [VideoPlayer](classes/VideoPlayer.md)
-- [Interface: BandwidthData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/BandwidthData): Defined in: [types/Events.ts:131](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: JSVideoPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/JSVideoPlayerEvents): Defined in: [types/Events.ts:96](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-na...
-- [Interface: TextTrack](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/TextTrack): Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-...
-- [Interface: TimedMetadata](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/TimedMetadata): Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: VideoComponentError](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoComponentError): Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/reac...
-- [Interface: VideoError\<TCode\>](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoError): Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/reac...
-- [Interface: VideoPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoPlayerEvents): Defined in: [types/Events.ts:7](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-nat...
-- [Interface: VideoRuntimeError](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoRuntimeError): Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/reac...
-- [Interface: VideoViewEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewEvents): Defined in: [types/Events.ts:102](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: VideoViewProps](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewProps): Defined in: [video-view/VideoView.tsx:20](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages...
-- [Interface: VideoViewRef](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewRef): Defined in: [video-view/VideoView.tsx:67](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages...
-- [Interface: onLoadData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onLoadData): Defined in: [types/Events.ts:148](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: onLoadStartData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onLoadStartData): Defined in: [types/Events.ts:174](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: onPlaybackStateChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onPlaybackStateChangeData): Defined in: [types/Events.ts:186](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: onProgressData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onProgressData): Defined in: [types/Events.ts:197](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
-- [Interface: onVolumeChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onVolumeChangeData): Defined in: [types/Events.ts:220](https://github.com/moskalakamil/react-native-video/blob/959ec208f697525e32a70aee55ec9b60a48b9b78/packages/react-n...
+- [Interface: BandwidthData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/BandwidthData): Defined in: [types/Events.ts:131](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: JSVideoPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/JSVideoPlayerEvents): Defined in: [types/Events.ts:96](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-na...
+- [Interface: TextTrack](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/TextTrack): Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-...
+- [Interface: TimedMetadata](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/TimedMetadata): Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: VideoComponentError](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoComponentError): Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/reac...
+- [Interface: VideoError\<TCode\>](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoError): Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/reac...
+- [Interface: VideoPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoPlayerEvents): Defined in: [types/Events.ts:7](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-nat...
+- [Interface: VideoRuntimeError](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoRuntimeError): Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/reac...
+- [Interface: VideoViewEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewEvents): Defined in: [types/Events.ts:102](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: VideoViewProps](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewProps): Defined in: [video-view/VideoView.tsx:20](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages...
+- [Interface: VideoViewRef](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/VideoViewRef): Defined in: [video-view/VideoView.tsx:67](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages...
+- [Interface: onLoadData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onLoadData): Defined in: [types/Events.ts:148](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: onLoadStartData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onLoadStartData): Defined in: [types/Events.ts:174](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: onPlaybackStateChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onPlaybackStateChangeData): Defined in: [types/Events.ts:186](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: onProgressData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onProgressData): Defined in: [types/Events.ts:197](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
+- [Interface: onVolumeChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/interfaces/onVolumeChangeData): Defined in: [types/Events.ts:220](https://github.com/moskalakamil/react-native-video/blob/588544b9f0c1e6fb0cc20799ff9414689dea0aea/packages/react-n...
 - [Type Alias: AllPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/type-aliases/AllPlayerEvents): ```ts
 - [Type Alias: IgnoreSilentSwitchMode](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/type-aliases/IgnoreSilentSwitchMode): ```ts
 - [Type Alias: LibraryError](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/type-aliases/LibraryError): ```ts
@@ -45,19 +44,123 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Variable: ALL\_PLAYER\_EVENTS](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/variables/ALL_PLAYER_EVENTS): ```ts
 - [Variable: ALL\_VIEW\_EVENTS](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/variables/ALL_VIEW_EVENTS): ```ts
 - [Variable: VideoView](https://moskalakamil.github.io/react-native-video/docs/v7/api-reference/variables/VideoView): ```ts
+- [Type Alias: IgnoreSilentSwitchMode](https://moskalakamil.github.io/react-native-video/docs/v7/audio/IgnoreSilentSwitchMode): ```ts
+- [Type Alias: MixAudioMode](https://moskalakamil.github.io/react-native-video/docs/v7/audio/MixAudioMode): ```ts
+- [initialize()](https://moskalakamil.github.io/react-native-video/docs/v7/background-lifecycle/initialize): ```ts
+- [playInBackground](https://moskalakamil.github.io/react-native-video/docs/v7/background-lifecycle/playInBackground): ```ts
+- [playWhenInactive](https://moskalakamil.github.io/react-native-video/docs/v7/background-lifecycle/playWhenInactive): ```ts
+- [preload()](https://moskalakamil.github.io/react-native-video/docs/v7/background-lifecycle/preload): ```ts
+- [release()](https://moskalakamil.github.io/react-native-video/docs/v7/background-lifecycle/release): ```ts
+- [Interface: BandwidthData](https://moskalakamil.github.io/react-native-video/docs/v7/bandwidth/BandwidthData): Defined in: [types/Events.ts:131](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
 - [Expo Plugin](https://moskalakamil.github.io/react-native-video/docs/v7/configuration/expo-plugin): Expo plugin for react-native-video configuration
 - [Manual Configuration](https://moskalakamil.github.io/react-native-video/docs/v7/configuration/manual): Manual configuration of react-native-video
-- [Basic Controls](https://moskalakamil.github.io/react-native-video/docs/v7/custom-ui/basic-controls): Build custom video controls with React Native Video's compound API
-- [Handling Player Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/events): The `VideoPlayer` emits a variety of events that allow you to monitor and react to changes in its state and playback.
-- [Installation](https://moskalakamil.github.io/react-native-video/docs/v7/installation): React Native Video Installation Guide and Requirements
-- [Intro](https://moskalakamil.github.io/react-native-video/docs/v7/intro): Introduction to React Native Video library
-- [DRM](https://moskalakamil.github.io/react-native-video/docs/v7/player/drm): :::tip Pluginable Architecture
-- [Player Lifecycle](https://moskalakamil.github.io/react-native-video/docs/v7/player/player-lifecycle): Understanding the lifecycle of the `VideoPlayer` is crucial for managing resources effectively and ensuring a smooth user experience.
-- [Player](https://moskalakamil.github.io/react-native-video/docs/v7/player/player): The `VideoPlayer` class is the primary way to control video playback. It provides methods and properties to manage the video source, playback state...
+- [Type Alias: LibraryError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/LibraryError): ```ts
+- [Type Alias: PlayerError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/PlayerError): ```ts
+- [Type Alias: SourceError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/SourceError): ```ts
+- [Type Alias: UnknownError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/UnknownError): ```ts
+- [Interface: VideoComponentError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/VideoComponentError): Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/reac...
+- [Interface: VideoError\<TCode\>](https://moskalakamil.github.io/react-native-video/docs/v7/errors/VideoError): Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/reac...
+- [Type Alias: VideoErrorCode](https://moskalakamil.github.io/react-native-video/docs/v7/errors/VideoErrorCode): ```ts
+- [Interface: VideoRuntimeError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/VideoRuntimeError): Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/reac...
+- [Type Alias: VideoViewError](https://moskalakamil.github.io/react-native-video/docs/v7/errors/VideoViewError): ```ts
+- [Variable: ALL\_PLAYER\_EVENTS](https://moskalakamil.github.io/react-native-video/docs/v7/events/ALL_PLAYER_EVENTS): ```ts
+- [Variable: ALL\_VIEW\_EVENTS](https://moskalakamil.github.io/react-native-video/docs/v7/events/ALL_VIEW_EVENTS): ```ts
+- [Type Alias: AllPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/events/AllPlayerEvents): ```ts
+- [Interface: JSVideoPlayerEvents](https://moskalakamil.github.io/react-native-video/docs/v7/events/JSVideoPlayerEvents): Defined in: [types/Events.ts:96](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-na...
+- [onAudioBecomingNoisy](https://moskalakamil.github.io/react-native-video/docs/v7/events/audio-events/onAudioBecomingNoisy): ```ts
+- [onAudioFocusChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/audio-events/onAudioFocusChange): ```ts
+- [onVolumeChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/audio-events/onVolumeChange): ```ts
+- [Audio Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/audio): Events related to audio playback and system audio state.
+- [onBandwidthUpdate](https://moskalakamil.github.io/react-native-video/docs/v7/events/bandwidth-events/onBandwidthUpdate): ```ts
+- [Buffering & Status Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/buffering): Events related to buffering state, player status, and network bandwidth.
+- [Interface: onLoadData](https://moskalakamil.github.io/react-native-video/docs/v7/events/event-data/onLoadData): Defined in: [types/Events.ts:148](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Interface: onLoadStartData](https://moskalakamil.github.io/react-native-video/docs/v7/events/event-data/onLoadStartData): Defined in: [types/Events.ts:174](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Interface: onPlaybackStateChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/events/event-data/onPlaybackStateChangeData): Defined in: [types/Events.ts:186](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Interface: onProgressData](https://moskalakamil.github.io/react-native-video/docs/v7/events/event-data/onProgressData): Defined in: [types/Events.ts:197](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Interface: onVolumeChangeData](https://moskalakamil.github.io/react-native-video/docs/v7/events/event-data/onVolumeChangeData): Defined in: [types/Events.ts:220](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Getting Started](https://moskalakamil.github.io/react-native-video/docs/v7/events/getting-started): The `VideoPlayer` emits a variety of events that allow you to monitor and react to changes in its state and playback.
+- [onLoad](https://moskalakamil.github.io/react-native-video/docs/v7/events/loading-events/onLoad): ```ts
+- [onLoadStart](https://moskalakamil.github.io/react-native-video/docs/v7/events/loading-events/onLoadStart): ```ts
+- [onReadyToDisplay](https://moskalakamil.github.io/react-native-video/docs/v7/events/loading-events/onReadyToDisplay): ```ts
+- [Loading Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/loading): Events related to video loading and initialization.
+- [onTimedMetadata](https://moskalakamil.github.io/react-native-video/docs/v7/events/metadata-events/onTimedMetadata): ```ts
+- [onEnd](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback-events/onEnd): ```ts
+- [onPlaybackRateChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback-events/onPlaybackRateChange): ```ts
+- [onPlaybackStateChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback-events/onPlaybackStateChange): ```ts
+- [onProgress](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback-events/onProgress): ```ts
+- [onSeek](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback-events/onSeek): ```ts
+- [Playback Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/playback): Events related to video playback state and progress.
+- [onBuffer](https://moskalakamil.github.io/react-native-video/docs/v7/events/status-events/onBuffer): ```ts
+- [onStatusChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/status-events/onStatusChange): ```ts
+- [onTextTrackDataChanged](https://moskalakamil.github.io/react-native-video/docs/v7/events/text-track-events/onTextTrackDataChanged): ```ts
+- [onTrackChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/text-track-events/onTrackChange): ```ts
+- [Tracks & Metadata Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/tracks): Events related to text tracks, subtitles, and timed metadata.
+- [onControlsVisibleChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/ui-events/onControlsVisibleChange): ```ts
+- [onExternalPlaybackChange](https://moskalakamil.github.io/react-native-video/docs/v7/events/ui-events/onExternalPlaybackChange): ```ts
+- [UI & External Playback Events](https://moskalakamil.github.io/react-native-video/docs/v7/events/ui): Events related to UI controls visibility and external playback (AirPlay, Chromecast).
+- [Function: useEvent()](https://moskalakamil.github.io/react-native-video/docs/v7/events/useEvent): ```ts
+- [addEventListener()](https://moskalakamil.github.io/react-native-video/docs/v7/events-management/addEventListener): ```ts
+- [clearAllEvents()](https://moskalakamil.github.io/react-native-video/docs/v7/events-management/clearAllEvents): ```ts
+- [Installation](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/installation): React Native Video Installation Guide and Requirements
+- [Intro](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/intro): Introduction to React Native Video library
+- [Interface: TimedMetadata](https://moskalakamil.github.io/react-native-video/docs/v7/metadata/TimedMetadata): Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Type Alias: TimedMetadataObject](https://moskalakamil.github.io/react-native-video/docs/v7/metadata/TimedMetadataObject): ```ts
+- [isPlaying](https://moskalakamil.github.io/react-native-video/docs/v7/playback-control/isPlaying): ```ts
+- [loop](https://moskalakamil.github.io/react-native-video/docs/v7/playback-control/loop): ```ts
+- [pause()](https://moskalakamil.github.io/react-native-video/docs/v7/playback-control/pause): ```ts
+- [play()](https://moskalakamil.github.io/react-native-video/docs/v7/playback-control/play): ```ts
+- [rate](https://moskalakamil.github.io/react-native-video/docs/v7/playback-control/rate): ```ts
+- [ignoreSilentSwitchMode](https://moskalakamil.github.io/react-native-video/docs/v7/player-audio/ignoreSilentSwitchMode): ```ts
+- [mixAudioMode](https://moskalakamil.github.io/react-native-video/docs/v7/player-audio/mixAudioMode): ```ts
+- [muted](https://moskalakamil.github.io/react-native-video/docs/v7/player-audio/muted): ```ts
+- [volume](https://moskalakamil.github.io/react-native-video/docs/v7/player-audio/volume): ```ts
+- [getAvailableTextTracks()](https://moskalakamil.github.io/react-native-video/docs/v7/player-text-tracks/getAvailableTextTracks): ```ts
+- [selectTextTrack()](https://moskalakamil.github.io/react-native-video/docs/v7/player-text-tracks/selectTextTrack): ```ts
+- [selectedTrack](https://moskalakamil.github.io/react-native-video/docs/v7/player-text-tracks/selectedTrack): ```ts
+- [Player Lifecycle](https://moskalakamil.github.io/react-native-video/docs/v7/players/AdvancedPlayer): Understanding the lifecycle of the `VideoPlayer` is crucial for managing resources effectively and ensuring a smooth user experience.
+- [Class: VideoPlayer](https://moskalakamil.github.io/react-native-video/docs/v7/players/VideoPlayer): Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-nat...
+- [DRM](https://moskalakamil.github.io/react-native-video/docs/v7/players/drm): :::tip Pluginable Architecture
+- [Getting Started](https://moskalakamil.github.io/react-native-video/docs/v7/players/player): The `VideoPlayer` class is the primary way to control video playback. It provides methods and properties to manage the video source, playback state...
 - [Plugin Usage Examples](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/examples): Simple examples of implementing common plugin scenarios for React Native Video
 - [Plugin Interface](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/interface): Reference for the React Native Video plugin interface
 - [Plugin Registry](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/registry): Overview of the React Native Video plugin registry and how to use it
 - [Useful Projects](https://moskalakamil.github.io/react-native-video/docs/v7/projects): React Native Video Useful Projects
+- [currentTime](https://moskalakamil.github.io/react-native-video/docs/v7/seeking-time/currentTime): ```ts
+- [duration](https://moskalakamil.github.io/react-native-video/docs/v7/seeking-time/duration): ```ts
+- [seekBy()](https://moskalakamil.github.io/react-native-video/docs/v7/seeking-time/seekBy): ```ts
+- [seekTo()](https://moskalakamil.github.io/react-native-video/docs/v7/seeking-time/seekTo): ```ts
+- [Type Alias: SourceType](https://moskalakamil.github.io/react-native-video/docs/v7/source/SourceType): ```ts
+- [Type Alias: VideoConfig](https://moskalakamil.github.io/react-native-video/docs/v7/source/VideoConfig): ```ts
+- [Type Alias: VideoSource](https://moskalakamil.github.io/react-native-video/docs/v7/source/VideoSource): ```ts
+- [replaceSourceAsync()](https://moskalakamil.github.io/react-native-video/docs/v7/source-management/replaceSourceAsync): ```ts
+- [source](https://moskalakamil.github.io/react-native-video/docs/v7/source-management/source): ```ts
+- [showNotificationControls](https://moskalakamil.github.io/react-native-video/docs/v7/status/showNotificationControls): ```ts
+- [status](https://moskalakamil.github.io/react-native-video/docs/v7/status/status): ```ts
+- [Interface: TextTrack](https://moskalakamil.github.io/react-native-video/docs/v7/text-tracks/TextTrack): Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-...
 - [Updating](https://moskalakamil.github.io/react-native-video/docs/v7/updating): React Native Video Updating Guide
 - [Use in Third Party Library](https://moskalakamil.github.io/react-native-video/docs/v7/use-in-third-party-library): How to use React Native Video in a third party library
-- [VideoView Component](https://moskalakamil.github.io/react-native-video/docs/v7/video-view): React Native Video VideoView Component
+- [Type Alias: ResizeMode](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/ResizeMode): ```ts
+- [Variable: VideoView](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/VideoView): ```ts
+- [Interface: VideoViewEvents](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/VideoViewEvents): Defined in: [types/Events.ts:102](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-n...
+- [Interface: VideoViewProps](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/VideoViewProps): Defined in: [video-view/VideoView.tsx:20](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages...
+- [Interface: VideoViewRef](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/VideoViewRef): Defined in: [video-view/VideoView.tsx:67](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages...
+- [enterFullscreen()](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/fullscreen/enterFullscreen): ```ts
+- [exitFullscreen()](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/fullscreen/exitFullscreen): ```ts
+- [onFullscreenChange](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/fullscreen/onFullscreenChange): ```ts
+- [willEnterFullscreen](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/fullscreen/willEnterFullscreen): ```ts
+- [willExitFullscreen](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/fullscreen/willExitFullscreen): ```ts
+- [Getting Started](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/getting-started): React Native Video VideoView Component
+- [canEnterPictureInPicture()](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/canEnterPictureInPicture): ```ts
+- [enterPictureInPicture()](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/enterPictureInPicture): ```ts
+- [exitPictureInPicture()](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/exitPictureInPicture): ```ts
+- [onPictureInPictureChange](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/onPictureInPictureChange): ```ts
+- [willEnterPictureInPicture](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/willEnterPictureInPicture): ```ts
+- [willExitPictureInPicture](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/picture-in-picture/willExitPictureInPicture): ```ts
+- [autoEnterPictureInPicture](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/autoEnterPictureInPicture): ```ts
+- [controls](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/controls): ```ts
+- [keepScreenAwake](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/keepScreenAwake): ```ts
+- [pictureInPicture](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/pictureInPicture): ```ts
+- [player](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/player): ```ts
+- [resizeMode](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/resizeMode): ```ts
+- [style](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/style): ```ts
+- [surfaceType](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props/surfaceType): ```ts
