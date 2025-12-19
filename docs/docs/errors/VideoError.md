@@ -15,7 +15,7 @@ Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-nativ
 
 | Type Parameter |
 | ------ |
-| `TCode` *extends* [`VideoErrorCode`](../type-aliases/VideoErrorCode.md) |
+| `TCode` *extends* [`VideoErrorCode`](VideoErrorCode.md) |
 
 ## Accessors
 

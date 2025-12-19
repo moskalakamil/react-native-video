@@ -4,35 +4,71 @@ sidebar_label: Buffering & Status
 
 # Buffering & Status Events
 
-Events related to buffering state, player status, and network bandwidth.
-
----
+Events for buffering, player status, and bandwidth.
 
 ## onBuffer
 
 ```ts
-onBuffer: (buffering) => void;
+onBuffer: (buffering: boolean) => void;
 ```
 
-Called when the video buffering state changes. Indicates whether the player is currently buffering content.
+Fired when buffering state changes.
 
----
+```tsx
+useEvent(player, 'onBuffer', (buffering) => {
+  setIsBuffering(buffering);
+});
+```
 
 ## onStatusChange
 
 ```ts
-onStatusChange: (status) => void;
+onStatusChange: (status: VideoPlayerStatus) => void;
 ```
 
-Called when the player status changes. Provides information about the overall player state.
+Fired when player status changes.
 
----
+```tsx
+useEvent(player, 'onStatusChange', (status) => {
+  console.log('Status:', status);
+  // 'idle' | 'loading' | 'ready' | 'playing' | 'paused' | 'buffering' | 'ended' | 'error'
+});
+```
 
 ## onBandwidthUpdate
 
 ```ts
-onBandwidthUpdate: (data) => void;
+onBandwidthUpdate: (data: BandwidthData) => void;
 ```
 
-Called when the estimated network bandwidth changes. Useful for adaptive bitrate streaming and monitoring network conditions.
+Fired when estimated bandwidth changes.
 
+```tsx
+useEvent(player, 'onBandwidthUpdate', (data) => {
+  console.log('Bandwidth:', data.bitrate, 'bps');
+});
+```
+
+## Example
+
+```tsx
+function BufferingPlayer() {
+  const [status, setStatus] = useState('idle');
+  const [buffering, setBuffering] = useState(false);
+
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  useEvent(player, 'onStatusChange', setStatus);
+  useEvent(player, 'onBuffer', setBuffering);
+
+  return (
+    <View>
+      <VideoView player={player} style={{ width: '100%', height: 300 }} />
+      {buffering && <ActivityIndicator />}
+      <Text>Status: {status}</Text>
+    </View>
+  );
+}
+```

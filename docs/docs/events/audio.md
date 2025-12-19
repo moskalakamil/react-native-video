@@ -4,19 +4,29 @@ sidebar_label: Audio
 
 # Audio Events
 
-Events related to audio playback and system audio state.
-
----
+Events for audio state changes.
 
 ## onVolumeChange
 
 ```ts
-onVolumeChange: (data) => void;
+onVolumeChange: (data: onVolumeChangeData) => void;
 ```
 
-Called when the volume of the player changes. Contains the new volume level.
+Fired when volume changes.
 
----
+```tsx
+useEvent(player, 'onVolumeChange', (data) => {
+  console.log('Volume:', data.volume);
+  console.log('Muted:', data.muted);
+});
+```
+
+### onVolumeChangeData
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `volume` | `number` | Volume level (0.0 - 1.0) |
+| `muted` | `boolean` | Is muted |
 
 ## onAudioBecomingNoisy
 
@@ -24,15 +34,46 @@ Called when the volume of the player changes. Contains the new volume level.
 onAudioBecomingNoisy: () => void;
 ```
 
-Called when audio output becomes "noisy" (e.g., when headphones are unplugged). Typically used to pause playback automatically.
+Fired when headphones are unplugged. Typically used to pause playback.
 
----
+```tsx
+useEvent(player, 'onAudioBecomingNoisy', () => {
+  player.pause();
+});
+```
 
 ## onAudioFocusChange
 
 ```ts
-onAudioFocusChange: (hasAudioFocus) => void;
+onAudioFocusChange: (hasAudioFocus: boolean) => void;
 ```
 
-Called when the audio focus changes. Indicates whether the player currently has audio focus (Android specific).
+Fired when audio focus changes (another app playing audio).
 
+```tsx
+useEvent(player, 'onAudioFocusChange', (hasFocus) => {
+  if (!hasFocus) player.pause();
+});
+```
+
+## Example
+
+```tsx
+function AudioAwarePlayer() {
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  // Pause when headphones unplugged
+  useEvent(player, 'onAudioBecomingNoisy', () => {
+    player.pause();
+  });
+
+  // Pause when another app takes audio focus
+  useEvent(player, 'onAudioFocusChange', (hasFocus) => {
+    if (!hasFocus) player.pause();
+  });
+
+  return <VideoView player={player} style={{ width: '100%', height: 300 }} />;
+}
+```

@@ -5,10 +5,10 @@ Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-nativ
 ## Extends
 
 - [`VideoError`](VideoError.md)\<
-  \| [`LibraryError`](../type-aliases/LibraryError.md)
-  \| [`PlayerError`](../type-aliases/PlayerError.md)
-  \| [`SourceError`](../type-aliases/SourceError.md)
-  \| [`UnknownError`](../type-aliases/UnknownError.md)\>
+  \| [`LibraryError`](LibraryError.md)
+  \| [`PlayerError`](PlayerError.md)
+  \| [`SourceError`](SourceError.md)
+  \| [`UnknownError`](UnknownError.md)\>
 
 ## Accessors
 

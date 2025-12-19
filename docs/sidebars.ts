@@ -15,6 +15,21 @@ const sidebars: TypedSidebarsConfig = {
           type: 'doc',
           id: 'fundamentals/installation',
         },
+        {
+          type: 'category',
+          label: 'Configuration',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'fundamentals/configuration/expo-plugin',
+            },
+            {
+              type: 'doc',
+              id: 'fundamentals/configuration/manual',
+            },
+          ],
+        },
       ],
     },
     {
@@ -36,67 +51,82 @@ const sidebars: TypedSidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Playback',
+          label: 'Usage',
           collapsed: false,
           items: [
             {
               type: 'doc',
-              id: 'playback-control/play',
+              id: 'players/usage/playback',
             },
             {
               type: 'doc',
-              id: 'playback-control/pause',
+              id: 'players/usage/audio',
             },
             {
               type: 'doc',
-              id: 'playback-control/isPlaying',
+              id: 'players/usage/source',
             },
             {
               type: 'doc',
-              id: 'playback-control/rate',
+              id: 'players/usage/background',
             },
             {
               type: 'doc',
-              id: 'playback-control/loop',
+              id: 'players/usage/lifecycle',
             },
             {
               type: 'doc',
-              id: 'seeking-time/seekTo',
+              id: 'players/usage/text-tracks',
             },
             {
               type: 'doc',
-              id: 'seeking-time/seekBy',
+              id: 'players/usage/status',
             },
-            {
-              type: 'doc',
-              id: 'seeking-time/currentTime',
-            },
-            {
-              type: 'doc',
-              id: 'seeking-time/duration',
-            },
+        {
+          type: 'doc',
+          id: 'players/usage/notification-controls',
+        },
           ],
         },
         {
           type: 'category',
-          label: 'Audio',
+          label: 'Events',
           collapsed: false,
           items: [
             {
               type: 'doc',
-              id: 'player-audio/volume',
+              id: 'events/useEvent',
             },
             {
-              type: 'doc',
-              id: 'player-audio/muted',
-            },
-            {
-              type: 'doc',
-              id: 'player-audio/mixAudioMode',
-            },
-            {
-              type: 'doc',
-              id: 'player-audio/ignoreSilentSwitchMode',
+              type: 'category',
+              label: 'Usage',
+              collapsed: false,
+              items: [
+                {
+                  type: 'doc',
+                  id: 'events/loading',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/playback',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/buffering',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/audio',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/tracks',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/ui',
+                },
+              ],
             },
             {
               type: 'category',
@@ -105,11 +135,51 @@ const sidebars: TypedSidebarsConfig = {
               items: [
                 {
                   type: 'doc',
-                  id: 'audio/MixAudioMode',
+                  id: 'events/AllPlayerEvents',
                 },
                 {
                   type: 'doc',
-                  id: 'audio/IgnoreSilentSwitchMode',
+                  id: 'events/ALL_PLAYER_EVENTS',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/ALL_VIEW_EVENTS',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/JSVideoPlayerEvents',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/event-data/onLoadData',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/event-data/onLoadStartData',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/event-data/onProgressData',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/event-data/onPlaybackStateChangeData',
+                },
+                {
+                  type: 'doc',
+                  id: 'events/event-data/onVolumeChangeData',
+                },
+                {
+                  type: 'doc',
+                  id: 'bandwidth/BandwidthData',
+                },
+                {
+                  type: 'doc',
+                  id: 'metadata/TimedMetadata',
+                },
+                {
+                  type: 'doc',
+                  id: 'metadata/TimedMetadataObject',
                 },
               ],
             },
@@ -117,115 +187,47 @@ const sidebars: TypedSidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Source',
+          label: 'Ads',
           collapsed: false,
+          customProps: {
+            badgeType: 'planned',
+          },
           items: [
             {
               type: 'doc',
-              id: 'source-management/source',
+              id: 'players/advertising/getting-started',
             },
             {
               type: 'doc',
-              id: 'source-management/replaceSourceAsync',
-            },
-            {
-              type: 'category',
-              label: 'Types',
-              collapsed: false,
-              items: [
-                {
-                  type: 'doc',
-                  id: 'source/VideoSource',
-                },
-                {
-                  type: 'doc',
-                  id: 'source/VideoConfig',
-                },
-                {
-                  type: 'doc',
-                  id: 'source/SourceType',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Lifecycle',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'background-lifecycle/playInBackground',
+              id: 'players/advertising/google-ima',
             },
             {
               type: 'doc',
-              id: 'background-lifecycle/playWhenInactive',
+              id: 'players/advertising/google-dai',
+              customProps: {
+                plan: 'pro',
+              },
             },
             {
               type: 'doc',
-              id: 'background-lifecycle/initialize',
+              id: 'players/advertising/spotx',
+              customProps: {
+                plan: 'pro',
+              },
             },
             {
               type: 'doc',
-              id: 'background-lifecycle/preload',
+              id: 'players/advertising/freewheel',
+              customProps: {
+                plan: 'pro',
+              },
             },
             {
               type: 'doc',
-              id: 'background-lifecycle/release',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Text Tracks',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'player-text-tracks/selectedTrack',
-            },
-            {
-              type: 'doc',
-              id: 'player-text-tracks/getAvailableTextTracks',
-            },
-            {
-              type: 'doc',
-              id: 'player-text-tracks/selectTextTrack',
-            },
-            {
-              type: 'category',
-              label: 'Types',
-              collapsed: false,
-              items: [
-                {
-                  type: 'doc',
-                  id: 'text-tracks/TextTrack',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Status & Events',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'status/status',
-            },
-            {
-              type: 'doc',
-              id: 'status/showNotificationControls',
-            },
-            {
-              type: 'doc',
-              id: 'events-management/addEventListener',
-            },
-            {
-              type: 'doc',
-              id: 'events-management/clearAllEvents',
+              id: 'players/advertising/yospace',
+              customProps: {
+                plan: 'pro',
+              },
             },
           ],
         },
@@ -368,110 +370,170 @@ const sidebars: TypedSidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Events',
+      label: 'UI',
       collapsed: false,
       items: [
         {
           type: 'doc',
-          id: 'events/getting-started',
+          id: 'players/ui/getting-started',
         },
         {
           type: 'doc',
-          id: 'events/useEvent',
+          id: 'players/ui/playback',
         },
         {
           type: 'doc',
-          id: 'events/loading',
+          id: 'players/ui/screen-sharing',
         },
         {
           type: 'doc',
-          id: 'events/playback',
+          id: 'players/ui/subtitles',
         },
         {
           type: 'doc',
-          id: 'events/buffering',
+          id: 'players/ui/chapters',
+          customProps: {
+            plan: 'pro',
+          },
         },
         {
           type: 'doc',
-          id: 'events/audio',
-        },
-        {
-          type: 'doc',
-          id: 'events/tracks',
-        },
-        {
-          type: 'doc',
-          id: 'events/ui',
-        },
-        {
-          type: 'category',
-          label: 'Types',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'events/AllPlayerEvents',
-            },
-            {
-              type: 'doc',
-              id: 'events/ALL_PLAYER_EVENTS',
-            },
-            {
-              type: 'doc',
-              id: 'events/ALL_VIEW_EVENTS',
-            },
-            {
-              type: 'doc',
-              id: 'events/JSVideoPlayerEvents',
-            },
-            {
-              type: 'doc',
-              id: 'events/event-data/onLoadData',
-            },
-            {
-              type: 'doc',
-              id: 'events/event-data/onLoadStartData',
-            },
-            {
-              type: 'doc',
-              id: 'events/event-data/onProgressData',
-            },
-            {
-              type: 'doc',
-              id: 'events/event-data/onPlaybackStateChangeData',
-            },
-            {
-              type: 'doc',
-              id: 'events/event-data/onVolumeChangeData',
-            },
-            {
-              type: 'doc',
-              id: 'bandwidth/BandwidthData',
-            },
-            {
-              type: 'doc',
-              id: 'metadata/TimedMetadata',
-            },
-            {
-              type: 'doc',
-              id: 'metadata/TimedMetadataObject',
-            },
-          ],
+          id: 'players/ui/resolution-select',
+          customProps: {
+            plan: 'pro',
+          },
         },
       ],
     },
     {
       type: 'category',
-      label: 'Configuration',
+      label: 'Extensions',
       collapsed: false,
       items: [
         {
-          type: 'doc',
-          id: 'configuration/manual',
+          type: 'category',
+          label: 'Downloading',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'extensions/downloading/getting-started',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/basic-downloads',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/adaptive-streaming',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/track-selection',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/metadata',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/drm-downloads',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/downloading/configuration',
+            },
+          ],
         },
         {
-          type: 'doc',
-          id: 'configuration/expo-plugin',
+          type: 'category',
+          label: 'Uploading',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'extensions/uploading/getting-started',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/uploading/basic-upload',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/uploading/multi-part-upload',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/uploading/queue-management',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/uploading/network-tracking',
+            },
+            {
+              type: 'doc',
+              id: 'extensions/uploading/configuration',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Caching',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'extensions/caching/getting-started',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/caching/configuration',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/caching/preloading',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/caching/management',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'extensions/caching/storage',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+          ],
         },
       ],
     },
@@ -559,4 +621,5 @@ const sidebars: TypedSidebarsConfig = {
 };
 
 export default sidebars;
+
 

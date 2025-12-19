@@ -1,18 +1,23 @@
 ---
-sidebar_label: Advanced player
+sidebar_label: Player
 sidebar_position: 2
 ---
 
-# Player Lifecycle
+# Player (VideoPlayer Class)
 
-Understanding the lifecycle of the `VideoPlayer` is crucial for managing resources effectively and ensuring a smooth user experience.
+:::tip Recommended: useVideoPlayer
+For most use cases, use the [`useVideoPlayer`](./player.md) hook instead. It automatically manages the player lifecycle (creation and cleanup) within React components.
+:::
 
-## Creation and Initialization
+The `VideoPlayer` class gives you direct control over player lifecycle. Use it when you need manual management or in non-React contexts.
 
-1. **Instantiation**: A `VideoPlayer` instance is created by calling its constructor with a video source (URL, `VideoSource`, or `VideoConfig`).
-    ```typescript
-    const player = new VideoPlayer('https://example.com/video.mp4');
-    ```
+## Creation
+
+```typescript
+import { VideoPlayer } from 'react-native-video';
+
+const player = new VideoPlayer('https://example.com/video.mp4');
+```
 2. **Native Player Allocation**: A lightweight native player object is allocated immediately.
 3. **Asset Initialization**: By default (unless you opt out) the underlying media item is prepared **asynchronously right after creation**. You can control this with `initializeOnCreation` inside `VideoConfig`.
 
@@ -95,16 +100,13 @@ It is recommended to use `replaceSourceAsync(null)` when you want to free resour
 
 The `useVideoPlayer` hook simplifies managing the `VideoPlayer` lifecycle within React components.
 
-```typescript
-import { useVideoPlayer } from 'react-native-video';
+```tsx
+import { useVideoPlayer, VideoView } from 'react-native-video';
 
 const MyComponent = () => {
-  const player = useVideoPlayer('https://example.com/video.mp4', (playerInstance) => {
-    // Optional setup function: configure the player instance after creation
-    playerInstance.loop = true;
+  const player = useVideoPlayer(source, (_player) => {
+    _player.loop = true;
   });
-
-  // ... use player ...
 
   return <VideoView player={player} />;
 };
@@ -119,15 +121,14 @@ Using `useVideoPlayer` is the recommended way to manage `VideoPlayer` instances 
 
 ```tsx
 const player = useVideoPlayer({
-    source: { uri: 'https://example.com/video.mp4' },
-    initializeOnCreation: false,
-}, (instance) => {
-    // Attach listeners first
-    instance.onLoad = () => console.log('Loaded');
+  uri: 'https://example.com/video.mp4',
+  initializeOnCreation: false,
+}, (_player) => {
+  _player.onLoad = () => console.log('Loaded');
 });
 
 // Later (e.g. on user tap)
-await player.initialize(); // or player.preload()
+await player.initialize();
 player.play();
 ```
 :::

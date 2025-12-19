@@ -4,49 +4,80 @@ sidebar_label: Playback
 
 # Playback Events
 
-Events related to video playback state and progress.
-
----
+Events for playback state and progress.
 
 ## onPlaybackStateChange
 
 ```ts
-onPlaybackStateChange: (data) => void;
+onPlaybackStateChange: (data: onPlaybackStateChangeData) => void;
 ```
 
-Called when the player playback state changes (e.g., playing, paused, stopped).
+Fired when playback state changes.
 
----
+```tsx
+useEvent(player, 'onPlaybackStateChange', (data) => {
+  console.log('Playing:', data.isPlaying);
+  console.log('Buffering:', data.isBuffering);
+});
+```
+
+### onPlaybackStateChangeData
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `isPlaying` | `boolean` | Currently playing |
+| `isBuffering` | `boolean` | Currently buffering |
 
 ## onPlaybackRateChange
 
 ```ts
-onPlaybackRateChange: (rate) => void;
+onPlaybackRateChange: (rate: number) => void;
 ```
 
-Called when the player playback rate changes (e.g., when setting playback speed).
+Fired when playback speed changes.
 
----
+```tsx
+useEvent(player, 'onPlaybackRateChange', (rate) => {
+  console.log('Speed:', rate);
+});
+```
 
 ## onProgress
 
 ```ts
-onProgress: (data) => void;
+onProgress: (data: onProgressData) => void;
 ```
 
-Called periodically while the video is playing. Contains current playback position and buffered ranges.
+Fired periodically during playback.
 
----
+```tsx
+useEvent(player, 'onProgress', (data) => {
+  setCurrentTime(data.currentTime);
+  setPlayableDuration(data.playableDuration);
+});
+```
+
+### onProgressData
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `currentTime` | `number` | Current position (seconds) |
+| `playableDuration` | `number` | Buffered duration |
+| `seekableDuration` | `number` | Seekable duration |
 
 ## onSeek
 
 ```ts
-onSeek: (seekTime) => void;
+onSeek: (seekTime: number) => void;
 ```
 
-Called when a seek operation completes. Contains the time that was seeked to.
+Fired when seek completes.
 
----
+```tsx
+useEvent(player, 'onSeek', (time) => {
+  console.log('Seeked to:', time);
+});
+```
 
 ## onEnd
 
@@ -54,5 +85,46 @@ Called when a seek operation completes. Contains the time that was seeked to.
 onEnd: () => void;
 ```
 
-Called when the video playback reaches the end of the content.
+Fired when video reaches the end.
 
+```tsx
+useEvent(player, 'onEnd', () => {
+  console.log('Video ended');
+  // Auto-play next or show replay
+});
+```
+
+## Example
+
+```tsx
+function ProgressPlayer() {
+  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  useEvent(player, 'onProgress', (data) => {
+    setCurrentTime(data.currentTime);
+  });
+
+  useEvent(player, 'onPlaybackStateChange', (data) => {
+    setIsPlaying(data.isPlaying);
+  });
+
+  useEvent(player, 'onEnd', () => {
+    // Replay
+    player.seekTo(0);
+    player.play();
+  });
+
+  return (
+    <View>
+      <VideoView player={player} style={{ width: '100%', height: 300 }} />
+      <Text>{isPlaying ? 'Playing' : 'Paused'}</Text>
+      <Text>{Math.floor(currentTime)}s</Text>
+    </View>
+  );
+}
+```

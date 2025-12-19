@@ -4,7 +4,7 @@ Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-nativ
 
 ## Extends
 
-- [`VideoError`](VideoError.md)\<[`VideoViewError`](../type-aliases/VideoViewError.md)\>
+- [`VideoError`](VideoError.md)\<[`VideoViewError`](VideoViewError.md)\>
 
 ## Accessors
 

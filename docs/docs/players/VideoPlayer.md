@@ -24,7 +24,7 @@ Defined in: [VideoPlayer.ts:23](https://github.com/moskalakamil/react-native-vid
 
 | Parameter | Type |
 | ------ | ------ |
-| `source` | \| [`VideoSource`](../type-aliases/VideoSource.md) \| [`VideoConfig`](../type-aliases/VideoConfig.md) \| `VideoPlayerSource` |
+| `source` | \| [`VideoSource`](./usage/source.md#videosource) \| [`VideoConfig`](./usage/source.md#videoconfig) \| `VideoPlayerSource` |
 
 #### Returns
 
@@ -131,7 +131,7 @@ This is only supported on iOS.
 
 ##### Returns
 
-[`IgnoreSilentSwitchMode`](../type-aliases/IgnoreSilentSwitchMode.md)
+[`IgnoreSilentSwitchMode`](./usage/audio.md#ignoresilentswitchmode-1)
 
 #### Set Signature
 
@@ -155,7 +155,7 @@ This is only supported on iOS.
 
 | Parameter | Type |
 | ------ | ------ |
-| `value` | [`IgnoreSilentSwitchMode`](../type-aliases/IgnoreSilentSwitchMode.md) |
+| `value` | [`IgnoreSilentSwitchMode`](./usage/audio.md#ignoresilentswitchmode-1) |
 
 ##### Returns
 
@@ -266,7 +266,7 @@ default is `auto`.
 
 ##### Returns
 
-[`MixAudioMode`](../type-aliases/MixAudioMode.md)
+[`MixAudioMode`](./usage/audio.md#mixaudiomode-1)
 
 #### Set Signature
 
@@ -289,7 +289,7 @@ default is `auto`.
 
 | Parameter | Type |
 | ------ | ------ |
-| `value` | [`MixAudioMode`](../type-aliases/MixAudioMode.md) |
+| `value` | [`MixAudioMode`](./usage/audio.md#mixaudiomode-1) |
 
 ##### Returns
 
@@ -537,7 +537,7 @@ Get the currently selected text track.
 
 ##### Returns
 
-[`TextTrack`](../interfaces/TextTrack.md) \| `undefined`
+[`TextTrack`](./usage/text-tracks.md#texttrack) \| `undefined`
 
 The currently selected text track, or undefined if none is selected
 
@@ -623,7 +623,7 @@ The status of the player.
 
 ##### Returns
 
-[`VideoPlayerStatus`](../type-aliases/VideoPlayerStatus.md)
+[`VideoPlayerStatus`](./usage/status.md#status)
 
 #### Implementation of
 
@@ -706,7 +706,7 @@ Adds a listener for a player event.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `event` | `Event` | The event to add a listener for. |
-| `callback` | [`AllPlayerEvents`](../type-aliases/AllPlayerEvents.md)\[`Event`\] | The callback to call when the event is triggered. |
+| `callback` | [`AllPlayerEvents`](../events/AllPlayerEvents.md)\[`Event`\] | The callback to call when the event is triggered. |
 
 #### Returns
 
@@ -760,7 +760,7 @@ Get all available text tracks for the current source.
 
 #### Returns
 
-[`TextTrack`](../interfaces/TextTrack.md)[]
+[`TextTrack`](./usage/text-tracks.md#texttrack)[]
 
 Array of available text tracks
 
@@ -780,7 +780,7 @@ initialize(): Promise<void>;
 
 Defined in: [VideoPlayer.ts:205](https://github.com/moskalakamil/react-native-video/blob/758f54e450f1f536cb2092e087be9e65f05c3e68/packages/react-native-video/src/core/VideoPlayer.ts#L205)
 
-Manually initialize the player. You don't need to call this method manually, unless you set `initializeOnCreation` to false in [VideoConfig](../type-aliases/VideoConfig.md)
+Manually initialize the player. You don't need to call this method manually, unless you set `initializeOnCreation` to false in [VideoConfig](./usage/source.md#videoconfig)
 
 #### Returns
 
@@ -895,7 +895,7 @@ Replace the current source of the player.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `source` | \| [`VideoSource`](../type-aliases/VideoSource.md) \| [`VideoConfig`](../type-aliases/VideoConfig.md) \| `null` | The new source of the video. |
+| `source` | \| [`VideoSource`](./usage/source.md#videosource) \| [`VideoConfig`](./usage/source.md#videoconfig) \| `null` | The new source of the video. |
 
 #### Returns
 
@@ -994,7 +994,7 @@ Select a text track to display.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `textTrack` | [`TextTrack`](../interfaces/TextTrack.md) \| `null` | Text track to select, or null to unselect current track |
+| `textTrack` | [`TextTrack`](./usage/text-tracks.md#texttrack) \| `null` | Text track to select, or null to unselect current track |
 
 #### Returns
 

@@ -16,7 +16,7 @@ Defined in: [types/Events.ts:97](https://github.com/moskalakamil/react-native-vi
 
 | Parameter | Type |
 | ------ | ------ |
-| `error` | [`VideoRuntimeError`](VideoRuntimeError.md) |
+| `error` | [`VideoRuntimeError`](../errors/VideoRuntimeError.md) |
 
 #### Returns
 

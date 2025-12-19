@@ -4,29 +4,48 @@ sidebar_label: Loading
 
 # Loading Events
 
-Events related to video loading and initialization.
-
----
+Events for video loading and initialization.
 
 ## onLoadStart
 
 ```ts
-onLoadStart: (data) => void;
+onLoadStart: (data: onLoadStartData) => void;
 ```
 
-Called when the video starts loading. This is the first event fired when a new source is set.
+Fired when video starts loading.
 
----
+```tsx
+useEvent(player, 'onLoadStart', (data) => {
+  console.log('Loading:', data.uri);
+  setLoading(true);
+});
+```
 
 ## onLoad
 
 ```ts
-onLoad: (data) => void;
+onLoad: (data: onLoadData) => void;
 ```
 
-Called when the video is loaded and ready to play. Contains metadata about the video such as duration, dimensions, and available tracks.
+Fired when video is loaded and ready to play.
 
----
+```tsx
+useEvent(player, 'onLoad', (data) => {
+  console.log('Duration:', data.duration);
+  console.log('Size:', data.naturalSize.width, 'x', data.naturalSize.height);
+  setLoading(false);
+});
+```
+
+### onLoadData
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `duration` | `number` | Duration in seconds |
+| `currentTime` | `number` | Current position |
+| `naturalSize` | `{ width, height }` | Video dimensions |
+| `audioTracks` | `AudioTrack[]` | Available audio tracks |
+| `textTracks` | `TextTrack[]` | Available text tracks |
 
 ## onReadyToDisplay
 
@@ -34,5 +53,39 @@ Called when the video is loaded and ready to play. Contains metadata about the v
 onReadyToDisplay: () => void;
 ```
 
-Called when the video is ready to be displayed on screen. This fires after `onLoad` when the first frame is available for rendering.
+Fired when first frame is ready to render.
 
+```tsx
+useEvent(player, 'onReadyToDisplay', () => {
+  console.log('First frame ready');
+  hidePosterImage();
+});
+```
+
+## Example
+
+```tsx
+function LoadingPlayer() {
+  const [loading, setLoading] = useState(true);
+  const [duration, setDuration] = useState(0);
+
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  useEvent(player, 'onLoadStart', () => setLoading(true));
+  
+  useEvent(player, 'onLoad', (data) => {
+    setLoading(false);
+    setDuration(data.duration);
+  });
+
+  return (
+    <View>
+      <VideoView player={player} style={{ width: '100%', height: 300 }} />
+      {loading && <ActivityIndicator />}
+      <Text>Duration: {duration}s</Text>
+    </View>
+  );
+}
+```

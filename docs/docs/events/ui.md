@@ -2,27 +2,57 @@
 sidebar_label: UI & External
 ---
 
-# UI & External Playback Events
+# UI & External Events
 
-Events related to UI controls visibility and external playback (AirPlay, Chromecast).
-
----
+Events for controls visibility and external playback (AirPlay, Chromecast).
 
 ## onControlsVisibleChange
 
 ```ts
-onControlsVisibleChange: (visible) => void;
+onControlsVisibleChange: (visible: boolean) => void;
 ```
 
-Called when the video view's native controls visibility changes. Indicates whether the controls are currently shown or hidden.
+Fired when native controls visibility changes.
 
----
+```tsx
+useEvent(player, 'onControlsVisibleChange', (visible) => {
+  console.log('Controls:', visible ? 'shown' : 'hidden');
+});
+```
 
 ## onExternalPlaybackChange
 
 ```ts
-onExternalPlaybackChange: (externalPlaybackActive) => void;
+onExternalPlaybackChange: (externalPlaybackActive: boolean) => void;
 ```
 
-Called when the external playback state changes (e.g., AirPlay on iOS). Indicates whether content is being played on an external device.
+Fired when AirPlay/external playback state changes.
 
+```tsx
+useEvent(player, 'onExternalPlaybackChange', (active) => {
+  console.log('AirPlay:', active ? 'active' : 'inactive');
+});
+```
+
+## Example
+
+```tsx
+function ExternalPlaybackPlayer() {
+  const [isAirPlay, setIsAirPlay] = useState(false);
+
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  useEvent(player, 'onExternalPlaybackChange', (active) => {
+    setIsAirPlay(active);
+  });
+
+  return (
+    <View>
+      <VideoView player={player} style={{ width: '100%', height: 300 }} />
+      {isAirPlay && <Text>📺 Playing on external device</Text>}
+    </View>
+  );
+}
+```

@@ -1,50 +1,47 @@
 ---
 sidebar_position: 1
-sidebar_label: Player
+sidebar_label: useVideoPlayer
 ---
 
-# Getting Started
+# useVideoPlayer
 
-The `VideoPlayer` class is the primary way to control video playback. It provides methods and properties to manage the video source, playback state, volume, and other aspects of the video.
+The recommended way to create and manage a `VideoPlayer` instance in React components.
 
-## Initialization
+## Basic Usage
 
-To use the `VideoPlayer`, you first need to create an instance of it with a video source. There are two ways to do this. By default the native media item is initialized asynchronously right after creation (unless you opt out with `initializeOnCreation: false`).
-
-using `useVideoPlayer` hook
 ```tsx
-import { useVideoPlayer } from 'react-native-video';
+import { useVideoPlayer, VideoView } from 'react-native-video';
 
+function Player() {
+  const player = useVideoPlayer(source, (_player) => {
+    _player.play();
+  });
+
+  return <VideoView player={player} />;
+}
+```
+
+## With Configuration
+
+```tsx
 const player = useVideoPlayer({
-  source: {
-    uri: 'https://www.w3schools.com/html/mov_bbb.mp4',
-  },
+  uri: 'https://example.com/video.mp4',
+  headers: { Authorization: 'Bearer token' },
+}, (_player) => {
+  _player.loop = true;
+  _player.volume = 0.8;
+  _player.play();
 });
 ```
 
-:::info
-`useVideoPlayer` hook is recommended for most use cases. It automatically manages the player lifecycle between the component mount and unmount.
-:::
+## Benefits
 
-or using `VideoPlayer` class constructor directly
-```typescript
-import { VideoPlayer } from 'react-native-video';
+- **Automatic cleanup** - Resources released on unmount
+- **Dependency management** - Recreates player when source changes
+- **Lifecycle management** - No manual `release()` needed
 
-// Using a URL string
-const player = new VideoPlayer('https://example.com/video.mp4');
-
-// Using a VideoSource object
-const playerWithSource = new VideoPlayer({ uri: 'https://example.com/video.mp4' });
-
-// Using a VideoConfig object
-const playerWithConfig = new VideoPlayer({
-  source: { uri: 'https://example.com/video.mp4' },
-  // other configurations
-});
-```
-
-:::warning
-When using `VideoPlayer` class directly, you need to manually manage the player lifecycle. Once you no longer need the player, you need to call `release()` method to release the player's native resources. see [Player Lifecycle](./player-lifecycle.md) for more details.
+:::tip
+For advanced lifecycle control or non-React contexts, see [Player](./AdvancedPlayer.md).
 :::
 
 ## Core Functionality
@@ -76,7 +73,7 @@ The `VideoPlayer` class offers a comprehensive set of methods and properties to 
 | `muted` | Read/Write | `boolean` | Gets or sets whether the video is muted. |
 | `loop` | Read/Write | `boolean` | Gets or sets whether the video should loop. |
 | `rate` | Read/Write | `number` | Gets or sets the playback rate (e.g., 1.0 for normal speed, 0.5 for half speed, 2.0 for double speed). |
-| `mixAudioMode` | Read/Write | `MixAudioMode` | Controls how this player's audio mixes with other audio sources (see [MixAudioMode](../api-reference/type-aliases/MixAudioMode.md)). |
+| `mixAudioMode` | Read/Write | `MixAudioMode` | Controls how this player's audio mixes with other audio sources (see [MixAudioMode](./usage/audio.md#mixaudiomode-1)). |
 | `ignoreSilentSwitchMode` | Read/Write | `IgnoreSilentSwitchMode` | iOS-only. Determines how audio should behave when the hardware mute (silent) switch is on. |
 | `playInBackground` | Read/Write | `boolean` | Whether playback should continue when the app goes to the background. |
 | `playWhenInactive` | Read/Write | `boolean` | Whether playback should continue when the app is inactive (e.g., during a phone call). |
