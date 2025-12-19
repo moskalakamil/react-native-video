@@ -12,7 +12,7 @@ import {
   Collapsible,
   useCollapsible,
 } from '@docusaurus/theme-common';
-import {isSamePath} from '@docusaurus/theme-common/internal';
+import { isSamePath } from '@docusaurus/theme-common/internal';
 import {
   isActiveSidebarItem,
   findFirstSidebarItemLink,
@@ -20,14 +20,17 @@ import {
   useVisibleSidebarItems,
 } from '@docusaurus/plugin-content-docs/client';
 import Link from '@docusaurus/Link';
-import {translate} from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import DocSidebarItemLink from '@theme/DocSidebarItem/Link';
-import type {Props} from '@theme/DocSidebarItem/Category';
+import type { Props } from '@theme/DocSidebarItem/Category';
 import ProBadge from '@site/src/components/ProBadge/ProBadge';
 import StatusBadge from '@site/src/components/StatusBadge/StatusBadge';
-import type {WithCustomProps, CustomSidebarProps} from '@site/src/types/sidebar';
+import type {
+  WithCustomProps,
+  CustomSidebarProps,
+} from '@site/src/types/sidebar';
 
 import type {
   PropSidebarItemCategory,
@@ -76,7 +79,7 @@ function useAutoExpandActiveCategory({
  * see https://github.com/facebook/docusaurus/issues/3030
  */
 function useCategoryHrefWithSSRFallback(
-  item: Props['item'],
+  item: Props['item']
 ): string | undefined {
   const isBrowser = useIsBrowser();
   return useMemo(() => {
@@ -111,7 +114,7 @@ function CollapseButton({
                 message: "Expand sidebar category '{label}'",
                 description: 'The ARIA label to expand the sidebar category',
               },
-              {label: categoryLabel},
+              { label: categoryLabel }
             )
           : translate(
               {
@@ -119,7 +122,7 @@ function CollapseButton({
                 message: "Collapse sidebar category '{label}'",
                 description: 'The ARIA label to collapse the sidebar category',
               },
-              {label: categoryLabel},
+              { label: categoryLabel }
             )
       }
       aria-expanded={!collapsed}
@@ -131,18 +134,18 @@ function CollapseButton({
 }
 
 function CategoryLinkLabel({
-  label, 
+  label,
   isRootCategory,
   customProps,
 }: {
-  label: string; 
+  label: string;
   isRootCategory: boolean;
   customProps?: CustomSidebarProps;
 }) {
   return (
     <>
-      <span 
-        title={label} 
+      <span
+        title={label}
         className={clsx(styles.categoryLinkLabel, {
           [styles.categoryLinkLabelRoot]: isRootCategory,
           [styles.categoryLinkLabelNested]: !isRootCategory,
@@ -151,17 +154,17 @@ function CategoryLinkLabel({
         {label}
       </span>
       {customProps?.plan === 'pro' && <ProBadge />}
-      {customProps?.badgeType && (
-        <StatusBadge type={customProps.badgeType} />
-      )}
+      {customProps?.badgeType && <StatusBadge type={customProps.badgeType} />}
     </>
   );
 }
 
-export default function DocSidebarItemCategory(props: WithCustomProps<Props>): ReactNode {
+export default function DocSidebarItemCategory(
+  props: WithCustomProps<Props>
+): ReactNode {
   const visibleChildren = useVisibleSidebarItems(
     props.item.items,
-    props.activePath,
+    props.activePath
   );
   if (visibleChildren.length === 0) {
     return <DocSidebarItemCategoryEmpty {...props} />;
@@ -171,13 +174,16 @@ export default function DocSidebarItemCategory(props: WithCustomProps<Props>): R
 }
 
 function isCategoryWithHref(
-  category: PropSidebarItemCategory,
-): category is PropSidebarItemCategory & {href: string} {
+  category: PropSidebarItemCategory
+): category is PropSidebarItemCategory & { href: string } {
   return typeof category.href === 'string';
 }
 
 // If a category doesn't have any visible children, we render it as a link
-function DocSidebarItemCategoryEmpty({item, ...props}: WithCustomProps<Props>): ReactNode {
+function DocSidebarItemCategoryEmpty({
+  item,
+  ...props
+}: WithCustomProps<Props>): ReactNode {
   // If the category has no link, we don't render anything
   // It's not super useful to render a category you can't open nor click
   if (!isCategoryWithHref(item)) {
@@ -185,11 +191,11 @@ function DocSidebarItemCategoryEmpty({item, ...props}: WithCustomProps<Props>): 
   }
   // We remove props that don't make sense for a link and forward the rest
   const {
-    type,
-    collapsed,
-    collapsible,
-    items,
-    linkUnlisted,
+    type: _type,
+    collapsed: _collapsed,
+    collapsible: _collapsible,
+    items: _items,
+    linkUnlisted: _linkUnlisted,
     ...forwardableProps
   } = item;
   const linkItem: PropSidebarItemLink = {
@@ -207,10 +213,10 @@ function DocSidebarItemCategoryCollapsible({
   index,
   ...props
 }: WithCustomProps<Props>): ReactNode {
-  const {items, label, collapsible, className, href, customProps} = item;
+  const { items, label, collapsible, className, href, customProps } = item;
   const {
     docs: {
-      sidebar: {autoCollapseCategories},
+      sidebar: { autoCollapseCategories },
     },
   } = useThemeConfig();
   const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
@@ -221,7 +227,7 @@ function DocSidebarItemCategoryCollapsible({
   // Root categories (level === 1) are always expanded and non-collapsible
   const isRootCategory = level === 1;
 
-  const {collapsed, setCollapsed} = useCollapsible({
+  const { collapsed, setCollapsed } = useCollapsible({
     // Root categories (level === 1) are always expanded
     // Level 2 categories respect the collapsed prop from sidebars.ts
     // Deeper nested categories (level > 2) are collapsed by default, unless they are active
@@ -241,7 +247,7 @@ function DocSidebarItemCategoryCollapsible({
     },
   });
 
-  const {expandedItem, setExpandedItem} = useDocSidebarItemsExpandedState();
+  const { expandedItem, setExpandedItem } = useDocSidebarItemsExpandedState();
   // Use this instead of `setCollapsed`, because it is also reactive
   const updateCollapsed = (toCollapsed: boolean = !collapsed) => {
     // Root categories cannot be collapsed
@@ -251,7 +257,7 @@ function DocSidebarItemCategoryCollapsible({
     setExpandedItem(toCollapsed ? null : index);
     setCollapsed(toCollapsed);
   };
-  
+
   // Only auto-expand for nested categories, not root
   // We need to call the hook unconditionally (React rules), but make it a no-op for root categories
   useAutoExpandActiveCategory({
@@ -260,7 +266,7 @@ function DocSidebarItemCategoryCollapsible({
     updateCollapsed: isRootCategory ? () => {} : updateCollapsed,
     activePath,
   });
-  
+
   useEffect(() => {
     // Root categories should never collapse - always keep them expanded
     if (isRootCategory) {
@@ -276,7 +282,14 @@ function DocSidebarItemCategoryCollapsible({
     ) {
       setCollapsed(true);
     }
-  }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories, isRootCategory]);
+  }, [
+    collapsible,
+    expandedItem,
+    index,
+    setCollapsed,
+    autoCollapseCategories,
+    isRootCategory,
+  ]);
 
   const handleItemClick: ComponentProps<'a'>['onClick'] = (e) => {
     onItemClick?.(item);
@@ -318,26 +331,40 @@ function DocSidebarItemCategoryCollapsible({
           'menu__list-item--collapsed': collapsed,
           [styles.rootCategoryContainer]: isRootCategory,
         },
-        className,
-      )}>
+        className
+      )}
+    >
       <div
         className={clsx('menu__list-item-collapsible', {
           'menu__list-item-collapsible--active': isCurrentPage,
-        })}>
+        })}
+      >
         <Link
           className={clsx(styles.categoryLink, 'menu__link', {
             [styles.categoryLinkRoot]: isRootCategory,
             'menu__link--sublist': collapsible && !isRootCategory,
-            'menu__link--sublist-caret': !href && collapsible && !isRootCategory,
+            'menu__link--sublist-caret':
+              !href && collapsible && !isRootCategory,
             'menu__link--active': isActive,
           })}
-          style={nestedIndent > 0 ? { paddingLeft: `${nestedIndent + 0.5}rem` } : undefined}
+          style={
+            nestedIndent > 0
+              ? { paddingLeft: `${nestedIndent + 0.5}rem` }
+              : undefined
+          }
           onClick={handleItemClick}
           aria-current={isCurrentPage ? 'page' : undefined}
           role={collapsible && !href && !isRootCategory ? 'button' : undefined}
-          aria-expanded={collapsible && !href && !isRootCategory ? !collapsed : undefined}
-          href={collapsible && !isRootCategory ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
-          {...props}>
+          aria-expanded={
+            collapsible && !href && !isRootCategory ? !collapsed : undefined
+          }
+          href={
+            collapsible && !isRootCategory
+              ? (hrefWithSSRFallback ?? '#')
+              : hrefWithSSRFallback
+          }
+          {...props}
+        >
           {/* Only show collapse button for nested categories (not root) */}
           {href && collapsible && !isRootCategory && (
             <CollapseButton
@@ -349,15 +376,20 @@ function DocSidebarItemCategoryCollapsible({
               }}
             />
           )}
-          <CategoryLinkLabel 
-            label={label} 
-            isRootCategory={isRootCategory} 
+          <CategoryLinkLabel
+            label={label}
+            isRootCategory={isRootCategory}
             customProps={customProps}
           />
         </Link>
       </div>
 
-      <Collapsible lazy as="ul" className={clsx('menu__list', isRootCategory && styles.categoryList)} collapsed={collapsed}>
+      <Collapsible
+        lazy
+        as="ul"
+        className={clsx('menu__list', isRootCategory && styles.categoryList)}
+        collapsed={collapsed}
+      >
         <DocSidebarItems
           items={items}
           tabIndex={collapsed ? -1 : 0}

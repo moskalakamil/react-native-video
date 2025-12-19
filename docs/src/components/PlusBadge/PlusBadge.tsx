@@ -7,10 +7,10 @@ interface PlusBadgeProps {
 const PlusBadge = ({ tooltip = 'Pro feature' }: PlusBadgeProps) => {
   return (
     <span className={styles.badge} title={tooltip}>
-      <svg 
-        width="12" 
-        height="12" 
-        viewBox="0 0 24 24" 
+      <svg
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
         fill="currentColor"
         className={styles.icon}
       >
@@ -21,4 +21,3 @@ const PlusBadge = ({ tooltip = 'Pro feature' }: PlusBadgeProps) => {
 };
 
 export default PlusBadge;
-

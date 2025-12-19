@@ -7,11 +7,12 @@ import Layout from '@theme/Layout';
 import { type ReactNode } from 'react';
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={siteConfig.title}
-      description="Video player for React Native.">
+      description="Video player for React Native."
+    >
       <HomepageHero />
       <main>
         <HomepageFeatures />

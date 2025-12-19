@@ -4,7 +4,7 @@ interface TWGBadgeProps {
   visibleOnLarge?: boolean;
 }
 
-const TWGBadge = ({visibleOnLarge}: TWGBadgeProps) => {
+const TWGBadge = ({ visibleOnLarge }: TWGBadgeProps) => {
   const visibilityClass = visibleOnLarge
     ? styles.visibleOnLarge
     : styles.visibleOnSmall;
@@ -16,7 +16,8 @@ const TWGBadge = ({visibleOnLarge}: TWGBadgeProps) => {
         target="_blank"
         href="https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=badge&utm_id=enterprise#Contact"
         className={styles.extraButton}
-        rel="noreferrer">
+        rel="noreferrer"
+      >
         Premium support →
       </a>
     </div>

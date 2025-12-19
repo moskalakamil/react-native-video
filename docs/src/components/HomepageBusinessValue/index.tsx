@@ -4,14 +4,18 @@ import styles from './styles.module.css';
 
 function ArrowIcon() {
   return (
-    <svg 
-      className={styles.arrowIcon} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
+    <svg
+      className={styles.arrowIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
       strokeWidth="2"
     >
-      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M5 12h14M12 5l7 7-7 7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -27,9 +31,11 @@ export default function HomepageBusinessValue(): ReactNode {
               Need custom integration or support?
             </h2>
             <p className={styles.description}>
-              Our team provides enterprise-grade integration services, custom development, and dedicated support to help you build the perfect video solution for your business.
+              Our team provides enterprise-grade integration services, custom
+              development, and dedicated support to help you build the perfect
+              video solution for your business.
             </p>
-            <Link 
+            <Link
               to="https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=business-value&utm_id=enterprise#Contact"
               className={styles.ctaButton}
               target="_blank"
@@ -42,7 +48,12 @@ export default function HomepageBusinessValue(): ReactNode {
           <div className={styles.featuresList}>
             <div className={styles.feature}>
               <div className={styles.featureIcon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M12 2L2 7l10 5 10-5-10-5z" />
                   <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
@@ -56,7 +67,12 @@ export default function HomepageBusinessValue(): ReactNode {
             </div>
             <div className={styles.feature}>
               <div className={styles.featureIcon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
@@ -69,7 +85,12 @@ export default function HomepageBusinessValue(): ReactNode {
             </div>
             <div className={styles.feature}>
               <div className={styles.featureIcon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
@@ -86,4 +107,3 @@ export default function HomepageBusinessValue(): ReactNode {
     </section>
   );
 }
-

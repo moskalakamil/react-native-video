@@ -23,14 +23,10 @@ const config = {
 
 export default function StatusBadge({ type }: StatusBadgeProps) {
   const { label, title, className } = config[type];
-  
+
   return (
-    <span 
-      className={clsx(styles.badge, styles[className])}
-      title={title}
-    >
+    <span className={clsx(styles.badge, styles[className])} title={title}>
       {label}
     </span>
   );
 }
-

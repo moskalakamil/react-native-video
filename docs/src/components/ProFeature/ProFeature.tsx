@@ -5,18 +5,18 @@ interface ProFeatureProps {
   description?: string;
 }
 
-const ProFeature = ({ 
+const ProFeature = ({
   title = 'Pro Feature',
-  description = 'This feature is part of our commercial offering. Start a free trial to explore all Pro features.'
+  description = 'This feature is part of our commercial offering. Start a free trial to explore all Pro features.',
 }: ProFeatureProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.badge}>
-          <svg 
-            width="14" 
-            height="14" 
-            viewBox="0 0 24 24" 
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
             fill="currentColor"
             className={styles.icon}
           >
@@ -27,7 +27,7 @@ const ProFeature = ({
       </div>
       <p className={styles.description}>{description}</p>
       <div className={styles.actions}>
-        <a 
+        <a
           href="https://sdk.thewidlarzgroup.com/signup?utm_source=rnv&utm_medium=docs&utm_campaign=pro-feature"
           target="_blank"
           rel="noreferrer"
@@ -35,7 +35,7 @@ const ProFeature = ({
         >
           Start Free Trial
         </a>
-        <a 
+        <a
           href="https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=pro-feature#Contact"
           target="_blank"
           rel="noreferrer"
@@ -49,4 +49,3 @@ const ProFeature = ({
 };
 
 export default ProFeature;
-

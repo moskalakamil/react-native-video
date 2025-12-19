@@ -29,15 +29,19 @@ const TestimonialList: TestimonialItem[] = [
   },
 ];
 
-function Testimonial({quote, author, role, company}: TestimonialItem) {
+function Testimonial({ quote, author, role, company }: TestimonialItem) {
   return (
     <div className={styles.testimonialCard}>
       <div className={styles.quoteIcon}>"</div>
-      <p className={styles.quote}>{quote || 'Testimonial quote will appear here'}</p>
+      <p className={styles.quote}>
+        {quote || 'Testimonial quote will appear here'}
+      </p>
       <div className={styles.author}>
         <div className={styles.authorName}>{author || 'Author Name'}</div>
         <div className={styles.authorRole}>
-          {role && company ? `${role} at ${company}` : role || company || 'Role, Company'}
+          {role && company
+            ? `${role} at ${company}`
+            : role || company || 'Role, Company'}
         </div>
       </div>
     </div>
@@ -64,4 +68,3 @@ export default function HomepageTestimonials(): ReactNode {
     </section>
   );
 }
-

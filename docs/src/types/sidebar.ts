@@ -8,12 +8,16 @@ export interface CustomSidebarProps {
 export type AddCustomProps<T> = T extends readonly (infer U)[]
   ? Array<AddCustomProps<U>>
   : T extends object
-  ? Omit<{ [K in keyof T]: AddCustomProps<T[K]> }, 'customProps'> & { customProps?: CustomSidebarProps }
-  : T;
+    ? Omit<{ [K in keyof T]: AddCustomProps<T[K]> }, 'customProps'> & {
+        customProps?: CustomSidebarProps;
+      }
+    : T;
 
 export type TypedSidebarsConfig = AddCustomProps<SidebarsConfig>;
 
-export type WithCustomProps<Props extends { item: unknown }> = Omit<Props, 'item'> & {
-  item: AddCustomProps<Props['item']> & Props['item']
+export type WithCustomProps<Props extends { item: unknown }> = Omit<
+  Props,
+  'item'
+> & {
+  item: AddCustomProps<Props['item']> & Props['item'];
 };
-
