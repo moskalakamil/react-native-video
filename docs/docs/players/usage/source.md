@@ -67,7 +67,7 @@ interface VideoConfig {
 | `uri` | `VideoSource` | Video URL or local file. Required. |
 | `headers?` | `Record<string, string>` | HTTP headers |
 | `drm?` | `DrmParams` | DRM config. See [DRM](../drm.md). |
-| `bufferConfig?` | `BufferConfig` | Buffer config. See [Player](../player.md#buffer-config). |
+| `bufferConfig?` | `BufferConfig` | Buffer config. See [useVideoPlayer](../use-video-player.md#buffer-config). |
 | `metadata?` | `CustomVideoMetadata` | Metadata for notifications |
 | `externalSubtitles?` | `ExternalSubtitle[]` | External subtitle tracks |
 | `initializeOnCreation?` | `boolean` | Initialize immediately. Default: `true`. |

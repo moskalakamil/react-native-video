@@ -13,10 +13,10 @@ const config: Config = {
   tagline: 'React Native Video - Video player for React Native',
   favicon: 'img/favicon.ico',
 
-  url: 'https://moskalakamil.github.io',
+  url: 'https://docs.thewidlarzgroup.com',
   baseUrl: '/react-native-video',
 
-  organizationName: 'moskalakamil',
+  organizationName: 'TheWidlarzGroup',
   projectName: 'react-native-video',
 
   onBrokenLinks: 'throw',

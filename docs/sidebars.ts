@@ -39,11 +39,11 @@ const sidebars: TypedSidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'players/player',
+          id: 'players/use-video-player',
         },
         {
           type: 'doc',
-          id: 'players/AdvancedPlayer',
+          id: 'players/player',
         },
         {
           type: 'doc',
@@ -243,15 +243,15 @@ const sidebars: TypedSidebarsConfig = {
                 },
                 {
                   type: 'doc',
-                  id: 'bandwidth/BandwidthData',
+                  id: 'players/events/event-data/BandwidthData',
                 },
                 {
                   type: 'doc',
-                  id: 'metadata/TimedMetadata',
+                  id: 'players/events/event-data/TimedMetadata',
                 },
                 {
                   type: 'doc',
-                  id: 'metadata/TimedMetadataObject',
+                  id: 'players/events/event-data/TimedMetadataObject',
                 },
               ],
             },
@@ -518,7 +518,7 @@ const sidebars: TypedSidebarsConfig = {
         },
         {
           type: 'doc',
-          id: 'use-in-third-party-library',
+          id: 'plugins/use-in-third-party-library',
         },
       ],
     },
@@ -526,55 +526,6 @@ const sidebars: TypedSidebarsConfig = {
       type: 'html',
       value: '<br />',
     },
-    // {
-    //   type: 'link',
-    //   label: 'Example Apps',
-    //   href: 'https://github.com/TheWidlarzGroup/react-native-video/tree/master/examples',
-    // },
-    // {
-    //   type: 'doc',
-    //   id: 'projects',
-    // },
-    // {
-    //   type: 'html',
-    //   value: '<hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
-    // },
-    // {
-    //   type: 'link',
-    //   label: 'Offline Video SDK',
-    //   customProps: {
-    //     plan: "pro",
-    //     badgeType: "planned"
-    //   },
-    //   href: 'https://www.thewidlarzgroup.com/offline-video-sdk/?utm_source=rnv&utm_medium=docs&utm_campaign=sidebar&utm_id=offline-video-sdk-button',
-    // },
-    // {
-    //   type: 'link',
-    //   label: 'Enterprise Support',
-    //   customProps: {
-    //     plan: "pro",
-    //     badgeType: "new"
-    //   },
-    //   href: 'https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=navbar&utm_id=enterprise#Contact',
-    // },
-    // {
-    //   type: 'link',
-    //   label: 'Boost Your Issue',
-    //   href: 'https://www.thewidlarzgroup.com/issue-boost/?utm_source=rnv&utm_medium=docs&utm_campaign=sidebar&utm_id=issue-boost-button',
-    // },
-    // {
-    //   type: 'html',
-    //   value: '<hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
-    // },
-    // {
-    //   type: 'doc',
-    //   id: 'updating',
-    // },
-    // {
-    //   type: 'link',
-    //   label: 'Releases',
-    //   href: 'https://github.com/TheWidlarzGroup/react-native-video/releases',
-    // }
   ],
 };
 

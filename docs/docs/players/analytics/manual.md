@@ -4,7 +4,7 @@ Integrate your own analytics system using native plugins.
 
 ## Overview
 
-Most analytics systems that track player data (e.g., bitrate, errors) can be integrated directly with ExoPlayer or AVPlayer. The [plugin system](../../plugins/plugins.mdx) allows for non-intrusive analytics integration with react-native-video. It should be implemented in native languages (Kotlin/Swift) to ensure efficiency.
+Most analytics systems that track player data (e.g., bitrate, errors) can be integrated directly with ExoPlayer or AVPlayer. The [plugin system](../../plugins/plugins.md) allows for non-intrusive analytics integration with react-native-video. It should be implemented in native languages (Kotlin/Swift) to ensure efficiency.
 
 ## Architecture
 
@@ -285,7 +285,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## See Also
 
-- [Plugins](../../plugins/plugins.mdx) - Full plugin system documentation
+- [Plugins](../../plugins/plugins.md) - Full plugin system documentation
 - [Plugin Interface](../../plugins/interface.md) - Complete API reference
 - [Mux Data](./mux.md) - Pre-built Mux integration *(Pro)*
 - [Conviva](./conviva.md) - Pre-built Conviva integration *(Pro)*

@@ -155,6 +155,6 @@ function ManualLifecycle() {
 
 ## See Also
 
-- [Player](../player.md) - Main documentation
-- [Player](../AdvancedPlayer.md) - Detailed lifecycle
+- [useVideoPlayer](../use-video-player.md) - Hook documentation
+- [Player](../player.md) - Detailed lifecycle
 - [Source](./source.md) - Source management
