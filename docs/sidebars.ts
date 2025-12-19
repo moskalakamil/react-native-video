@@ -104,18 +104,56 @@ const sidebars: TypedSidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'players/usage/analytics',
+              id: 'players/usage/multiview',
               customProps: {
                 plan: 'pro',
                 badgeType: 'planned',
               },
             },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Analytics',
+          collapsed: false,
+          items: [
             {
               type: 'doc',
-              id: 'players/usage/multiview',
+              id: 'players/analytics/manual',
+            },
+            {
+              type: 'doc',
+              id: 'players/analytics/mux',
               customProps: {
                 plan: 'pro',
-                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/analytics/conviva',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/analytics/npaw',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/analytics/adobe',
+              customProps: {
+                plan: 'pro',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/analytics/google-analytics',
+              customProps: {
+                plan: 'pro',
               },
             },
           ],
