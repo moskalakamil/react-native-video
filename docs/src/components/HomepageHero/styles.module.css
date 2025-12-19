@@ -92,19 +92,6 @@
   width: 120px;
   height: 80px;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 0 30px rgba(150, 201, 235, 0.25));
-  animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 30px rgba(150, 201, 235, 0.25));
-    transform: scale(1);
-  }
-  50% {
-    filter: drop-shadow(0 0 50px rgba(150, 201, 235, 0.4));
-    transform: scale(1.02);
-  }
 }
 
 .badge {
