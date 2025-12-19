@@ -261,9 +261,6 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Ads',
           collapsed: false,
-          customProps: {
-            badgeType: 'planned',
-          },
           items: [
             {
               type: 'doc',
@@ -278,6 +275,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/advertising/google-dai',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -285,6 +283,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/advertising/spotx',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -292,6 +291,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/advertising/freewheel',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -299,6 +299,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/advertising/yospace',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
           ],
@@ -344,7 +345,7 @@ const sidebars: TypedSidebarsConfig = {
           type: 'doc',
           id: 'ui/playback',
         },
-                {
+        {
           type: 'doc',
           id: 'ui/chapters',
           customProps: {
@@ -360,7 +361,7 @@ const sidebars: TypedSidebarsConfig = {
           id: 'ui/screen-sharing',
           customProps: {
             plan: 'pro',
-          }
+          },
         },
         {
           type: 'doc',
@@ -515,16 +516,16 @@ const sidebars: TypedSidebarsConfig = {
           type: 'doc',
           id: 'plugins/examples',
         },
+        {
+          type: 'doc',
+          id: 'use-in-third-party-library',
+        },
       ],
     },
     {
-      type: 'doc',
-      id: 'use-in-third-party-library',
+      type: 'html',
+      value: '<br />',
     },
-    // {
-    //   type: 'html',
-    //   value: '<hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
-    // },
     // {
     //   type: 'link',
     //   label: 'Example Apps',
@@ -578,5 +579,3 @@ const sidebars: TypedSidebarsConfig = {
 };
 
 export default sidebars;
-
-
