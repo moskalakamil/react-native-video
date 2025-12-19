@@ -72,19 +72,15 @@ const sidebars: TypedSidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'players/usage/multiview',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
               id: 'players/usage/lifecycle',
-            },
-            {
-              type: 'doc',
-              id: 'players/usage/text-tracks',
-            },
-            {
-              type: 'doc',
-              id: 'players/usage/status',
-            },
-            {
-              type: 'doc',
-              id: 'players/usage/notification-controls',
             },
             {
               type: 'doc',
@@ -96,19 +92,22 @@ const sidebars: TypedSidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'players/usage/text-tracks',
+            },
+            {
+              type: 'doc',
+              id: 'players/usage/status',
+            },
+            {
+              type: 'doc',
               id: 'players/usage/frame-processors',
               customProps: {
-                plan: 'pro',
                 badgeType: 'planned',
               },
             },
             {
               type: 'doc',
-              id: 'players/usage/multiview',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
+              id: 'players/usage/notification-controls',
             },
           ],
         },
@@ -116,6 +115,9 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Analytics',
           collapsed: false,
+          customProps: {
+            badgeType: 'planned',
+          },
           items: [
             {
               type: 'doc',
@@ -462,7 +464,7 @@ const sidebars: TypedSidebarsConfig = {
         {
           type: 'category',
           label: 'Caching',
-          collapsed: false,
+          collapsed: true,
           customProps: {
             plan: 'pro',
             badgeType: 'planned',
