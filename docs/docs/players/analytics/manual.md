@@ -33,11 +33,17 @@ flowchart TB
 ### Android (Kotlin)
 
 ```kotlin
+import androidx.annotation.OptIn
+import androidx.media3.common.Format
+import androidx.media3.common.PlaybackException
+import androidx.media3.common.Player
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.analytics.AnalyticsListener
 import com.twg.video.core.plugins.NativeVideoPlayer
 import com.twg.video.core.plugins.ReactNativeVideoPlugin
 import java.lang.ref.WeakReference
 
+@OptIn(UnstableApi::class)
 class AnalyticsPlugin : ReactNativeVideoPlugin("MyAnalytics") {
     
     override fun onPlayerCreated(player: WeakReference<NativeVideoPlayer>) {
@@ -98,7 +104,6 @@ class AnalyticsPlugin : ReactNativeVideoPlugin("MyAnalytics") {
     }
     
     override fun onPlayerDestroyed(player: WeakReference<NativeVideoPlayer>) {
-        // Cleanup & send final analytics
         flushAnalytics()
     }
     
@@ -122,83 +127,89 @@ class AnalyticsPlugin : ReactNativeVideoPlugin("MyAnalytics") {
 import AVFoundation
 
 class AnalyticsPlugin: ReactNativeVideoPlugin {
-    private var timeObserver: Any?
-    private var statusObserver: NSKeyValueObservation?
+    
+    // MARK: - Properties
+    
+    private weak var currentPlayer: AVPlayer?
     private var rateObserver: NSKeyValueObservation?
+    private var statusObserver: NSKeyValueObservation?
+    private var timeObserver: Any?
+    
+    // MARK: - Init
     
     init() {
         super.init(name: "MyAnalytics")
     }
     
+    // MARK: - Plugin Lifecycle
+    
     override func onPlayerCreated(player: Weak<NativeVideoPlayer>) {
         guard let nativePlayer = player.value else { return }
-        let avPlayer = nativePlayer.player
+        currentPlayer = nativePlayer.player
         
-        // Observe playback rate (play/pause)
-        rateObserver = avPlayer.observe(\.rate) { [weak self] player, _ in
-            if player.rate > 0 {
-                self?.trackEvent("play")
-            } else {
-                self?.trackEvent("pause")
-            }
+        setupPlaybackObservers(for: nativePlayer.player)
+        setupQualityTracking(for: nativePlayer.playerItem)
+    }
+    
+    override func onPlayerDestroyed(player: Weak<NativeVideoPlayer>) {
+        removeAllObservers()
+        flushAnalytics()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupPlaybackObservers(for player: AVPlayer) {
+        rateObserver = player.observe(\.rate) { [weak self] p, _ in
+            self?.trackEvent(p.rate > 0 ? "play" : "pause")
         }
         
-        // Observe player status
-        statusObserver = avPlayer.observe(\.status) { [weak self] player, _ in
-            switch player.status {
-            case .readyToPlay:
+        statusObserver = player.observe(\.status) { [weak self] p, _ in
+            if p.status == .readyToPlay {
                 self?.trackEvent("ready")
-            case .failed:
-                self?.trackEvent("error", params: [
-                    "message": player.error?.localizedDescription ?? "Unknown"
-                ])
-            default:
-                break
+            } else if p.status == .failed {
+                self?.trackEvent("error", params: ["message": p.error?.localizedDescription ?? ""])
             }
         }
         
-        // Periodic time observer for progress
-        let interval = CMTime(seconds: 10, preferredTimescale: 1)
-        timeObserver = avPlayer.addPeriodicTimeObserver(
-            forInterval: interval,
+        timeObserver = player.addPeriodicTimeObserver(
+            forInterval: CMTime(seconds: 10, preferredTimescale: 1),
             queue: .main
         ) { [weak self] time in
             self?.trackMetric("position", value: time.seconds)
         }
-        
-        // Access logs for quality metrics
+    }
+    
+    private func setupQualityTracking(for playerItem: AVPlayerItem?) {
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(handleAccessLogEntry),
+            selector: #selector(handleAccessLog),
             name: .AVPlayerItemNewAccessLogEntry,
-            object: nil
+            object: playerItem
         )
     }
     
-    @objc private func handleAccessLogEntry(_ notification: Notification) {
-        guard let playerItem = notification.object as? AVPlayerItem,
-              let event = playerItem.accessLog()?.events.last else { return }
+    @objc private func handleAccessLog(_ notification: Notification) {
+        guard let item = notification.object as? AVPlayerItem,
+              let event = item.accessLog()?.events.last else { return }
         
         trackMetric("bitrate", value: event.indicatedBitrate)
-        trackMetric("stalls", value: event.numberOfStalls)
-        trackMetric("dropped_frames", value: event.numberOfDroppedVideoFrames)
-        
-        if event.numberOfBytesTransferred > 0 {
-            trackMetric("bytes_transferred", value: event.numberOfBytesTransferred)
-        }
+        trackMetric("stalls", value: Double(event.numberOfStalls))
+        trackMetric("dropped_frames", value: Double(event.numberOfDroppedVideoFrames))
     }
     
-    override func onPlayerDestroyed(player: Weak<NativeVideoPlayer>) {
-        // Cleanup observers
+    private func removeAllObservers() {
         if let observer = timeObserver {
-            player.value?.player.removeTimeObserver(observer)
+            currentPlayer?.removeTimeObserver(observer)
         }
-        statusObserver?.invalidate()
         rateObserver?.invalidate()
+        statusObserver?.invalidate()
         NotificationCenter.default.removeObserver(self)
         
-        flushAnalytics()
+        currentPlayer = nil
+        timeObserver = nil
     }
+    
+    // MARK: - Analytics
     
     private func trackEvent(_ name: String, params: [String: Any] = [:]) {
         // Send to your analytics backend
@@ -244,24 +255,29 @@ class AnalyticsPlugin: ReactNativeVideoPlugin {
 
 Plugins auto-register when instantiated. Create your plugin early in app lifecycle:
 
+**Android** - `MainApplication.kt`:
+
 ```kotlin
-// Android - Application.kt or MainApplication.kt
 class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        AnalyticsPlugin() // Auto-registers
+        AnalyticsPlugin() // Auto-registers via init block
     }
 }
 ```
 
+**iOS** - `AppDelegate.swift`:
+
 ```swift
-// iOS - AppDelegate.swift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private var analyticsPlugin: AnalyticsPlugin?
     
-    func application(_ application: UIApplication, ...) -> Bool {
-        analyticsPlugin = AnalyticsPlugin() // Auto-registers
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        analyticsPlugin = AnalyticsPlugin() // Auto-registers via init
         return true
     }
 }
