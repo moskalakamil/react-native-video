@@ -135,7 +135,7 @@ const config: Config = {
     },
     footer: {
       style: 'light',
-      copyright: `Built with ❤️ by TheWidlarzGroup & the React Native Video Community`,
+      copyright: `Built with ❤️ by TheWidlarzGroup & React Native Video Community`,
     },
     colorMode: {
       defaultMode: 'light',
