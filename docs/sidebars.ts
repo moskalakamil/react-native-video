@@ -82,10 +82,42 @@ const sidebars: TypedSidebarsConfig = {
               type: 'doc',
               id: 'players/usage/status',
             },
-        {
-          type: 'doc',
-          id: 'players/usage/notification-controls',
-        },
+            {
+              type: 'doc',
+              id: 'players/usage/notification-controls',
+            },
+            {
+              type: 'doc',
+              id: 'players/usage/low-latency',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/usage/frame-processors',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/usage/analytics',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'players/usage/multiview',
+              customProps: {
+                plan: 'pro',
+                badgeType: 'planned',
+              },
+            },
           ],
         },
         {
@@ -95,7 +127,7 @@ const sidebars: TypedSidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'events/useEvent',
+              id: 'players/events/useEvent',
             },
             {
               type: 'category',
@@ -104,27 +136,27 @@ const sidebars: TypedSidebarsConfig = {
               items: [
                 {
                   type: 'doc',
-                  id: 'events/loading',
+                  id: 'players/events/loading',
                 },
                 {
                   type: 'doc',
-                  id: 'events/playback',
+                  id: 'players/events/playback',
                 },
                 {
                   type: 'doc',
-                  id: 'events/buffering',
+                  id: 'players/events/buffering',
                 },
                 {
                   type: 'doc',
-                  id: 'events/audio',
+                  id: 'players/events/audio',
                 },
                 {
                   type: 'doc',
-                  id: 'events/tracks',
+                  id: 'players/events/tracks',
                 },
                 {
                   type: 'doc',
-                  id: 'events/ui',
+                  id: 'players/events/ui',
                 },
               ],
             },
@@ -135,39 +167,39 @@ const sidebars: TypedSidebarsConfig = {
               items: [
                 {
                   type: 'doc',
-                  id: 'events/AllPlayerEvents',
+                  id: 'players/events/AllPlayerEvents',
                 },
                 {
                   type: 'doc',
-                  id: 'events/ALL_PLAYER_EVENTS',
+                  id: 'players/events/ALL_PLAYER_EVENTS',
                 },
                 {
                   type: 'doc',
-                  id: 'events/ALL_VIEW_EVENTS',
+                  id: 'players/events/ALL_VIEW_EVENTS',
                 },
                 {
                   type: 'doc',
-                  id: 'events/JSVideoPlayerEvents',
+                  id: 'players/events/JSVideoPlayerEvents',
                 },
                 {
                   type: 'doc',
-                  id: 'events/event-data/onLoadData',
+                  id: 'players/events/event-data/onLoadData',
                 },
                 {
                   type: 'doc',
-                  id: 'events/event-data/onLoadStartData',
+                  id: 'players/events/event-data/onLoadStartData',
                 },
                 {
                   type: 'doc',
-                  id: 'events/event-data/onProgressData',
+                  id: 'players/events/event-data/onProgressData',
                 },
                 {
                   type: 'doc',
-                  id: 'events/event-data/onPlaybackStateChangeData',
+                  id: 'players/events/event-data/onPlaybackStateChangeData',
                 },
                 {
                   type: 'doc',
-                  id: 'events/event-data/onVolumeChangeData',
+                  id: 'players/events/event-data/onVolumeChangeData',
                 },
                 {
                   type: 'doc',
@@ -243,128 +275,16 @@ const sidebars: TypedSidebarsConfig = {
           id: 'video-view/getting-started',
         },
         {
-          type: 'category',
-          label: 'Props',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'video-view/props/player',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/style',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/controls',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/resizeMode',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/keepScreenAwake',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/surfaceType',
-            },
-          ],
+          type: 'doc',
+          id: 'video-view/props',
         },
         {
-          type: 'category',
-          label: 'Fullscreen',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'video-view/fullscreen/enterFullscreen',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/fullscreen/exitFullscreen',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/fullscreen/onFullscreenChange',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/fullscreen/willEnterFullscreen',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/fullscreen/willExitFullscreen',
-            },
-          ],
+          type: 'doc',
+          id: 'video-view/fullscreen',
         },
         {
-          type: 'category',
-          label: 'Picture in Picture',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'video-view/props/pictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/props/autoEnterPictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/enterPictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/exitPictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/canEnterPictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/onPictureInPictureChange',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/willEnterPictureInPicture',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/picture-in-picture/willExitPictureInPicture',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Types',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'video-view/VideoView',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/VideoViewProps',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/VideoViewRef',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/VideoViewEvents',
-            },
-            {
-              type: 'doc',
-              id: 'video-view/ResizeMode',
-            },
-          ],
+          type: 'doc',
+          id: 'video-view/picture-in-picture',
         },
       ],
     },
@@ -372,33 +292,46 @@ const sidebars: TypedSidebarsConfig = {
       type: 'category',
       label: 'UI',
       collapsed: false,
+      customProps: {
+        badgeType: 'planned',
+      },
       items: [
         {
           type: 'doc',
-          id: 'players/ui/getting-started',
+          id: 'ui/getting-started',
         },
         {
           type: 'doc',
-          id: 'players/ui/playback',
+          id: 'ui/playback',
         },
-        {
+                {
           type: 'doc',
-          id: 'players/ui/screen-sharing',
-        },
-        {
-          type: 'doc',
-          id: 'players/ui/subtitles',
-        },
-        {
-          type: 'doc',
-          id: 'players/ui/chapters',
+          id: 'ui/chapters',
           customProps: {
             plan: 'pro',
           },
         },
         {
           type: 'doc',
-          id: 'players/ui/resolution-select',
+          id: 'ui/skip-intro',
+        },
+        {
+          type: 'doc',
+          id: 'ui/screen-sharing',
+          customProps: {
+            plan: 'pro',
+          }
+        },
+        {
+          type: 'doc',
+          id: 'ui/subtitles',
+          customProps: {
+            plan: 'pro',
+          },
+        },
+        {
+          type: 'doc',
+          id: 'ui/resolution-select',
           customProps: {
             plan: 'pro',
           },
@@ -492,46 +425,30 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Caching',
           collapsed: false,
+          customProps: {
+            plan: 'pro',
+            badgeType: 'planned',
+          },
           items: [
             {
               type: 'doc',
               id: 'extensions/caching/getting-started',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
             },
             {
               type: 'doc',
               id: 'extensions/caching/configuration',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
             },
             {
               type: 'doc',
-              id: 'extensions/caching/preloading',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
+              id: 'extensions/caching/strategies',
             },
             {
               type: 'doc',
               id: 'extensions/caching/management',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
             },
             {
               type: 'doc',
               id: 'extensions/caching/storage',
-              customProps: {
-                plan: 'pro',
-                badgeType: 'planned',
-              },
             },
           ],
         },
