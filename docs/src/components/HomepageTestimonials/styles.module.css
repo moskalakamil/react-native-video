@@ -1,11 +1,7 @@
 .testimonials {
   padding: 6rem 2rem;
   position: relative;
-  background: #ffffff;
-}
-
-[data-theme='dark'] .testimonials {
-  background: #171717;
+  background: var(--color-bg-primary);
 }
 
 .container {
@@ -21,12 +17,12 @@
 .headerLabel {
   display: inline-block;
   padding: 0.4rem 1rem;
-  background: rgba(150, 201, 235, 0.08);
+  background: var(--color-accent-subtle);
   border: 1px solid rgba(150, 201, 235, 0.2);
   border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #96c9eb;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
@@ -35,14 +31,10 @@
 .headerTitle {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
   line-height: 1.2;
-}
-
-[data-theme='dark'] .headerTitle {
-  color: #fafafa;
 }
 
 .grid {
@@ -62,8 +54,8 @@
   position: relative;
   padding: 2.5rem 2rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   display: flex;
@@ -73,19 +65,12 @@
 
 .testimonialCard:hover {
   border-color: rgba(150, 201, 235, 0.4);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-bg-elevated);
   box-shadow: 0 4px 20px rgba(150, 201, 235, 0.15);
   transform: translateY(-2px);
 }
 
-[data-theme='dark'] .testimonialCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 [data-theme='dark'] .testimonialCard:hover {
-  border-color: rgba(150, 201, 235, 0.3);
-  background: rgba(255, 255, 255, 0.05);
   box-shadow: none;
 }
 
@@ -99,43 +84,27 @@
 
 .quote {
   font-size: 1.1rem;
-  color: #4a4a4a;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0 0 2rem 0;
   flex-grow: 1;
 }
 
-[data-theme='dark'] .quote {
-  color: #b4b4b4;
-}
-
 .author {
   margin-top: auto;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-[data-theme='dark'] .author {
-  border-top-color: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 .authorName {
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 0.25rem;
-}
-
-[data-theme='dark'] .authorName {
-  color: #fafafa;
 }
 
 .authorRole {
   font-size: 0.9rem;
-  color: #6a6a6a;
-}
-
-[data-theme='dark'] .authorRole {
-  color: #808080;
+  color: var(--color-text-muted);
 }
 
