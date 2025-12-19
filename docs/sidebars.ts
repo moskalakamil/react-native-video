@@ -115,9 +115,6 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Analytics',
           collapsed: false,
-          customProps: {
-            badgeType: 'planned',
-          },
           items: [
             {
               type: 'doc',
@@ -128,6 +125,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/analytics/mux',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -135,6 +133,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/analytics/conviva',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -142,6 +141,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/analytics/npaw',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -149,6 +149,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/analytics/adobe',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
             {
@@ -156,6 +157,7 @@ const sidebars: TypedSidebarsConfig = {
               id: 'players/analytics/google-analytics',
               customProps: {
                 plan: 'pro',
+                badgeType: 'planned',
               },
             },
           ],
@@ -388,6 +390,9 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Downloading',
           collapsed: false,
+          customProps: {
+            badgeType: 'new',
+          },
           items: [
             {
               type: 'doc',
@@ -432,6 +437,9 @@ const sidebars: TypedSidebarsConfig = {
           type: 'category',
           label: 'Uploading',
           collapsed: false,
+          customProps: {
+            badgeType: 'new',
+          },
           items: [
             {
               type: 'doc',
