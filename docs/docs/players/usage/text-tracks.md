@@ -181,4 +181,4 @@ function SubtitlePicker() {
 ## See Also
 
 - [Source](./source.md) - External subtitles config
-- [Events](../../events/useEvent.md) - Event handling
+- [Events](../events/useEvent.md) - Event handling

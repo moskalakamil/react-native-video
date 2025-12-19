@@ -360,7 +360,7 @@ console.log(config);
 ## See Also
 
 - [Getting Started](./getting-started.md) - Video caching basics
-- [Preloading](./preloading.md) - Pre-cache videos
+- [Strategies](./strategies.md) - Caching strategies
 - [Cache Management](./management.md) - Manage cached content
 - [Storage](./storage.md) - Storage management
 

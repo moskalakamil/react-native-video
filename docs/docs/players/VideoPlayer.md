@@ -706,7 +706,7 @@ Adds a listener for a player event.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `event` | `Event` | The event to add a listener for. |
-| `callback` | [`AllPlayerEvents`](../events/AllPlayerEvents.md)\[`Event`\] | The callback to call when the event is triggered. |
+| `callback` | [`AllPlayerEvents`](./events/AllPlayerEvents.md)\[`Event`\] | The callback to call when the event is triggered. |
 
 #### Returns
 

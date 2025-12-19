@@ -45,7 +45,7 @@ export default function App() {
 - **[Installation Guide](./installation.md)** - Get started with `react-native-video`
 - **[useVideoPlayer](../players/player.md)** - Learn how to create and use video players
 - **[VideoView Component](../video-view/getting-started.md)** - Understand the video display component
-- **[Event Handling](../events/useEvent.md)** - Master player events and callbacks
+- **[Event Handling](../players/events/useEvent.md)** - Master player events and callbacks
 - **[Configuration](./configuration/expo-plugin.md)** - Configure the player
 
 [![React Native Video](../../static/baners/rnv-banner.png)](https://www.thewidlarzgroup.com/react-native-video/?utm_source=rnv&utm_medium=docs&utm_campaign=intro&utm_id=rnv-banner)

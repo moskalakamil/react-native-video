@@ -39,7 +39,7 @@ The compound component pattern gives you:
 - Screen sharing: [AirPlay, Chromecast, native pickers](./screen-sharing.md)
 - Subtitles: [Subtitle selector](./subtitles.md)
 - Pro features: [Chapters](./chapters.md) · [ResolutionSelect](./resolution-select.md) · SeekBar preview thumbnails (in SeekBar props)
-- SeekBar preview thumbnails *(Pro)* — see [Basic Controls](./basic.md#seekbar)
+- SeekBar preview thumbnails *(Pro)* — see [Playback Controls](./playback.md#seekbar)
 
 ## Basic Example
 

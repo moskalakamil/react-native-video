@@ -1,6 +1,6 @@
-# Preloading
+# Caching Strategies
 
-Strategically pre-cache videos for optimal user experience.
+Smart strategies for when and how to cache videos to disk.
 
 :::tip Pro Feature - Coming Soon
 Video caching is a Pro feature currently in development.
@@ -8,14 +8,17 @@ Video caching is a Pro feature currently in development.
 
 ## Overview
 
-Preloading strategies:
-- **On Demand** - Cache when user navigates to video
-- **Predictive** - Cache likely-to-watch videos
-- **Background** - Cache during idle time
-- **Scheduled** - Cache at specific times
-- **Smart Queue** - Priority-based caching
+Caching strategies - all data persists across app restarts:
 
-## On-Demand Preloading
+| Strategy | Description |
+|----------|-------------|
+| **On Demand** | Cache when user navigates to video |
+| **Predictive** | Cache likely-to-watch videos ahead |
+| **Background** | Cache during idle time |
+| **Scheduled** | Cache at specific times (e.g., overnight) |
+| **Smart Queue** | Priority-based caching |
+
+## On-Demand Caching
 
 Cache when user views or scrolls to video:
 
@@ -38,7 +41,7 @@ function VideoItem({ video, isVisible }) {
 }
 ```
 
-## Predictive Preloading
+## Predictive Caching
 
 Cache next videos in feed:
 
@@ -61,7 +64,7 @@ function VideoFeed({ videos, currentIndex }) {
 }
 ```
 
-## Background Preloading
+## Background Caching
 
 Cache during idle time:
 
@@ -82,7 +85,7 @@ function setupBackgroundCaching() {
 }
 ```
 
-## Scheduled Preloading
+## Scheduled Caching
 
 Cache at specific times (e.g., overnight):
 
@@ -136,7 +139,7 @@ await VideoCache.cache({
 });
 ```
 
-## Preload Strategies
+## Cache Profiles
 
 ### Aggressive (Fast Startup)
 
@@ -174,9 +177,9 @@ VideoCache.configure({
 });
 ```
 
-## Feed Preloading
+## Feed Caching
 
-Preload videos in scrollable feed:
+Cache videos in scrollable feed - all persisted to disk:
 
 ```tsx
 import { FlatList } from 'react-native';
@@ -215,7 +218,7 @@ function VideoFeed({ videos }) {
 }
 ```
 
-## Playlist Preloading
+## Playlist Caching
 
 Cache entire playlists:
 
@@ -231,7 +234,7 @@ async function cachePlaylist(playlist) {
 }
 ```
 
-## Conditional Preloading
+## Conditional Caching
 
 Cache based on conditions:
 
@@ -359,7 +362,7 @@ function CachedVideoItem({ video }) {
 
 ## Best Practices
 
-1. **Progressive Caching** - Cache visible/next videos first
+1. **Proximity Caching** - Cache visible/next videos first
 2. **Priority Queue** - Use priorities effectively
 3. **Condition-Based** - Check network/storage/battery
 4. **User Preference** - Respect user settings

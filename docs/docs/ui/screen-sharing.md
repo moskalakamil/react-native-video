@@ -44,7 +44,7 @@ AirPlay and Chromecast controls built with the compound API. These buttons open 
 | Android | ✅ |
 
 **Setup**
-- Chromecast requires Android project setup. See the [Chromecast Setup Guide](../../video-view/getting-started.md).
+- Chromecast requires Android project setup. See the [Chromecast Setup Guide](../video-view/getting-started.md).
 
 ## Invoking native pickers
 Both `Controls.AirPlay` and `Controls.Chromecast` render platform-native route pickers. Place the buttons wherever you need them; tapping opens the system device selector.

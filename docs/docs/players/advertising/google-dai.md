@@ -346,5 +346,5 @@ ads: {
 
 - [Getting Started](./getting-started.md) - Ads overview
 - [Google IMA](./google-ima.md) - Client-side ads
-- [Events](../events/overview.md) - Event handling
+- [Events](../events/useEvent.md) - Event handling
 

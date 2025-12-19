@@ -405,6 +405,6 @@ export default new CacheManager();
 
 - [Getting Started](./getting-started.md) - Video caching basics
 - [Configuration](./configuration.md) - Configure caching
-- [Preloading](./preloading.md) - Pre-cache videos
+- [Strategies](./strategies.md) - Caching strategies
 - [Storage](./storage.md) - Storage management
 

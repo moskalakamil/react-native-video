@@ -356,5 +356,5 @@ ads: {
 
 - [Getting Started](./getting-started.md) - Ads overview
 - [Google DAI](./google-dai.md) - Server-side ads *(Pro)*
-- [Events](../events/overview.md) - Event handling
+- [Events](../events/useEvent.md) - Event handling
 

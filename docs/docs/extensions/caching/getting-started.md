@@ -1,6 +1,6 @@
 # Getting Started
 
-Pre-cache video content for instant playback and offline viewing.
+Pre-cache video content for instant playback and reduced bandwidth usage.
 
 :::tip Pro Feature - Coming Soon
 Video caching is a Pro feature currently in development.
@@ -8,205 +8,324 @@ Video caching is a Pro feature currently in development.
 
 ## Overview
 
-Video caching enables:
-- **Instant Playback** - Start playing immediately from cache
-- **Partial Caching** - Cache percentage of video (e.g., 50%)
-- **Background Caching** - Pre-cache videos while app is idle
-- **Smart Storage** - Automatic cache management based on space
-- **Offline Viewing** - Play cached videos without network
-- **Adaptive Caching** - Cache based on network and storage
+Video caching provides:
 
-## How It Works
-
-```tsx
-import { VideoCache } from 'react-native-video';
-
-// Cache 50% of a video
-await VideoCache.cache({
-  url: 'https://example.com/video.mp4',
-  percentage: 50, // Cache first 50%
-});
-
-// Play from cache
-const player = useVideoPlayer({
-  source: {
-    uri: 'https://example.com/video.mp4',
-    cache: true, // Use cache if available
-  },
-});
-```
+| Feature | Description |
+|---------|-------------|
+| **Instant Playback** | Zero startup delay from cached content |
+| **Seamless Streaming** | Play while caching in background |
+| **Partial Caching** | Cache only first X% or X seconds |
+| **Offline Playback** | Watch without network connection |
+| **Smart Cleanup** | Automatic LRU-based cache management |
+| **Bandwidth Savings** | Reduce data usage on repeat views |
 
 ## Quick Start
 
-### 1. Enable Caching
+### Automatic Caching
+
+The simplest approach - cache is used automatically:
+
+```tsx
+import { useVideoPlayer, VideoView } from 'react-native-video';
+
+function Player({ source }) {
+  const player = useVideoPlayer({
+    uri: source,
+    cache: true, // Enable caching
+  });
+
+  return <VideoView player={player} />;
+}
+```
+
+That's it! The SDK automatically:
+- Caches video segments as they stream
+- Uses cached data on repeat playback
+- Manages storage limits
+
+### Manual Caching
+
+For more control, cache videos before playback:
+
+```tsx
+import { useCache } from 'react-native-video';
+
+function VideoItem({ video }) {
+  const cache = useCache(video.url);
+
+  useEffect(() => {
+    // Cache first 30 seconds to disk
+    cache.save({ duration: 30 });
+  }, []);
+
+  return (
+    <View>
+      <Text>Cached: {cache.progress}%</Text>
+      <VideoView player={player} />
+    </View>
+  );
+}
+```
+
+## useCache Hook
+
+React hook for caching control:
+
+```tsx
+const cache = useCache(url: string);
+```
+
+### Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `isCached` | `boolean` | Whether video has cached content |
+| `progress` | `number` | Cache progress (0-100) |
+| `size` | `number` | Cached size in bytes |
+| `status` | `CacheStatus` | `'idle'` \| `'caching'` \| `'cached'` \| `'error'` |
+
+### Methods
+
+| Method | Description |
+|--------|-------------|
+| `save(options)` | Save video to cache (persistent) |
+| `cancel()` | Cancel ongoing caching |
+| `clear()` | Remove from cache |
+
+### Example
+
+```tsx
+function SmartVideoPlayer({ source }) {
+  const cache = useCache(source);
+  const player = useVideoPlayer({ uri: source, cache: true });
+
+  // Cache on mount - persists across app restarts
+  useEffect(() => {
+    if (!cache.isCached) {
+      cache.save({ percentage: 50 });
+    }
+  }, []);
+
+  return (
+    <View>
+      <VideoView player={player} />
+      
+      {cache.status === 'caching' && (
+        <ProgressBar progress={cache.progress / 100} />
+      )}
+    </View>
+  );
+}
+```
+
+## Cache Options
+
+```ts
+interface CacheOptions {
+  percentage?: number;  // Cache first X% (default: 100)
+  duration?: number;    // Cache first X seconds
+  priority?: 'high' | 'medium' | 'low';
+  networkPolicy?: 'any' | 'wifi' | 'unmetered';
+}
+```
+
+### Cache by Percentage
+
+```tsx
+// Cache first 50% - persists on disk
+cache.save({ percentage: 50 });
+```
+
+### Cache by Duration
+
+```tsx
+// Cache first 30 seconds
+cache.save({ duration: 30 });
+```
+
+### Priority Caching
+
+```tsx
+// High priority - cache immediately
+cache.save({ priority: 'high' });
+
+// Low priority - cache when idle
+cache.save({ priority: 'low' });
+```
+
+### Network Policy
+
+```tsx
+// Only cache on WiFi
+cache.save({ networkPolicy: 'wifi' });
+
+// Only on unmetered connections
+cache.save({ networkPolicy: 'unmetered' });
+```
+
+## Feed Caching
+
+Cache videos as user scrolls - they persist across app restarts:
+
+```tsx
+import { FlatList } from 'react-native';
+import { useCache, useVideoPlayer, VideoView, VideoCache } from 'react-native-video';
+
+function VideoFeed({ videos }) {
+  return (
+    <FlatList
+      data={videos}
+      renderItem={({ item, index }) => (
+        <VideoItem video={item} index={index} />
+      )}
+      onViewableItemsChanged={({ viewableItems }) => {
+        // Cache next 2 videos to disk
+        viewableItems.forEach(({ index }) => {
+          const nextVideos = videos.slice(index + 1, index + 3);
+          nextVideos.forEach(v => VideoCache.save(v.url, { percentage: 30 }));
+        });
+      }}
+    />
+  );
+}
+
+function VideoItem({ video }) {
+  const cache = useCache(video.url);
+  const player = useVideoPlayer({ uri: video.url, cache: true });
+
+  return (
+    <View>
+      <VideoView player={player} style={{ height: 300 }} />
+      {cache.isCached && <CachedBadge />}
+    </View>
+  );
+}
+```
+
+## Global Configuration
+
+Configure caching behavior globally:
 
 ```tsx
 import { VideoCache } from 'react-native-video';
 
-// Configure cache
+// At app startup
 VideoCache.configure({
-  maxCacheSize: 500 * 1024 * 1024, // 500 MB
-  defaultCachePercentage: 50, // Cache 50% by default
-  enableBackgroundCaching: true,
+  // Storage
+  maxSize: 500 * 1024 * 1024, // 500 MB
+  
+  // Behavior
+  defaultPercentage: 50,
+  networkPolicy: 'wifi',
+  
+  // Cleanup
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  cleanupStrategy: 'lru',
 });
-```
-
-### 2. Cache a Video
-
-```tsx
-// Cache specific video
-const cacheJob = await VideoCache.cache({
-  url: 'https://example.com/video.mp4',
-  percentage: 50,
-  priority: 'high',
-});
-
-// Monitor progress
-cacheJob.onProgress((progress) => {
-  console.log(`Cached: ${progress.percentage}%`);
-});
-
-await cacheJob.start();
-```
-
-### 3. Play Cached Video
-
-```tsx
-const player = useVideoPlayer({
-  source: {
-    uri: 'https://example.com/video.mp4',
-    cache: true,
-  },
-});
-
-// Check if cached
-const isCached = await VideoCache.isCached('https://example.com/video.mp4');
-console.log('Video cached:', isCached);
-```
-
-## Cache Strategies
-
-### Partial Cache (Recommended)
-
-Cache first portion of videos for quick startup:
-
-```tsx
-await VideoCache.cache({
-  url: 'https://example.com/video.mp4',
-  percentage: 50, // First 50%
-});
-```
-
-**Benefits:**
-- Quick playback startup
-- Saves storage space
-- Works for most use cases
-
-### Full Cache
-
-Cache entire video for offline playback:
-
-```tsx
-await VideoCache.cache({
-  url: 'https://example.com/video.mp4',
-  percentage: 100, // Entire video
-});
-```
-
-**Benefits:**
-- Complete offline support
-- No network needed during playback
-- Best user experience
-
-### Adaptive Cache
-
-Automatically adjust cache based on conditions:
-
-```tsx
-await VideoCache.cache({
-  url: 'https://example.com/video.mp4',
-  adaptive: true, // Adjust based on network/storage
-  minPercentage: 25,
-  maxPercentage: 75,
-});
-```
-
-## Background Caching
-
-Pre-cache videos when app is idle:
-
-```tsx
-// Add to background cache queue
-await VideoCache.queueForBackground([
-  { url: 'https://example.com/video1.mp4', percentage: 50 },
-  { url: 'https://example.com/video2.mp4', percentage: 50 },
-  { url: 'https://example.com/video3.mp4', percentage: 50 },
-]);
-
-// Caching happens automatically when:
-// - Device is charging
-// - Connected to WiFi
-// - App is idle
 ```
 
 ## Cache Status
 
-Check cache status:
+Check cache status for any URL:
 
 ```tsx
-// Check if URL is cached
-const isCached = await VideoCache.isCached('https://example.com/video.mp4');
+const status = await VideoCache.getStatus(url);
 
-// Get cache info
-const info = await VideoCache.getInfo('https://example.com/video.mp4');
-console.log(info);
+console.log(status);
 // {
-//   cached: true,
+//   isCached: true,
 //   percentage: 50,
-//   size: 25 * 1024 * 1024, // 25 MB
+//   size: 25_000_000, // 25 MB
 //   createdAt: Date,
-//   lastAccessed: Date
+//   lastAccessed: Date,
 // }
-
-// Get all cached videos
-const cached = await VideoCache.getAllCached();
 ```
 
-## Cache Management
-
-### Clear Cache
+## Complete Example
 
 ```tsx
-// Clear specific video
-await VideoCache.clear('https://example.com/video.mp4');
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { 
+  useVideoPlayer, 
+  VideoView, 
+  useCache,
+  VideoCache 
+} from 'react-native-video';
 
-// Clear all cache
-await VideoCache.clearAll();
+// Configure at app startup
+VideoCache.configure({
+  maxSize: 500 * 1024 * 1024,
+  networkPolicy: 'wifi',
+});
 
-// Clear old cache
-await VideoCache.clearOlderThan(7 * 24 * 60 * 60 * 1000); // 7 days
-```
+function App() {
+  const [videos] = useState([
+    { id: '1', url: 'https://example.com/video1.mp4', title: 'Video 1' },
+    { id: '2', url: 'https://example.com/video2.mp4', title: 'Video 2' },
+    { id: '3', url: 'https://example.com/video3.mp4', title: 'Video 3' },
+  ]);
 
-### Storage Info
+  return (
+    <FlatList
+      data={videos}
+      renderItem={({ item }) => <CachedVideoPlayer video={item} />}
+      keyExtractor={(item) => item.id}
+    />
+  );
+}
 
-```tsx
-const storage = await VideoCache.getStorageInfo();
-console.log(storage);
-// {
-//   totalSize: 500 * 1024 * 1024, // 500 MB
-//   usedSize: 250 * 1024 * 1024, // 250 MB
-//   availableSize: 250 * 1024 * 1024, // 250 MB
-//   cachedVideos: 10
-// }
+function CachedVideoPlayer({ video }) {
+  const cache = useCache(video.url);
+  
+  const player = useVideoPlayer({
+    uri: video.url,
+    cache: true,
+  }, (_player) => {
+    _player.play();
+  });
+
+  // Cache first 30 seconds - persists on disk
+  useEffect(() => {
+    if (!cache.isCached) {
+      cache.save({ duration: 30 });
+    }
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <VideoView player={player} style={styles.video} />
+      
+      <View style={styles.info}>
+        <Text style={styles.title}>{video.title}</Text>
+        
+        {cache.status === 'caching' && (
+          <Text>Caching: {cache.progress}%</Text>
+        )}
+        
+        {cache.isCached && (
+          <View style={styles.cachedBadge}>
+            <Text>✓ Cached</Text>
+          </View>
+        )}
+      </View>
+      
+      <TouchableOpacity onPress={() => cache.clear()}>
+        <Text>Clear Cache</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 ```
 
 ## Platform Configuration
 
 ### iOS
 
-Add to `Info.plist`:
+Add background fetch capability for background caching:
 
 ```xml
+<!-- Info.plist -->
 <key>UIBackgroundModes</key>
 <array>
   <string>fetch</string>
@@ -215,104 +334,27 @@ Add to `Info.plist`:
 
 ### Android
 
-Add to `AndroidManifest.xml`:
+Required permissions:
 
 ```xml
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<!-- AndroidManifest.xml -->
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Complete Example
+## Platform Support
 
-```tsx
-import React, { useEffect, useState } from 'react';
-import { View, Text, Button, ProgressBar } from 'react-native';
-import { VideoCache, useVideoPlayer, VideoView } from 'react-native-video';
-
-function CachedVideoPlayer({ videoUrl }) {
-  const [cacheProgress, setCacheProgress] = useState(0);
-  const [isCached, setIsCached] = useState(false);
-  const [caching, setCaching] = useState(false);
-
-  useEffect(() => {
-    checkCache();
-  }, []);
-
-  const checkCache = async () => {
-    const cached = await VideoCache.isCached(videoUrl);
-    setIsCached(cached);
-    
-    if (cached) {
-      const info = await VideoCache.getInfo(videoUrl);
-      setCacheProgress(info.percentage);
-    }
-  };
-
-  const startCaching = async () => {
-    setCaching(true);
-    
-    const cacheJob = await VideoCache.cache({
-      url: videoUrl,
-      percentage: 50,
-      priority: 'high',
-    });
-
-    cacheJob.onProgress((progress) => {
-      setCacheProgress(progress.percentage);
-    });
-
-    cacheJob.onComplete(() => {
-      setIsCached(true);
-      setCaching(false);
-    });
-
-    await cacheJob.start();
-  };
-
-  const player = useVideoPlayer({
-    source: {
-      uri: videoUrl,
-      cache: true,
-    },
-  });
-
-  return (
-    <View>
-      <VideoView player={player} style={{ width: '100%', height: 300 }} />
-      
-      <View style={styles.cacheInfo}>
-        <Text>Cache Status: {isCached ? '✅ Cached' : '❌ Not Cached'}</Text>
-        {cacheProgress > 0 && (
-          <>
-            <Text>Cache Progress: {cacheProgress}%</Text>
-            <ProgressBar progress={cacheProgress / 100} />
-          </>
-        )}
-      </View>
-
-      {!isCached && !caching && (
-        <Button title="Cache Video (50%)" onPress={startCaching} />
-      )}
-
-      {caching && <Text>Caching...</Text>}
-    </View>
-  );
-}
-```
-
-## Best Practices
-
-1. **Partial Caching** - Cache 30-50% for best balance
-2. **Background Caching** - Pre-cache popular content
-3. **Storage Limits** - Set reasonable max cache size
-4. **Auto Cleanup** - Remove old/unused cache regularly
-5. **WiFi Only** - Cache on WiFi to save cellular data
-6. **User Control** - Let users manage cache
+| Feature | iOS | Android |
+|---------|-----|---------|
+| Automatic caching | ✅ | ✅ |
+| Partial caching | ✅ | ✅ |
+| Background caching | ✅ | ✅ |
+| Offline playback | ✅ | ✅ |
+| HLS caching | ✅ | ✅ |
+| DASH caching | ❌ | ✅ |
 
 ## Next Steps
 
-- [Cache Configuration](./configuration.md) - Configure caching behavior
-- [Preloading](./preloading.md) - Pre-cache videos strategically
-- [Cache Management](./management.md) - Manage cached content
-- [Storage](./storage.md) - Storage configuration
-
+- [Configuration](./configuration.md) - Advanced cache settings
+- [Strategies](./strategies.md) - Smart caching strategies
+- [Management](./management.md) - Cache cleanup and monitoring
+- [Storage](./storage.md) - Storage optimization

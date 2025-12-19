@@ -176,5 +176,5 @@ function StatusPlayer() {
 
 ## See Also
 
-- [Events](../../events/useEvent.md) - Event handling
+- [Events](../events/useEvent.md) - Event handling
 - [Playback](./playback.md) - Playback control
