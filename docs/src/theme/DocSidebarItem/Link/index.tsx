@@ -8,7 +8,7 @@ import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/DocSidebarItem/Link';
 import ProBadge from '@site/src/components/ProBadge/ProBadge';
 import StatusBadge from '@site/src/components/StatusBadge/StatusBadge';
-import type {AddCustomProps, CustomSidebarProps} from '@site/src/types/sidebar';
+import type {WithCustomProps} from '@site/src/types/sidebar';
 
 import styles from './styles.module.css';
 
@@ -20,10 +20,6 @@ function LinkLabel({label}: {label: string}) {
   );
 }
 
-type CustomProps = Omit<Props, 'item'> & {
-  item: AddCustomProps<Props['item']> & Props['item']
-}
-
 export default function DocSidebarItemLink({
   item,
   onItemClick,
@@ -31,12 +27,15 @@ export default function DocSidebarItemLink({
   level,
   index,
   ...props
-}: CustomProps): ReactNode {
+}: WithCustomProps<Props>): ReactNode {
   const {href, label, className, autoAddBaseUrl, customProps} = item;
   const isActive = isActiveSidebarItem(item, activePath);
   const isInternalLink = isInternalUrl(href);
 
   const isLink = item.type === 'link';
+
+  // Dynamic indent for nested items (level 3+)
+  const nestedIndent = level >= 3 ? (level - 2) * 0.05 : 0;
 
   return (
     <li
@@ -56,6 +55,7 @@ export default function DocSidebarItemLink({
             'menu__link--active': isActive,
           },
         )}
+        style={nestedIndent > 0 ? { paddingLeft: `${nestedIndent + 2.5}rem` } : undefined}
         autoAddBaseUrl={autoAddBaseUrl}
         aria-current={isActive ? 'page' : undefined}
         to={href}

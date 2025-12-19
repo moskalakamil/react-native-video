@@ -50,6 +50,12 @@
   background-color: var(--ifm-background-color);
   z-index: 2;
   pointer-events: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Circle outline turns blue on hover */
+.rootCategoryContainer:has(> :global(.menu__list-item-collapsible) > :global(.menu__link):hover)::before {
+  border-color: var(--ifm-color-primary-light);
 }
 
 /* Vertical line starting from the circle */
@@ -87,12 +93,12 @@
   padding-left: 0;
 }
 
-/* Border indicator on items */
-.rootCategoryContainer :global(.menu__link) {
+/* Border indicator on nested items only (not on root category link itself) */
+.rootCategoryContainer .categoryList :global(.menu__link) {
   position: relative;
 }
 
-.rootCategoryContainer :global(.menu__link)::before {
+.rootCategoryContainer .categoryList :global(.menu__link)::before {
   content: '';
   position: absolute;
   left: 0.5rem;
@@ -104,10 +110,10 @@
   transition: background-color 0.15s ease;
 }
 
-.rootCategoryContainer :global(.menu__link:hover:not([aria-current="page"]))::before {
+.rootCategoryContainer .categoryList :global(.menu__link:hover:not([aria-current="page"]))::before {
   background-color: var(--ifm-color-primary-light);
 }
 
-.rootCategoryContainer :global(.menu__link[aria-current="page"])::before {
+.rootCategoryContainer .categoryList :global(.menu__link[aria-current="page"])::before {
   background-color: var(--ifm-color-primary);
 }

@@ -13,3 +13,7 @@ export type AddCustomProps<T> = T extends readonly (infer U)[]
 
 export type TypedSidebarsConfig = AddCustomProps<SidebarsConfig>;
 
+export type WithCustomProps<Props extends { item: unknown }> = Omit<Props, 'item'> & {
+  item: AddCustomProps<Props['item']> & Props['item']
+};
+
