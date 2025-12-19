@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_react_native_video_docs=self.webpackChunk_react_native_video_docs||[]).push([["8049"],{39464:function(e,c,t){t.d(c,{createArchitectureServices:()=>a.S});var a=t(10910);t(26646)}}]);
