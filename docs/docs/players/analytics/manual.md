@@ -9,27 +9,22 @@ Most analytics systems that track player data (e.g., bitrate, errors) can be int
 ## Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f4fd', 'primaryBorderColor': '#3578e5', 'lineColor': '#3578e5'}}}%%
 flowchart TB
-    subgraph RN["React Native App"]
-        subgraph RNV["react-native-video"]
-            PS["Plugin System"]
-            CB1["onPlayerCreated"]
-            CB2["onPlayerDestroyed"]
+    subgraph RN[React Native App]
+        subgraph RNV[react-native-video]
+            PS[Plugin System]
         end
     end
     
-    PS --- CB1
-    PS --- CB2
-    PS --> Android
-    PS --> iOS
+    PS -->|onPlayerCreated| Android
+    PS -->|onPlayerCreated| iOS
     
-    subgraph Android["Your Analytics - Kotlin"]
-        EXO["ExoPlayer AnalyticsListener"]
+    subgraph Android[Your Plugin - Kotlin]
+        EXO[ExoPlayer.AnalyticsListener]
     end
     
-    subgraph iOS["Your Analytics - Swift"]
-        AVP["AVPlayer KVO Observers"]
+    subgraph iOS[Your Plugin - Swift]
+        AVP[AVPlayer KVO Observers]
     end
 ```
 

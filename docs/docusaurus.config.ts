@@ -5,6 +5,10 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   title: 'React Native Video',
   tagline: 'React Native Video - Video player for React Native',
   favicon: 'img/favicon.ico',
@@ -140,6 +144,26 @@ const config: Config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
+    },
+    mermaid: {
+      theme: {
+        light: 'base',
+        dark: 'dark',
+      },
+      options: {
+        maxTextSize: 500,
+        flowchart: {
+          htmlLabels: true,
+          curve: 'basis',
+        },
+        themeVariables: {
+          primaryColor: '#e8f4fd',
+          primaryBorderColor: '#3578e5',
+          lineColor: '#3578e5',
+          secondaryColor: '#f5f6f7',
+          tertiaryColor: '#fff',
+        },
+      },
     },
   } satisfies Preset.ThemeConfig,
 
