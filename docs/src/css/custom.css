@@ -6,16 +6,18 @@
   --color-bg-tertiary: #f1f3f5;
   --color-bg-elevated: #ffffff;
   
-  --color-accent: #96c9eb;
-  --color-accent-dim: #76b8e5;
-  --color-accent-dark: #5aa3d4;
-  --color-accent-glow: rgba(150, 201, 235, 0.15);
-  --color-accent-subtle: rgba(150, 201, 235, 0.08);
+  --color-accent: #4a9ece;
+  --color-accent-dim: #3a8ab8;
+  --color-accent-dark: #2d7aa8;
+  --color-accent-bright: #96c9eb;
+  --color-accent-bright-dim: #76b8e5;
+  --color-accent-glow: rgba(74, 158, 206, 0.25);
+  --color-accent-subtle: rgba(74, 158, 206, 0.12);
   
-  --color-secondary: ##FAD85B;
-  --color-secondary-dim: #d4a800;
-  --color-secondary-glow: rgba(230, 184, 0, 0.25);
-  --color-secondary-subtle: rgba(230, 184, 0, 0.15);
+  --color-secondary: #e8c420;
+  --color-secondary-dim: #d4b31a;
+  --color-secondary-glow: rgba(232, 196, 32, 0.35);
+  --color-secondary-subtle: rgba(232, 196, 32, 0.18);
   
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #4a4a4a;
@@ -91,10 +93,18 @@
   --color-bg-tertiary: #1c1c1c;
   --color-bg-elevated: #222222;
   
+  --color-accent: #96c9eb;
+  --color-accent-dim: #76b8e5;
+  --color-accent-dark: #5aa3d4;
+  --color-accent-bright: #96c9eb;
+  --color-accent-bright-dim: #76b8e5;
+  --color-accent-glow: rgba(150, 201, 235, 0.2);
+  --color-accent-subtle: rgba(150, 201, 235, 0.1);
+  
   --color-secondary: #FAD85B;
   --color-secondary-dim: #f8d03a;
-  --color-secondary-glow: rgba(250, 216, 91, 0.15);
-  --color-secondary-subtle: rgba(250, 216, 91, 0.08);
+  --color-secondary-glow: rgba(250, 216, 91, 0.2);
+  --color-secondary-subtle: rgba(250, 216, 91, 0.1);
   
   --color-text-primary: #e0e0e0;
   --color-text-secondary: #a0a0a0;
@@ -389,13 +399,13 @@ code {
 }
 
 .button--primary {
-  background: var(--color-accent);
+  background: var(--color-accent-bright);
   color: var(--color-bg-primary);
   border: none;
 }
 
 .button--primary:hover {
-  background: var(--color-accent-dim);
+  background: var(--color-accent-bright-dim);
   color: var(--color-bg-primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(150, 201, 235, 0.25);
