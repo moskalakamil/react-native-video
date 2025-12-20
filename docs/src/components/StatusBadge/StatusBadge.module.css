@@ -13,14 +13,14 @@
 }
 
 .badgePlanned {
-  background: #96c9eb26;
-  border-color: #96c9eb4d;
-  color: #96c9eb;
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-glow);
+  color: var(--color-accent);
 }
 
 .badgeNew {
-  background: #FAD85B26;
-  border-color: #FAD85B4d;
-  color: #FAD85B;
+  background: var(--color-secondary-subtle);
+  border-color: var(--color-secondary-glow);
+  color: var(--color-secondary);
 }
 

@@ -12,10 +12,10 @@
   --color-accent-glow: rgba(150, 201, 235, 0.15);
   --color-accent-subtle: rgba(150, 201, 235, 0.08);
   
-  --color-secondary: #FAD85B;
-  --color-secondary-dim: #f8d03a;
-  --color-secondary-glow: rgba(250, 216, 91, 0.15);
-  --color-secondary-subtle: rgba(250, 216, 91, 0.08);
+  --color-secondary: ##FAD85B;
+  --color-secondary-dim: #d4a800;
+  --color-secondary-glow: rgba(230, 184, 0, 0.25);
+  --color-secondary-subtle: rgba(230, 184, 0, 0.15);
   
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #4a4a4a;
@@ -90,6 +90,11 @@
   --color-bg-secondary: #161616;
   --color-bg-tertiary: #1c1c1c;
   --color-bg-elevated: #222222;
+  
+  --color-secondary: #FAD85B;
+  --color-secondary-dim: #f8d03a;
+  --color-secondary-glow: rgba(250, 216, 91, 0.15);
+  --color-secondary-subtle: rgba(250, 216, 91, 0.08);
   
   --color-text-primary: #e0e0e0;
   --color-text-secondary: #a0a0a0;

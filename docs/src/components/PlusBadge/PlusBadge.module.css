@@ -5,13 +5,13 @@
   width: 18px;
   height: 18px;
   margin-left: 6px;
-  background: linear-gradient(135deg, #96c9eb 0%, #76b8e5 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dim) 100%);
   border-radius: 4px;
   vertical-align: middle;
 }
 
 .icon {
-  color: #171717;
+  color: var(--color-bg-primary);
   flex-shrink: 0;
 }
 
