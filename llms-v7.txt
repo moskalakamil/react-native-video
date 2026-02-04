@@ -47,7 +47,6 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Expo Plugin](https://moskalakamil.github.io/react-native-video/docs/v7/fundaments/configuration/with-expo): Expo plugin for react-native-video configuration
 - [Manual Configuration](https://moskalakamil.github.io/react-native-video/docs/v7/fundaments/configuration/without-expo): Manual configuration of react-native-video
 - [Installation](https://moskalakamil.github.io/react-native-video/docs/v7/fundaments/installation): React Native Video Installation Guide and Requirements
-- [Intro](https://moskalakamil.github.io/react-native-video/docs/v7/fundaments/intro): Introduction to React Native Video library
 - [Manual Analytics](https://moskalakamil.github.io/react-native-video/docs/v7/player/analytics/manual): Manual analytics integration guide using native plugins
 - [Simple Analytics](https://moskalakamil.github.io/react-native-video/docs/v7/player/analytics/simple): Simple analytics using JavaScript events
 - [Downloading](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/downloading): Complete API reference for Offline Video SDK
