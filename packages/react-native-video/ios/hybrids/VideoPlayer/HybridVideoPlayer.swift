@@ -173,6 +173,11 @@ class HybridVideoPlayer: HybridVideoPlayerSpec, NativeVideoPlayerSpec {
     didSet {
       if showNotificationControls {
         NowPlayingInfoCenterManager.shared.registerPlayer(player: player)
+        // If player already has a source, update NowPlaying info immediately
+        // This handles the case where showNotificationControls is set after source
+        if player.currentItem != nil {
+          NowPlayingInfoCenterManager.shared.updateNowPlayingInfo()
+        }
       } else {
         NowPlayingInfoCenterManager.shared.removePlayer(player: player)
       }
@@ -386,6 +391,29 @@ class HybridVideoPlayer: HybridVideoPlayerSpec, NativeVideoPlayerSpec {
       )
     } else {
       playerItem = AVPlayerItem(asset: asset)
+    }
+
+    // Set custom metadata from config (for Now Playing info)
+    // This will merge with asset.commonMetadata in NowPlayingInfoCenterManager
+    if let metadata = source.config.metadata {
+      // Set text metadata immediately (non-blocking)
+      playerItem.externalMetadata = MetadataUtils.createSyncMetadataItems(from: metadata)
+
+      // Download artwork asynchronously in background (doesn't block player initialization)
+      if let imageUri = metadata.imageUri, !imageUri.isEmpty {
+        Task.detached { [weak playerItem] in
+          if let artworkItem = await MetadataUtils.downloadArtwork(from: imageUri) {
+            await MainActor.run {
+              guard let playerItem = playerItem else { return }
+              var currentMetadata = playerItem.externalMetadata ?? []
+              currentMetadata.append(artworkItem)
+              playerItem.externalMetadata = currentMetadata
+              // NowPlayingInfoCenterManager will automatically pick up the change
+              // via its periodic observer (line 115-121 in NowPlayingInfoCenterManager.swift)
+            }
+          }
+        }
+      }
     }
 
     return playerItem

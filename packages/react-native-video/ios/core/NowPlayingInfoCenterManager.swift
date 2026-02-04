@@ -111,7 +111,12 @@ class NowPlayingInfoCenterManager {
     currentPlayer = player
     registerCommandTargets()
 
-    updateNowPlayingInfo()
+    // Only update NowPlaying info if player has a current item
+    // This prevents clearing NowPlaying info when player is registered before source is set
+    if player.currentItem != nil {
+      updateNowPlayingInfo()
+    }
+
     playbackObserver = player.addPeriodicTimeObserver(
       forInterval: CMTime(value: 1, timescale: 4),
       queue: .global(),
@@ -249,19 +254,26 @@ class NowPlayingInfoCenterManager {
         filteredByIdentifier: .commonIdentifierArtist
       ).first?.stringValue ?? ""
 
-    // I have some issue with this - setting artworkItem when it not set dont return nil but also is crashing application
-    // this is very hacky workaround for it
-    let imgData = AVMetadataItem.metadataItems(
-      from: metadata,
-      filteredByIdentifier: .commonIdentifierArtwork
-    ).first?.dataValue
-    let image = imgData.flatMap { UIImage(data: $0) } ?? UIImage()
-    let artworkItem = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+    // Create artwork only if image data exists
+    let artworkItem: MPMediaItemArtwork? = {
+      let artworkMetadata = AVMetadataItem.metadataItems(
+        from: metadata,
+        filteredByIdentifier: .commonIdentifierArtwork
+      )
 
-    let newNowPlayingInfo: [String: Any] = [
+      guard let imgData = artworkMetadata.first?.dataValue,
+        let image = UIImage(data: imgData),
+        image.size.width > 0 && image.size.height > 0
+      else {
+        return nil
+      }
+
+      return MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+    }()
+
+    var newNowPlayingInfo: [String: Any] = [
       MPMediaItemPropertyTitle: titleItem,
       MPMediaItemPropertyArtist: artistItem,
-      MPMediaItemPropertyArtwork: artworkItem,
       MPMediaItemPropertyPlaybackDuration: currentItem.duration.seconds,
       MPNowPlayingInfoPropertyElapsedPlaybackTime: currentItem.currentTime()
         .seconds.rounded(),
@@ -270,6 +282,11 @@ class NowPlayingInfoCenterManager {
         currentItem.asset.duration
       ),
     ]
+
+    // Only add artwork if it exists
+    if let artworkItem = artworkItem {
+      newNowPlayingInfo[MPMediaItemPropertyArtwork] = artworkItem
+    }
     let currentNowPlayingInfo =
       MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
 
