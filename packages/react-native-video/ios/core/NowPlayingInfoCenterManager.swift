@@ -11,6 +11,7 @@ class NowPlayingInfoCenterManager {
 
   private var observers: [Int: NSKeyValueObservation] = [:]
   private var playbackObserver: Any?
+  private var pausedUpdateTimer: Timer?
 
   private var playTarget: Any?
   private var pauseTarget: Any?
@@ -76,6 +77,7 @@ class NowPlayingInfoCenterManager {
     players.remove(player)
 
     if currentPlayer == player {
+      stopPausedUpdateTimer()
       currentPlayer = nil
       updateNowPlayingInfo()
     }
@@ -93,6 +95,7 @@ class NowPlayingInfoCenterManager {
       currentPlayer?.removeTimeObserver(playbackObserver)
     }
 
+    stopPausedUpdateTimer()
     invalidateCommandTargets()
 
     MPNowPlayingInfoCenter.default().nowPlayingInfo = [:]
@@ -108,6 +111,9 @@ class NowPlayingInfoCenterManager {
       currentPlayer?.removeTimeObserver(playbackObserver)
     }
 
+    // Stop paused timer when switching players
+    stopPausedUpdateTimer()
+
     currentPlayer = player
     registerCommandTargets()
 
@@ -119,15 +125,32 @@ class NowPlayingInfoCenterManager {
 
     playbackObserver = player.addPeriodicTimeObserver(
       forInterval: CMTime(value: 1, timescale: 4),
-      queue: .global(),
+      queue: .main,  // CRITICAL: Use main queue for Now Playing updates
       using: { [weak self] _ in
         self?.updateNowPlayingInfo()
       }
     )
+
+    // If player is already paused, start the paused update timer
+    if player.rate == 0 {
+      startPausedUpdateTimer()
+    }
   }
 
   private func registerCommandTargets() {
     invalidateCommandTargets()
+
+    // CRITICAL: Enable commands - without this iOS won't recognize us as Now Playing app
+    remoteCommandCenter.playCommand.isEnabled = true
+    remoteCommandCenter.pauseCommand.isEnabled = true
+    remoteCommandCenter.skipBackwardCommand.isEnabled = true
+    remoteCommandCenter.skipForwardCommand.isEnabled = true
+    remoteCommandCenter.changePlaybackPositionCommand.isEnabled = true
+    remoteCommandCenter.togglePlayPauseCommand.isEnabled = true
+
+    // Set skip intervals for skip commands
+    remoteCommandCenter.skipBackwardCommand.preferredIntervals = [NSNumber(value: SEEK_INTERVAL_SECONDS)]
+    remoteCommandCenter.skipForwardCommand.preferredIntervals = [NSNumber(value: SEEK_INTERVAL_SECONDS)]
 
     playTarget = remoteCommandCenter.playCommand.addTarget { [weak self] _ in
       guard let self, let player = self.currentPlayer else {
@@ -207,6 +230,8 @@ class NowPlayingInfoCenterManager {
 
       return .success
     }
+
+    print("[NowPlaying] DEBUG: Remote commands registered and enabled")
   }
 
   private func invalidateCommandTargets() {
@@ -220,15 +245,30 @@ class NowPlayingInfoCenterManager {
     remoteCommandCenter.togglePlayPauseCommand.removeTarget(
       togglePlayPauseTarget
     )
+
+    // Disable commands when not in use
+    remoteCommandCenter.playCommand.isEnabled = false
+    remoteCommandCenter.pauseCommand.isEnabled = false
+    remoteCommandCenter.skipBackwardCommand.isEnabled = false
+    remoteCommandCenter.skipForwardCommand.isEnabled = false
+    remoteCommandCenter.changePlaybackPositionCommand.isEnabled = false
+    remoteCommandCenter.togglePlayPauseCommand.isEnabled = false
+
+    print("[NowPlaying] DEBUG: Remote commands invalidated and disabled")
   }
 
   public func updateNowPlayingInfo() {
     guard let player = currentPlayer, let currentItem = player.currentItem
     else {
+      print("[NowPlaying] DEBUG: No player or currentItem - clearing NowPlaying info")
       invalidateCommandTargets()
-      MPNowPlayingInfoCenter.default().nowPlayingInfo = [:]
+      DispatchQueue.main.async {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [:]
+      }
       return
     }
+
+    print("[NowPlaying] DEBUG: Updating NowPlaying - rate: \(player.rate)")
 
     // commonMetadata is metadata from asset, externalMetadata is custom metadata set by user
     // externalMetadata should override commonMetadata to allow override metadata from source
@@ -254,6 +294,8 @@ class NowPlayingInfoCenterManager {
         filteredByIdentifier: .commonIdentifierArtist
       ).first?.stringValue ?? ""
 
+    print("[NowPlaying] DEBUG: Metadata - title: '\(titleItem)', artist: '\(artistItem)', metadata count: \(metadata.count)")
+
     // Create artwork only if image data exists
     let artworkItem: MPMediaItemArtwork? = {
       let artworkMetadata = AVMetadataItem.metadataItems(
@@ -271,27 +313,44 @@ class NowPlayingInfoCenterManager {
       return MPMediaItemArtwork(boundsSize: image.size) { _ in image }
     }()
 
+    // CRITICAL: Always set ElapsedPlaybackTime explicitly, especially when rate=0
+    // iOS resets elapsed time when rate=0 if not explicitly set
+    let currentTime = currentItem.currentTime().seconds
+    let duration = currentItem.duration.seconds
+
     var newNowPlayingInfo: [String: Any] = [
       MPMediaItemPropertyTitle: titleItem,
       MPMediaItemPropertyArtist: artistItem,
-      MPMediaItemPropertyPlaybackDuration: currentItem.duration.seconds,
-      MPNowPlayingInfoPropertyElapsedPlaybackTime: currentItem.currentTime()
-        .seconds.rounded(),
+      MPMediaItemPropertyPlaybackDuration: duration,
+      MPNowPlayingInfoPropertyElapsedPlaybackTime: currentTime.isFinite ? currentTime : 0,
       MPNowPlayingInfoPropertyPlaybackRate: player.rate,
+      MPNowPlayingInfoPropertyDefaultPlaybackRate: 1.0, // iOS needs this to know normal playback rate
       MPNowPlayingInfoPropertyIsLiveStream: CMTIME_IS_INDEFINITE(
         currentItem.asset.duration
       ),
+      MPNowPlayingInfoPropertyMediaType: MPNowPlayingInfoMediaType.video.rawValue, // CRITICAL: Tell iOS this is video
     ]
 
     // Only add artwork if it exists
     if let artworkItem = artworkItem {
       newNowPlayingInfo[MPMediaItemPropertyArtwork] = artworkItem
     }
-    let currentNowPlayingInfo =
-      MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
+    print("[NowPlaying] DEBUG: Setting NowPlaying with \(newNowPlayingInfo.count) keys")
+    print("[NowPlaying] DEBUG: Has artwork: \(newNowPlayingInfo[MPMediaItemPropertyArtwork] != nil)")
+    print("[NowPlaying] DEBUG: Playback rate: \(player.rate)")
 
-    MPNowPlayingInfoCenter.default().nowPlayingInfo =
-      currentNowPlayingInfo.merging(newNowPlayingInfo) { _, new in new }
+    // CRITICAL: Always update on main thread
+    if Thread.isMainThread {
+      // CRITICAL: Don't merge - replace completely to ensure iOS updates the display
+      // Merging can cause iOS to not refresh the UI when paused
+      MPNowPlayingInfoCenter.default().nowPlayingInfo = newNowPlayingInfo
+      print("[NowPlaying] DEBUG: Final NowPlaying has \(MPNowPlayingInfoCenter.default().nowPlayingInfo?.count ?? 0) keys")
+    } else {
+      DispatchQueue.main.async {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = newNowPlayingInfo
+        print("[NowPlaying] DEBUG: Final NowPlaying has \(MPNowPlayingInfoCenter.default().nowPlayingInfo?.count ?? 0) keys (async)")
+      }
+    }
   }
 
   private func findNewCurrentPlayer() {
@@ -319,7 +378,23 @@ class NowPlayingInfoCenterManager {
       // case where currentPlayer was paused
       // In this case event is triggered by currentPlayer
       if rate == 0 && self.currentPlayer == player {
+        print("[NowPlaying] DEBUG: Player paused - finding new current player")
         self.findNewCurrentPlayer()
+        print("[NowPlaying] DEBUG: After findNewCurrentPlayer, currentPlayer is: \(self.currentPlayer != nil ? "set" : "nil")")
+        // Always update NowPlaying info after pause to ensure metadata stays visible
+        self.updateNowPlayingInfo()
+        // Start timer to keep updating NowPlaying while paused
+        self.startPausedUpdateTimer()
+        return
+      }
+
+      // case where currentPlayer resumed playing
+      // CRITICAL: Update NowPlaying when resuming to refresh playbackRate
+      if rate != 0 && self.currentPlayer == player {
+        print("[NowPlaying] DEBUG: Player resumed - updating NowPlaying")
+        // Stop the paused timer since periodic observer will handle updates
+        self.stopPausedUpdateTimer()
+        self.updateNowPlayingInfo()
       }
     }
   }
@@ -336,5 +411,37 @@ class NowPlayingInfoCenterManager {
     }
 
     return result
+  }
+
+  // MARK: - Paused State Timer
+
+  /// Starts a timer to update NowPlaying info while paused
+  /// This ensures iOS keeps the notification visible even when playback is paused
+  private func startPausedUpdateTimer() {
+    stopPausedUpdateTimer()
+
+    print("[NowPlaying] DEBUG: Starting paused update timer")
+    // CRITICAL: Schedule on main thread for Now Playing updates
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      // Update every 5 seconds to keep notification alive
+      self.pausedUpdateTimer = Timer.scheduledTimer(
+        withTimeInterval: 5.0,
+        repeats: true
+      ) { [weak self] _ in
+        self?.updateNowPlayingInfo()
+      }
+    }
+  }
+
+  private func stopPausedUpdateTimer() {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      if self.pausedUpdateTimer != nil {
+        print("[NowPlaying] DEBUG: Stopping paused update timer")
+      }
+      self.pausedUpdateTimer?.invalidate()
+      self.pausedUpdateTimer = nil
+    }
   }
 }

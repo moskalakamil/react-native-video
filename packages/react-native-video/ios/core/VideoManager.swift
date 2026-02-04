@@ -138,21 +138,25 @@ class VideoManager {
     let isAnyPlayerPlaying = players.allObjects.contains { hybridPlayer in
       hybridPlayer.player.isMuted == false && hybridPlayer.player.rate != 0
     }
-    
+
     let anyPlayerNeedsNotMixWithOthers = players.allObjects.contains { player in
       player.mixAudioMode == .donotmix
     }
-    
+
     let anyPlayerNeedsNotificationControls = players.allObjects.contains { player in
       player.showNotificationControls
     }
-    
+
+    print("[VideoManager] DEBUG: updateAudioSessionConfiguration - playing: \(isAnyPlayerPlaying), notificationControls: \(anyPlayerNeedsNotificationControls), remoteControlActive: \(remoteControlEventsActive)")
+
     if isAnyPlayerPlaying || anyPlayerNeedsNotMixWithOthers || anyPlayerNeedsNotificationControls || remoteControlEventsActive {
+      print("[VideoManager] DEBUG: ACTIVATING audio session")
       activateAudioSession()
     } else {
+      print("[VideoManager] DEBUG: DEACTIVATING audio session")
       deactivateAudioSession()
     }
-    
+
     configureAudioSession()
   }
   

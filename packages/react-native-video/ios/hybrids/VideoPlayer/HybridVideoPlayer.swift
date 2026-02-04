@@ -178,8 +178,11 @@ class HybridVideoPlayer: HybridVideoPlayerSpec, NativeVideoPlayerSpec {
         if player.currentItem != nil {
           NowPlayingInfoCenterManager.shared.updateNowPlayingInfo()
         }
+        // CRITICAL: Request audio session update to keep session active even when paused
+        VideoManager.shared.requestAudioSessionUpdate()
       } else {
         NowPlayingInfoCenterManager.shared.removePlayer(player: player)
+        VideoManager.shared.requestAudioSessionUpdate()
       }
     }
   }
@@ -401,15 +404,28 @@ class HybridVideoPlayer: HybridVideoPlayerSpec, NativeVideoPlayerSpec {
 
       // Download artwork asynchronously in background (doesn't block player initialization)
       if let imageUri = metadata.imageUri, !imageUri.isEmpty {
-        Task.detached { [weak playerItem] in
+        Task.detached { [weak self] in
           if let artworkItem = await MetadataUtils.downloadArtwork(from: imageUri) {
             await MainActor.run {
-              guard let playerItem = playerItem else { return }
-              var currentMetadata = playerItem.externalMetadata ?? []
+              guard let self = self else {
+                print("[NowPlaying] DEBUG: Self deallocated before artwork downloaded")
+                return
+              }
+
+              // CRITICAL: Use player.currentItem instead of self.playerItem
+              // to ensure we're updating the actual playing item
+              guard let currentItem = self.player.currentItem else {
+                print("[NowPlaying] DEBUG: No currentItem when artwork downloaded")
+                return
+              }
+
+              print("[NowPlaying] DEBUG: Adding artwork to currentItem")
+              var currentMetadata = currentItem.externalMetadata ?? []
               currentMetadata.append(artworkItem)
-              playerItem.externalMetadata = currentMetadata
-              // NowPlayingInfoCenterManager will automatically pick up the change
-              // via its periodic observer (line 115-121 in NowPlayingInfoCenterManager.swift)
+              currentItem.externalMetadata = currentMetadata
+
+              // Explicitly update NowPlaying info to ensure artwork appears immediately
+              NowPlayingInfoCenterManager.shared.updateNowPlayingInfo()
             }
           }
         }
