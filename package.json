@@ -8,7 +8,9 @@
   "workspaces": [
     "packages/react-native-video",
     "packages/drm-plugin",
-    "example",
+    "packages/ui",
+    "packages/controls",
+    "examples/bare",
     "docs"
   ],
   "scripts": {

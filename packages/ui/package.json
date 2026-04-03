@@ -1,0 +1,108 @@
+{
+  "name": "@react-native-video/ui",
+  "version": "7.0.0-beta.8",
+  "description": "Compound components UI for react-native-video",
+  "source": "./src/index.tsx",
+  "react-native": "./src/index.tsx",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "typecheck": "tsc",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build",
+    "clean": "del-cli lib"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-video",
+    "ui",
+    "video-player",
+    "compound-components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheWidlarzGroup/react-native-video.git"
+  },
+  "author": "TheWidlarzGroup <hi@thewidlarzgroup.com> (https://github.com/TheWidlarzGroup)",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@gorhom/bottom-sheet": "^5.0.0",
+    "@react-native-community/blur": "^4.4.1",
+    "@types/react": "^19.0.0",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
+    "react": "^19.0.0",
+    "react-native": "^0.78.0",
+    "react-native-builder-bob": "^0.40.13",
+    "react-native-gesture-handler": "^2.0.0",
+    "react-native-reanimated": "^4.0.0",
+    "react-native-worklets": "^0.8.1",
+    "react-native-svg": "^15.15.4",
+    "react-native-video": "*",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-native": ">=0.78.0",
+    "react-native-video": ">=7.0.0",
+    "react-native-reanimated": ">=4.0.0",
+    "react-native-worklets": ">=0.8.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "@gorhom/bottom-sheet": ">=5.0.0",
+    "react-native-svg": ">=13.0.0",
+    "@react-native-community/blur": ">=4.0.0",
+    "react-native-safe-area-context": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@gorhom/bottom-sheet": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    },
+    "@react-native-community/blur": {
+      "optional": true
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

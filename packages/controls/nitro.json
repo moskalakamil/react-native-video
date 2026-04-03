@@ -1,0 +1,17 @@
+{
+  "cxxNamespace": ["reactnativevideo_controls"],
+  "ios": {
+    "iosModuleName": "Controls"
+  },
+  "android": {
+    "androidNamespace": ["reactnativevideo","controls"],
+    "androidCxxLibName": "reactnativevideo_controls"
+  },
+  "autolinking": {
+    "Controls": {
+      "swift": "HybridControls",
+      "kotlin": "HybridControls"
+    }
+  },
+  "ignorePaths": ["node_modules"]
+}
