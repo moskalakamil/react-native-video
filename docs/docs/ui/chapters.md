@@ -1,6 +1,6 @@
 ---
 title: Video Chapters — Seekbar Markers & Navigation
-sidebar_position: 5
+sidebar_position: 2
 sidebar_label: Chapters
 description: Add chapter markers and navigation to video content with VideoView chapters support in React Native Video.
 keywords: [video chapters, seekbar markers, chapter navigation, setChapters, react native video]
