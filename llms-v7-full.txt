@@ -8,7 +8,7 @@ This file contains all documentation content in a single document following the 
 
 # Class: VideoPlayer
 
-Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L20)
+Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L20)
 
 ## Extends
 
@@ -26,7 +26,7 @@ Defined in: [VideoPlayer.ts:20](https://github.com/moskalakamil/react-native-vid
 new VideoPlayer(source): VideoPlayer;
 ```
 
-Defined in: [VideoPlayer.ts:35](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L35)
+Defined in: [VideoPlayer.ts:35](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L35)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ VideoPlayerEvents.constructor
 get currentTime(): number;
 ```
 
-Defined in: [VideoPlayer.ts:149](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L149)
+Defined in: [VideoPlayer.ts:149](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L149)
 
 The duration of the video in seconds (1.0 = 1 sec).
 Returns NaN if the duration is not available.
@@ -69,7 +69,7 @@ Returns NaN if the duration is not available.
 set currentTime(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:153](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L153)
+Defined in: [VideoPlayer.ts:153](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L153)
 
 The duration of the video in seconds (1.0 = 1 sec).
 Returns NaN if the duration is not available.
@@ -92,6 +92,74 @@ VideoPlayerBase.currentTime
 
 ***
 
+### disableAudioSessionManagement
+
+#### Get Signature
+
+```ts
+get disableAudioSessionManagement(): boolean;
+```
+
+Defined in: [VideoPlayer.ts:227](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L227)
+
+Disables the internal audio session management for this player.
+When disabled, react-native-video will not configure or activate the AVAudioSession,
+allowing other libraries (like audio recording libraries) to manage it.
+
+##### Default
+
+```ts
+false
+```
+
+##### Platform
+
+iOS
+
+##### Returns
+
+`boolean`
+
+#### Set Signature
+
+```ts
+set disableAudioSessionManagement(value): void;
+```
+
+Defined in: [VideoPlayer.ts:231](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L231)
+
+Disables the internal audio session management for this player.
+When disabled, react-native-video will not configure or activate the AVAudioSession,
+allowing other libraries (like audio recording libraries) to manage it.
+
+##### Default
+
+```ts
+false
+```
+
+##### Platform
+
+iOS
+
+##### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `boolean` |
+
+##### Returns
+
+`void`
+
+#### Implementation of
+
+```ts
+VideoPlayerBase.disableAudioSessionManagement
+```
+
+***
+
 ### duration
 
 #### Get Signature
@@ -100,7 +168,7 @@ VideoPlayerBase.currentTime
 get duration(): number;
 ```
 
-Defined in: [VideoPlayer.ts:135](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L135)
+Defined in: [VideoPlayer.ts:135](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L135)
 
 The current time of the video in seconds (1.0 = 1 sec).
 Returns NaN if the current time is not available.
@@ -125,7 +193,7 @@ VideoPlayerBase.duration
 get ignoreSilentSwitchMode(): IgnoreSilentSwitchMode;
 ```
 
-Defined in: [VideoPlayer.ts:194](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L194)
+Defined in: [VideoPlayer.ts:194](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L194)
 
 Controls the silent switch mode of the player.
 
@@ -147,7 +215,7 @@ This is only supported on iOS.
 set ignoreSilentSwitchMode(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:198](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L198)
+Defined in: [VideoPlayer.ts:198](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L198)
 
 Controls the silent switch mode of the player.
 
@@ -185,7 +253,7 @@ VideoPlayerBase.ignoreSilentSwitchMode
 get isPlaying(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:227](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L227)
+Defined in: [VideoPlayer.ts:242](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L242)
 
 Whether the player is playing.
 
@@ -195,7 +263,7 @@ This is a read-only property.
 
 ##### Note
 
-To pause/resume the player, you need to use [play](#play) and [pause](#pause) methods.
+To pause/resume the player, you need to use [play](../interfaces/WebVideoPlayer.md#play) and [pause](../interfaces/WebVideoPlayer.md#pause) methods.
 
 ##### Returns
 
@@ -217,7 +285,7 @@ VideoPlayerBase.isPlaying
 get loop(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:167](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L167)
+Defined in: [VideoPlayer.ts:167](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L167)
 
 Whether the player is looped.
 
@@ -231,7 +299,7 @@ Whether the player is looped.
 set loop(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:171](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L171)
+Defined in: [VideoPlayer.ts:171](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L171)
 
 Whether the player is looped.
 
@@ -261,7 +329,7 @@ VideoPlayerBase.loop
 get mixAudioMode(): MixAudioMode;
 ```
 
-Defined in: [VideoPlayer.ts:185](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L185)
+Defined in: [VideoPlayer.ts:185](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L185)
 
 Controls the audio mixing mode of the player.
 
@@ -282,7 +350,7 @@ default is `auto`.
 set mixAudioMode(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:189](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L189)
+Defined in: [VideoPlayer.ts:189](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L189)
 
 Controls the audio mixing mode of the player.
 
@@ -319,7 +387,7 @@ VideoPlayerBase.mixAudioMode
 get muted(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:158](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L158)
+Defined in: [VideoPlayer.ts:158](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L158)
 
 Whether the player is muted.
 
@@ -333,7 +401,7 @@ Whether the player is muted.
 set muted(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:162](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L162)
+Defined in: [VideoPlayer.ts:162](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L162)
 
 Whether the player is muted.
 
@@ -363,7 +431,7 @@ VideoPlayerBase.muted
 get playInBackground(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:209](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L209)
+Defined in: [VideoPlayer.ts:209](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L209)
 
 Whether the player should play in background.
 
@@ -372,7 +440,7 @@ Whether the player should play in background.
 
 ##### Note
 
-this can override [playWhenInactive](#playwheninactive).
+this can override [playWhenInactive](../interfaces/WebVideoPlayer.md#playwheninactive).
 
 ##### Returns
 
@@ -384,7 +452,7 @@ this can override [playWhenInactive](#playwheninactive).
 set playInBackground(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:213](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L213)
+Defined in: [VideoPlayer.ts:213](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L213)
 
 Whether the player should play in background.
 
@@ -393,7 +461,7 @@ Whether the player should play in background.
 
 ##### Note
 
-this can override [playWhenInactive](#playwheninactive).
+this can override [playWhenInactive](../interfaces/WebVideoPlayer.md#playwheninactive).
 
 ##### Parameters
 
@@ -421,7 +489,7 @@ VideoPlayerBase.playInBackground
 get playWhenInactive(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:218](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L218)
+Defined in: [VideoPlayer.ts:218](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L218)
 
 Whether the player should play when the app is inactive (user opened control center).
 
@@ -430,7 +498,7 @@ Whether the player should play when the app is inactive (user opened control cen
 
 ##### Note
 
-this can be overridden by [playInBackground](#playinbackground).
+this can be overridden by [playInBackground](../interfaces/WebVideoPlayer.md#playinbackground).
 
 ##### Note
 
@@ -446,7 +514,7 @@ This is only supported on iOS.
 set playWhenInactive(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:222](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L222)
+Defined in: [VideoPlayer.ts:222](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L222)
 
 Whether the player should play when the app is inactive (user opened control center).
 
@@ -455,7 +523,7 @@ Whether the player should play when the app is inactive (user opened control cen
 
 ##### Note
 
-this can be overridden by [playInBackground](#playinbackground).
+this can be overridden by [playInBackground](../interfaces/WebVideoPlayer.md#playinbackground).
 
 ##### Note
 
@@ -487,7 +555,7 @@ VideoPlayerBase.playWhenInactive
 get rate(): number;
 ```
 
-Defined in: [VideoPlayer.ts:176](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L176)
+Defined in: [VideoPlayer.ts:176](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L176)
 
 Controls the speed at which the player should play.
 
@@ -505,7 +573,7 @@ if rate is = 0, it will pause video.
 set rate(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:180](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L180)
+Defined in: [VideoPlayer.ts:180](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L180)
 
 Controls the speed at which the player should play.
 
@@ -539,7 +607,7 @@ VideoPlayerBase.rate
 get selectedTrack(): TextTrack | undefined;
 ```
 
-Defined in: [VideoPlayer.ts:326](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L326)
+Defined in: [VideoPlayer.ts:341](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L341)
 
 Get the currently selected text track.
 
@@ -565,7 +633,9 @@ VideoPlayerBase.selectedTrack
 get showNotificationControls(): boolean;
 ```
 
-Defined in: [VideoPlayer.ts:231](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L231)
+Defined in: [VideoPlayer.ts:246](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L246)
+
+Whether to show notification controls (lock screen / control center).
 
 ##### Returns
 
@@ -577,7 +647,9 @@ Defined in: [VideoPlayer.ts:231](https://github.com/moskalakamil/react-native-vi
 set showNotificationControls(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:235](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L235)
+Defined in: [VideoPlayer.ts:250](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L250)
+
+Whether to show notification controls (lock screen / control center).
 
 ##### Parameters
 
@@ -589,6 +661,12 @@ Defined in: [VideoPlayer.ts:235](https://github.com/moskalakamil/react-native-vi
 
 `void`
 
+#### Implementation of
+
+```ts
+VideoPlayerBase.showNotificationControls
+```
+
 ***
 
 ### source
@@ -599,10 +677,10 @@ Defined in: [VideoPlayer.ts:235](https://github.com/moskalakamil/react-native-vi
 get source(): VideoPlayerSource;
 ```
 
-Defined in: [VideoPlayer.ts:125](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L125)
+Defined in: [VideoPlayer.ts:125](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L125)
 
 The source of the video.
-Source is immutable. To change the source, you need to call [replaceSourceAsync](#replacesourceasync) method.
+Source is immutable. To change the source, you need to call [replaceSourceAsync](../interfaces/WebVideoPlayer.md#replacesourceasync) method.
 see VideoPlayerSourceBase
 
 ##### Returns
@@ -625,7 +703,7 @@ VideoPlayerBase.source
 get status(): VideoPlayerStatus;
 ```
 
-Defined in: [VideoPlayer.ts:130](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L130)
+Defined in: [VideoPlayer.ts:130](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L130)
 
 The status of the player.
 
@@ -649,13 +727,13 @@ VideoPlayerBase.status
 get volume(): number;
 ```
 
-Defined in: [VideoPlayer.ts:140](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L140)
+Defined in: [VideoPlayer.ts:140](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L140)
 
 The volume of the video (0.0 = 0%, 1.0 = 100%).
 
 ##### Note
 
-If the player is [muted](#muted), the volume will be 0.0.
+If the player is [muted](../interfaces/WebVideoPlayer.md#muted), the volume will be 0.0.
 
 ##### Returns
 
@@ -667,13 +745,13 @@ If the player is [muted](#muted), the volume will be 0.0.
 set volume(value): void;
 ```
 
-Defined in: [VideoPlayer.ts:144](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L144)
+Defined in: [VideoPlayer.ts:144](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L144)
 
 The volume of the video (0.0 = 0%, 1.0 = 100%).
 
 ##### Note
 
-If the player is [muted](#muted), the volume will be 0.0.
+If the player is [muted](../interfaces/WebVideoPlayer.md#muted), the volume will be 0.0.
 
 ##### Parameters
 
@@ -699,9 +777,7 @@ VideoPlayerBase.volume
 addEventListener(event, callback): ListenerSubscription;
 ```
 
-Defined in: [VideoPlayerEvents.ts:40](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayerEvents.ts#L40)
-
-Adds a listener for a player event.
+Defined in: [events/VideoPlayerEvents.native.ts:9](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/events/VideoPlayerEvents.native.ts#L9)
 
 #### Type Parameters
 
@@ -711,20 +787,20 @@ Adds a listener for a player event.
 
 #### Parameters
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `event` | `Event` | The event to add a listener for. |
-| `callback` | [`AllPlayerEvents`](../type-aliases/AllPlayerEvents.md)\[`Event`\] | The callback to call when the event is triggered. |
+| Parameter | Type |
+| ------ | ------ |
+| `event` | `Event` |
+| `callback` | [`AllPlayerEvents`](../type-aliases/AllPlayerEvents.md)\[`Event`\] |
 
 #### Returns
 
 `ListenerSubscription`
 
-A subscription object that can be used to remove the listener.
+#### Implementation of
 
-#### Throw
-
-Error if the event is not supported.
+```ts
+VideoPlayerBase.addEventListener
+```
 
 #### Inherited from
 
@@ -740,9 +816,7 @@ VideoPlayerEvents.addEventListener
 clearAllEvents(): void;
 ```
 
-Defined in: [VideoPlayerEvents.ts:142](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayerEvents.ts#L142)
-
-Clears all events from the event emitter.
+Defined in: [events/VideoPlayerEventsBase.ts:42](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/events/VideoPlayerEventsBase.ts#L42)
 
 #### Returns
 
@@ -762,7 +836,7 @@ VideoPlayerEvents.clearAllEvents
 getAvailableTextTracks(): TextTrack[];
 ```
 
-Defined in: [VideoPlayer.ts:308](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L308)
+Defined in: [VideoPlayer.ts:323](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L323)
 
 Get all available text tracks for the current source.
 
@@ -786,7 +860,7 @@ VideoPlayerBase.getAvailableTextTracks
 initialize(): Promise;
 ```
 
-Defined in: [VideoPlayer.ts:239](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L239)
+Defined in: [VideoPlayer.ts:254](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L254)
 
 Manually initialize the player. You don't need to call this method manually, unless you set `initializeOnCreation` to false in [VideoConfig](../type-aliases/VideoConfig.md)
 
@@ -808,7 +882,7 @@ VideoPlayerBase.initialize
 pause(): void;
 ```
 
-Defined in: [VideoPlayer.ts:269](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L269)
+Defined in: [VideoPlayer.ts:284](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L284)
 
 Pause playback of player.
 
@@ -830,7 +904,7 @@ VideoPlayerBase.pause
 play(): void;
 ```
 
-Defined in: [VideoPlayer.ts:261](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L261)
+Defined in: [VideoPlayer.ts:276](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L276)
 
 Start playback of player.
 
@@ -852,7 +926,7 @@ VideoPlayerBase.play
 preload(): Promise;
 ```
 
-Defined in: [VideoPlayer.ts:245](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L245)
+Defined in: [VideoPlayer.ts:260](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L260)
 
 Preload the video.
 This is useful to avoid delay when the user plays the video.
@@ -876,7 +950,7 @@ VideoPlayerBase.preload
 release(): void;
 ```
 
-Defined in: [VideoPlayer.ts:257](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L257)
+Defined in: [VideoPlayer.ts:272](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L272)
 
 Releases the player's native resources and releases native state.
 After calling this method, the player is no longer usable.
@@ -887,6 +961,12 @@ If you want to clean player resource use `replaceSourceAsync` with `null` instea
 
 `void`
 
+#### Implementation of
+
+```ts
+VideoPlayerBase.release
+```
+
 ***
 
 ### replaceSourceAsync()
@@ -895,7 +975,7 @@ If you want to clean player resource use `replaceSourceAsync` with `null` instea
 replaceSourceAsync(source): Promise;
 ```
 
-Defined in: [VideoPlayer.ts:293](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L293)
+Defined in: [VideoPlayer.ts:308](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L308)
 
 Replace the current source of the player.
 
@@ -928,11 +1008,11 @@ VideoPlayerBase.replaceSourceAsync
 seekBy(time): void;
 ```
 
-Defined in: [VideoPlayer.ts:277](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L277)
+Defined in: [VideoPlayer.ts:292](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L292)
 
 Seek by given time.
 If the time is negative, it will seek backward.
-time will be clamped if it is out of range (0 ~ [duration](#duration)).
+time will be clamped if it is out of range (0 ~ [duration](../interfaces/WebVideoPlayer.md#duration)).
 
 #### Parameters
 
@@ -958,7 +1038,7 @@ VideoPlayerBase.seekBy
 seekTo(time): void;
 ```
 
-Defined in: [VideoPlayer.ts:285](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L285)
+Defined in: [VideoPlayer.ts:300](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L300)
 
 Seek to a specific time in the video.
 
@@ -974,11 +1054,11 @@ Seek to a specific time in the video.
 
 #### Note
 
-This have same effect as [currentTime](#currenttime) setter.
+This have same effect as [currentTime](../interfaces/WebVideoPlayer.md#currenttime) setter.
 
 #### Note
 
-time will be clamped if it is out of range (0 ~ [duration](#duration)).
+time will be clamped if it is out of range (0 ~ [duration](../interfaces/WebVideoPlayer.md#duration)).
 
 #### Implementation of
 
@@ -994,7 +1074,7 @@ VideoPlayerBase.seekTo
 selectTextTrack(textTrack): void;
 ```
 
-Defined in: [VideoPlayer.ts:317](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/VideoPlayer.ts#L317)
+Defined in: [VideoPlayer.ts:332](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/VideoPlayer.ts#L332)
 
 Select a text track to display.
 
@@ -1016,6 +1096,48 @@ VideoPlayerBase.selectTextTrack
 
 ---
 
+## Function: setAudioSessionManagementDisabled()
+
+# Function: setAudioSessionManagementDisabled()
+
+```ts
+function setAudioSessionManagementDisabled(disabled): void;
+```
+
+Defined in: [utils/playerFactory.ts:35](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/utils/playerFactory.ts#L35)
+
+Disables the internal audio session management on iOS.
+When disabled, react-native-video will not configure or activate the AVAudioSession,
+allowing other libraries (like audio recording libraries) to manage it.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `disabled` | `boolean` | If true, audio session management is disabled |
+
+## Returns
+
+`void`
+
+## Platform
+
+iOS
+
+## Example
+
+```tsx
+// Disable audio session management before recording
+setAudioSessionManagementDisabled(true);
+
+// Record audio using another library...
+
+// Re-enable audio session management after recording
+setAudioSessionManagementDisabled(false);
+```
+
+---
+
 ## Function: useEvent()
 
 # Function: useEvent()
@@ -1027,7 +1149,7 @@ function useEvent(
    callback): void;
 ```
 
-Defined in: [hooks/useEvent.ts:12](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/hooks/useEvent.ts#L12)
+Defined in: [hooks/useEvent.ts:12](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/hooks/useEvent.ts#L12)
 
 Attaches an event listener to a `VideoPlayer` instance for a specified event.
 
@@ -1041,7 +1163,7 @@ Attaches an event listener to a `VideoPlayer` instance for a specified event.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `player` | [`VideoPlayer`](../classes/VideoPlayer.md) | The player to attach the event to |
+| `player` | `VideoPlayerBase` | The player to attach the event to |
 | `event` | `T` | The name of the event to attach the callback to |
 | `callback` | [`AllPlayerEvents`](../type-aliases/AllPlayerEvents.md)\[`T`\] | The callback for the event |
 
@@ -1059,7 +1181,7 @@ Attaches an event listener to a `VideoPlayer` instance for a specified event.
 function useVideoPlayer(source, setup?): VideoPlayer;
 ```
 
-Defined in: [hooks/useVideoPlayer.ts:30](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/hooks/useVideoPlayer.ts#L30)
+Defined in: [hooks/useVideoPlayer.ts:30](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/hooks/useVideoPlayer.ts#L30)
 
 Creates a `VideoPlayer` instance and manages its lifecycle.
 
@@ -1091,6 +1213,7 @@ The `VideoPlayer` instance
 
 ## Interfaces
 
+- [AudioTrack](interfaces/AudioTrack.md)
 - [BandwidthData](interfaces/BandwidthData.md)
 - [JSVideoPlayerEvents](interfaces/JSVideoPlayerEvents.md)
 - [onLoadData](interfaces/onLoadData.md)
@@ -1104,9 +1227,11 @@ The `VideoPlayer` instance
 - [VideoError](interfaces/VideoError.md)
 - [VideoPlayerEvents](interfaces/VideoPlayerEvents.md)
 - [VideoRuntimeError](interfaces/VideoRuntimeError.md)
+- [VideoTrack](interfaces/VideoTrack.md)
 - [VideoViewEvents](interfaces/VideoViewEvents.md)
 - [VideoViewProps](interfaces/VideoViewProps.md)
 - [VideoViewRef](interfaces/VideoViewRef.md)
+- [WebVideoPlayer](interfaces/WebVideoPlayer.md)
 
 ## Type Aliases
 
@@ -1125,6 +1250,7 @@ The `VideoPlayer` instance
 - [VideoPlayerStatus](type-aliases/VideoPlayerStatus.md)
 - [VideoSource](type-aliases/VideoSource.md)
 - [VideoViewError](type-aliases/VideoViewError.md)
+- [WebError](type-aliases/WebError.md)
 
 ## Variables
 
@@ -1134,8 +1260,57 @@ The `VideoPlayer` instance
 
 ## Functions
 
+- [setAudioSessionManagementDisabled](functions/setAudioSessionManagementDisabled.md)
 - [useEvent](functions/useEvent.md)
 - [useVideoPlayer](functions/useVideoPlayer.md)
+
+---
+
+## Interface: AudioTrack
+
+# Interface: AudioTrack
+
+Defined in: [types/AudioTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/AudioTrack.ts#L1)
+
+## Properties
+
+### id
+
+```ts
+id: string;
+```
+
+Defined in: [types/AudioTrack.ts:2](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/AudioTrack.ts#L2)
+
+***
+
+### label
+
+```ts
+label: string;
+```
+
+Defined in: [types/AudioTrack.ts:3](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/AudioTrack.ts#L3)
+
+***
+
+### language?
+
+```ts
+optional language?: string;
+```
+
+Defined in: [types/AudioTrack.ts:4](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/AudioTrack.ts#L4)
+
+***
+
+### selected
+
+```ts
+selected: boolean;
+```
+
+Defined in: [types/AudioTrack.ts:5](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/AudioTrack.ts#L5)
 
 ---
 
@@ -1143,7 +1318,7 @@ The `VideoPlayer` instance
 
 # Interface: BandwidthData
 
-Defined in: [types/Events.ts:131](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L131)
+Defined in: [types/Events.ts:135](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L135)
 
 ## Properties
 
@@ -1153,7 +1328,7 @@ Defined in: [types/Events.ts:131](https://github.com/moskalakamil/react-native-v
 bitrate: number;
 ```
 
-Defined in: [types/Events.ts:135](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L135)
+Defined in: [types/Events.ts:139](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L139)
 
 The bitrate of the video in bits per second.
 
@@ -1162,10 +1337,10 @@ The bitrate of the video in bits per second.
 ### height?
 
 ```ts
-optional height: number;
+optional height?: number;
 ```
 
-Defined in: [types/Events.ts:145](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L145)
+Defined in: [types/Events.ts:149](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L149)
 
 The height of the video in pixels.
 
@@ -1178,10 +1353,10 @@ Android
 ### width?
 
 ```ts
-optional width: number;
+optional width?: number;
 ```
 
-Defined in: [types/Events.ts:140](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L140)
+Defined in: [types/Events.ts:144](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L144)
 
 The width of the video in pixels.
 
@@ -1195,17 +1370,17 @@ android
 
 # Interface: JSVideoPlayerEvents
 
-Defined in: [types/Events.ts:96](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L96)
+Defined in: [types/Events.ts:100](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L100)
 
 ## Properties
 
-### onError()
+### onError
 
 ```ts
 onError: (error) => void;
 ```
 
-Defined in: [types/Events.ts:97](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L97)
+Defined in: [types/Events.ts:101](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L101)
 
 #### Parameters
 
@@ -1223,7 +1398,7 @@ Defined in: [types/Events.ts:97](https://github.com/moskalakamil/react-native-vi
 
 # Interface: TextTrack
 
-Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/TextTrack.ts#L1)
+Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/TextTrack.ts#L1)
 
 ## Properties
 
@@ -1233,7 +1408,7 @@ Defined in: [types/TextTrack.ts:1](https://github.com/moskalakamil/react-native-
 id: string;
 ```
 
-Defined in: [types/TextTrack.ts:5](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/TextTrack.ts#L5)
+Defined in: [types/TextTrack.ts:5](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/TextTrack.ts#L5)
 
 Unique identifier for the text track
 
@@ -1245,7 +1420,7 @@ Unique identifier for the text track
 label: string;
 ```
 
-Defined in: [types/TextTrack.ts:10](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/TextTrack.ts#L10)
+Defined in: [types/TextTrack.ts:10](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/TextTrack.ts#L10)
 
 Display label for the text track
 
@@ -1254,10 +1429,10 @@ Display label for the text track
 ### language?
 
 ```ts
-optional language: string;
+optional language?: string;
 ```
 
-Defined in: [types/TextTrack.ts:16](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/TextTrack.ts#L16)
+Defined in: [types/TextTrack.ts:16](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/TextTrack.ts#L16)
 
 Language code (ISO 639-1 or ISO 639-2)
 
@@ -1275,7 +1450,7 @@ Language code (ISO 639-1 or ISO 639-2)
 selected: boolean;
 ```
 
-Defined in: [types/TextTrack.ts:21](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/TextTrack.ts#L21)
+Defined in: [types/TextTrack.ts:21](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/TextTrack.ts#L21)
 
 Whether this track is currently selected
 
@@ -1285,7 +1460,7 @@ Whether this track is currently selected
 
 # Interface: TimedMetadata
 
-Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L213)
+Defined in: [types/Events.ts:217](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L217)
 
 ## Properties
 
@@ -1295,7 +1470,7 @@ Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-v
 metadata: TimedMetadataObject[];
 ```
 
-Defined in: [types/Events.ts:217](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L217)
+Defined in: [types/Events.ts:221](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L221)
 
 The timed metadata of the video.
 
@@ -1305,7 +1480,7 @@ The timed metadata of the video.
 
 # Interface: VideoComponentError
 
-Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L67)
+Defined in: [types/VideoError.ts:74](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L74)
 
 ## Extends
 
@@ -1321,7 +1496,7 @@ Defined in: [types/VideoError.ts:67](https://github.com/moskalakamil/react-nativ
 get code(): TCode;
 ```
 
-Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L37)
+Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L44)
 
 ##### Returns
 
@@ -1341,7 +1516,7 @@ Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-nativ
 get message(): string;
 ```
 
-Defined in: [types/VideoError.ts:40](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L40)
+Defined in: [types/VideoError.ts:47](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L47)
 
 ##### Returns
 
@@ -1361,7 +1536,7 @@ Defined in: [types/VideoError.ts:40](https://github.com/moskalakamil/react-nativ
 get stack(): string | undefined;
 ```
 
-Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L44)
+Defined in: [types/VideoError.ts:51](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L51)
 
 ##### Returns
 
@@ -1379,7 +1554,7 @@ Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-nativ
 toString(): string;
 ```
 
-Defined in: [types/VideoError.ts:61](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L61)
+Defined in: [types/VideoError.ts:68](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L68)
 
 Returns a string representation of an object.
 
@@ -1397,7 +1572,7 @@ Returns a string representation of an object.
 
 # Interface: VideoError\
 
-Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L32)
+Defined in: [types/VideoError.ts:39](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L39)
 
 ## Extends
 
@@ -1424,7 +1599,7 @@ Defined in: [types/VideoError.ts:32](https://github.com/moskalakamil/react-nativ
 get code(): TCode;
 ```
 
-Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L37)
+Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L44)
 
 ##### Returns
 
@@ -1440,7 +1615,7 @@ Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-nativ
 get message(): string;
 ```
 
-Defined in: [types/VideoError.ts:40](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L40)
+Defined in: [types/VideoError.ts:47](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L47)
 
 ##### Returns
 
@@ -1462,7 +1637,7 @@ Error.message
 get stack(): string | undefined;
 ```
 
-Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L44)
+Defined in: [types/VideoError.ts:51](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L51)
 
 ##### Returns
 
@@ -1482,7 +1657,7 @@ Error.stack
 toString(): string;
 ```
 
-Defined in: [types/VideoError.ts:61](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L61)
+Defined in: [types/VideoError.ts:68](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L68)
 
 Returns a string representation of an object.
 
@@ -1496,17 +1671,17 @@ Returns a string representation of an object.
 
 # Interface: VideoPlayerEvents
 
-Defined in: [types/Events.ts:7](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L7)
+Defined in: [types/Events.ts:7](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L7)
 
 ## Properties
 
-### onAudioBecomingNoisy()
+### onAudioBecomingNoisy
 
 ```ts
 onAudioBecomingNoisy: () => void;
 ```
 
-Defined in: [types/Events.ts:12](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L12)
+Defined in: [types/Events.ts:12](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L12)
 
 Called when the audio becomes noisy.
 
@@ -1520,13 +1695,13 @@ Android
 
 ***
 
-### onAudioFocusChange()
+### onAudioFocusChange
 
 ```ts
 onAudioFocusChange: (hasAudioFocus) => void;
 ```
 
-Defined in: [types/Events.ts:18](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L18)
+Defined in: [types/Events.ts:18](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L18)
 
 Called when the audio focus changes.
 
@@ -1546,13 +1721,13 @@ Android
 
 ***
 
-### onBandwidthUpdate()
+### onBandwidthUpdate
 
 ```ts
 onBandwidthUpdate: (data) => void;
 ```
 
-Defined in: [types/Events.ts:22](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L22)
+Defined in: [types/Events.ts:22](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L22)
 
 Called when the bandwidth of the video changes.
 
@@ -1568,13 +1743,13 @@ Called when the bandwidth of the video changes.
 
 ***
 
-### onBuffer()
+### onBuffer
 
 ```ts
 onBuffer: (buffering) => void;
 ```
 
-Defined in: [types/Events.ts:27](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L27)
+Defined in: [types/Events.ts:27](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L27)
 
 Called when the video is buffering.
 
@@ -1590,13 +1765,13 @@ Called when the video is buffering.
 
 ***
 
-### onControlsVisibleChange()
+### onControlsVisibleChange
 
 ```ts
 onControlsVisibleChange: (visible) => void;
 ```
 
-Defined in: [types/Events.ts:32](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L32)
+Defined in: [types/Events.ts:33](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L33)
 
 Called when the video view's controls visibility changes.
 
@@ -1610,15 +1785,19 @@ Called when the video view's controls visibility changes.
 
 `void`
 
+#### Platform
+
+Android, Ios
+
 ***
 
-### onEnd()
+### onEnd
 
 ```ts
 onEnd: () => void;
 ```
 
-Defined in: [types/Events.ts:36](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L36)
+Defined in: [types/Events.ts:37](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L37)
 
 Called when the video ends.
 
@@ -1628,13 +1807,13 @@ Called when the video ends.
 
 ***
 
-### onExternalPlaybackChange()
+### onExternalPlaybackChange
 
 ```ts
 onExternalPlaybackChange: (externalPlaybackActive) => void;
 ```
 
-Defined in: [types/Events.ts:42](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L42)
+Defined in: [types/Events.ts:43](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L43)
 
 Called when the external playback state changes.
 
@@ -1654,13 +1833,13 @@ iOS
 
 ***
 
-### onLoad()
+### onLoad
 
 ```ts
 onLoad: (data) => void;
 ```
 
-Defined in: [types/Events.ts:47](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L47)
+Defined in: [types/Events.ts:48](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L48)
 
 Called when the video is loaded.
 
@@ -1680,13 +1859,13 @@ onLoadStart -> initialize the player -> onLoad
 
 ***
 
-### onLoadStart()
+### onLoadStart
 
 ```ts
 onLoadStart: (data) => void;
 ```
 
-Defined in: [types/Events.ts:52](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L52)
+Defined in: [types/Events.ts:53](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L53)
 
 Called when the video starts loading.
 
@@ -1706,13 +1885,13 @@ onLoadStart -> initialize the player -> onLoad
 
 ***
 
-### onPlaybackRateChange()
+### onPlaybackRateChange
 
 ```ts
 onPlaybackRateChange: (rate) => void;
 ```
 
-Defined in: [types/Events.ts:60](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L60)
+Defined in: [types/Events.ts:61](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L61)
 
 Called when the player playback rate changes.
 
@@ -1728,13 +1907,13 @@ Called when the player playback rate changes.
 
 ***
 
-### onPlaybackStateChange()
+### onPlaybackStateChange
 
 ```ts
 onPlaybackStateChange: (data) => void;
 ```
 
-Defined in: [types/Events.ts:56](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L56)
+Defined in: [types/Events.ts:57](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L57)
 
 Called when the player playback state changes.
 
@@ -1750,13 +1929,13 @@ Called when the player playback state changes.
 
 ***
 
-### onProgress()
+### onProgress
 
 ```ts
 onProgress: (data) => void;
 ```
 
-Defined in: [types/Events.ts:64](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L64)
+Defined in: [types/Events.ts:65](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L65)
 
 Called when the player progress changes.
 
@@ -1772,13 +1951,13 @@ Called when the player progress changes.
 
 ***
 
-### onReadyToDisplay()
+### onReadyToDisplay
 
 ```ts
 onReadyToDisplay: () => void;
 ```
 
-Defined in: [types/Events.ts:68](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L68)
+Defined in: [types/Events.ts:69](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L69)
 
 Called when the video is ready to display.
 
@@ -1788,13 +1967,13 @@ Called when the video is ready to display.
 
 ***
 
-### onSeek()
+### onSeek
 
 ```ts
 onSeek: (seekTime) => void;
 ```
 
-Defined in: [types/Events.ts:72](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L72)
+Defined in: [types/Events.ts:73](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L73)
 
 Called when the player seeks.
 
@@ -1810,13 +1989,13 @@ Called when the player seeks.
 
 ***
 
-### onStatusChange()
+### onStatusChange
 
 ```ts
 onStatusChange: (status) => void;
 ```
 
-Defined in: [types/Events.ts:93](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L93)
+Defined in: [types/Events.ts:97](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L97)
 
 Called when the player status changes.
 
@@ -1832,13 +2011,13 @@ Called when the player status changes.
 
 ***
 
-### onTextTrackDataChanged()
+### onTextTrackDataChanged
 
 ```ts
 onTextTrackDataChanged: (texts) => void;
 ```
 
-Defined in: [types/Events.ts:80](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L80)
+Defined in: [types/Events.ts:83](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L83)
 
 Called when the text track (currently displayed subtitle) data changes.
 
@@ -1852,15 +2031,19 @@ Called when the text track (currently displayed subtitle) data changes.
 
 `void`
 
+#### Platform
+
+Android, Ios
+
 ***
 
-### onTimedMetadata()
+### onTimedMetadata
 
 ```ts
 onTimedMetadata: (metadata) => void;
 ```
 
-Defined in: [types/Events.ts:76](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L76)
+Defined in: [types/Events.ts:78](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L78)
 
 Called when player receives timed metadata.
 
@@ -1874,15 +2057,19 @@ Called when player receives timed metadata.
 
 `void`
 
+#### Platform
+
+Android, Ios
+
 ***
 
-### onTrackChange()
+### onTrackChange
 
 ```ts
 onTrackChange: (track) => void;
 ```
 
-Defined in: [types/Events.ts:85](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L85)
+Defined in: [types/Events.ts:89](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L89)
 
 Called when the selected text track changes.
 
@@ -1896,15 +2083,19 @@ Called when the selected text track changes.
 
 `void`
 
+#### Platform
+
+Android, Ios
+
 ***
 
-### onVolumeChange()
+### onVolumeChange
 
 ```ts
 onVolumeChange: (data) => void;
 ```
 
-Defined in: [types/Events.ts:89](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L89)
+Defined in: [types/Events.ts:93](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L93)
 
 Called when the volume of the player changes.
 
@@ -1924,7 +2115,7 @@ Called when the volume of the player changes.
 
 # Interface: VideoRuntimeError
 
-Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L69)
+Defined in: [types/VideoError.ts:76](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L76)
 
 ## Extends
 
@@ -1940,7 +2131,7 @@ Defined in: [types/VideoError.ts:69](https://github.com/moskalakamil/react-nativ
 get code(): TCode;
 ```
 
-Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L37)
+Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L44)
 
 ##### Returns
 
@@ -1960,7 +2151,7 @@ Defined in: [types/VideoError.ts:37](https://github.com/moskalakamil/react-nativ
 get message(): string;
 ```
 
-Defined in: [types/VideoError.ts:40](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L40)
+Defined in: [types/VideoError.ts:47](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L47)
 
 ##### Returns
 
@@ -1980,7 +2171,7 @@ Defined in: [types/VideoError.ts:40](https://github.com/moskalakamil/react-nativ
 get stack(): string | undefined;
 ```
 
-Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L44)
+Defined in: [types/VideoError.ts:51](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L51)
 
 ##### Returns
 
@@ -1998,7 +2189,7 @@ Defined in: [types/VideoError.ts:44](https://github.com/moskalakamil/react-nativ
 toString(): string;
 ```
 
-Defined in: [types/VideoError.ts:61](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L61)
+Defined in: [types/VideoError.ts:68](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L68)
 
 Returns a string representation of an object.
 
@@ -2012,21 +2203,69 @@ Returns a string representation of an object.
 
 ---
 
+## Interface: VideoTrack
+
+# Interface: VideoTrack
+
+Defined in: [types/VideoTrack.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoTrack.ts#L1)
+
+## Properties
+
+### id
+
+```ts
+id: string;
+```
+
+Defined in: [types/VideoTrack.ts:2](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoTrack.ts#L2)
+
+***
+
+### label
+
+```ts
+label: string;
+```
+
+Defined in: [types/VideoTrack.ts:3](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoTrack.ts#L3)
+
+***
+
+### language?
+
+```ts
+optional language?: string;
+```
+
+Defined in: [types/VideoTrack.ts:4](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoTrack.ts#L4)
+
+***
+
+### selected
+
+```ts
+selected: boolean;
+```
+
+Defined in: [types/VideoTrack.ts:5](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoTrack.ts#L5)
+
+---
+
 ## Interface: VideoViewEvents
 
 # Interface: VideoViewEvents
 
-Defined in: [types/Events.ts:102](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L102)
+Defined in: [types/Events.ts:106](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L106)
 
 ## Properties
 
-### onFullscreenChange()
+### onFullscreenChange
 
 ```ts
 onFullscreenChange: (fullscreen) => void;
 ```
 
-Defined in: [types/Events.ts:112](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L112)
+Defined in: [types/Events.ts:116](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L116)
 
 Called when the video view's fullscreen state changes.
 
@@ -2042,13 +2281,13 @@ Called when the video view's fullscreen state changes.
 
 ***
 
-### onPictureInPictureChange()
+### onPictureInPictureChange
 
 ```ts
 onPictureInPictureChange: (isInPictureInPicture) => void;
 ```
 
-Defined in: [types/Events.ts:107](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L107)
+Defined in: [types/Events.ts:111](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L111)
 
 Called when the video view's picture in picture state changes.
 
@@ -2064,13 +2303,13 @@ Called when the video view's picture in picture state changes.
 
 ***
 
-### willEnterFullscreen()
+### willEnterFullscreen
 
 ```ts
 willEnterFullscreen: () => void;
 ```
 
-Defined in: [types/Events.ts:116](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L116)
+Defined in: [types/Events.ts:120](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L120)
 
 Called when the video view will enter fullscreen mode.
 
@@ -2080,13 +2319,13 @@ Called when the video view will enter fullscreen mode.
 
 ***
 
-### willEnterPictureInPicture()
+### willEnterPictureInPicture
 
 ```ts
 willEnterPictureInPicture: () => void;
 ```
 
-Defined in: [types/Events.ts:124](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L124)
+Defined in: [types/Events.ts:128](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L128)
 
 Called when the video view will enter picture in picture mode.
 
@@ -2096,13 +2335,13 @@ Called when the video view will enter picture in picture mode.
 
 ***
 
-### willExitFullscreen()
+### willExitFullscreen
 
 ```ts
 willExitFullscreen: () => void;
 ```
 
-Defined in: [types/Events.ts:120](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L120)
+Defined in: [types/Events.ts:124](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L124)
 
 Called when the video view will exit fullscreen mode.
 
@@ -2112,13 +2351,13 @@ Called when the video view will exit fullscreen mode.
 
 ***
 
-### willExitPictureInPicture()
+### willExitPictureInPicture
 
 ```ts
 willExitPictureInPicture: () => void;
 ```
 
-Defined in: [types/Events.ts:128](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L128)
+Defined in: [types/Events.ts:132](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L132)
 
 Called when the video view will exit picture in picture mode.
 
@@ -2132,7 +2371,7 @@ Called when the video view will exit picture in picture mode.
 
 # Interface: VideoViewProps
 
-Defined in: [video-view/VideoView.tsx:20](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L20)
+Defined in: [video-view/VideoViewProps.ts:8](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L8)
 
 ## Extends
 
@@ -2143,10 +2382,10 @@ Defined in: [video-view/VideoView.tsx:20](https://github.com/moskalakamil/react-
 ### autoEnterPictureInPicture?
 
 ```ts
-optional autoEnterPictureInPicture: boolean;
+optional autoEnterPictureInPicture?: boolean;
 ```
 
-Defined in: [video-view/VideoView.tsx:40](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L40)
+Defined in: [video-view/VideoViewProps.ts:28](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L28)
 
 Whether to automatically enter picture in picture mode when the video is playing. Defaults to false.
 
@@ -2155,10 +2394,10 @@ Whether to automatically enter picture in picture mode when the video is playing
 ### controls?
 
 ```ts
-optional controls: boolean;
+optional controls?: boolean;
 ```
 
-Defined in: [video-view/VideoView.tsx:32](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L32)
+Defined in: [video-view/VideoViewProps.ts:20](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L20)
 
 Whether to show the controls. Defaults to false.
 
@@ -2167,22 +2406,22 @@ Whether to show the controls. Defaults to false.
 ### keepScreenAwake?
 
 ```ts
-optional keepScreenAwake: boolean;
+optional keepScreenAwake?: boolean;
 ```
 
-Defined in: [video-view/VideoView.tsx:52](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L52)
+Defined in: [video-view/VideoViewProps.ts:40](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L40)
 
 Whether to keep the screen awake while the video view is mounted. Defaults to true.
 
 ***
 
-### onFullscreenChange()?
+### onFullscreenChange?
 
 ```ts
-optional onFullscreenChange: (fullscreen) => void;
+optional onFullscreenChange?: (fullscreen) => void;
 ```
 
-Defined in: [types/Events.ts:112](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L112)
+Defined in: [types/Events.ts:116](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L116)
 
 Called when the video view's fullscreen state changes.
 
@@ -2202,13 +2441,13 @@ Called when the video view's fullscreen state changes.
 
 ***
 
-### onPictureInPictureChange()?
+### onPictureInPictureChange?
 
 ```ts
-optional onPictureInPictureChange: (isInPictureInPicture) => void;
+optional onPictureInPictureChange?: (isInPictureInPicture) => void;
 ```
 
-Defined in: [types/Events.ts:107](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L107)
+Defined in: [types/Events.ts:111](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L111)
 
 Called when the video view's picture in picture state changes.
 
@@ -2231,10 +2470,10 @@ Called when the video view's picture in picture state changes.
 ### pictureInPicture?
 
 ```ts
-optional pictureInPicture: boolean;
+optional pictureInPicture?: boolean;
 ```
 
-Defined in: [video-view/VideoView.tsx:36](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L36)
+Defined in: [video-view/VideoViewProps.ts:24](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L24)
 
 Whether to enable & show the picture in picture button in native controls. Defaults to false.
 
@@ -2243,22 +2482,22 @@ Whether to enable & show the picture in picture button in native controls. Defau
 ### player
 
 ```ts
-player: VideoPlayer;
+player: VideoPlayerBase;
 ```
 
-Defined in: [video-view/VideoView.tsx:24](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L24)
+Defined in: [video-view/VideoViewProps.ts:12](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L12)
 
-The player to play the video - [VideoPlayer](../classes/VideoPlayer.md)
+The player to play the video
 
 ***
 
 ### resizeMode?
 
 ```ts
-optional resizeMode: ResizeMode;
+optional resizeMode?: ResizeMode;
 ```
 
-Defined in: [video-view/VideoView.tsx:48](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L48)
+Defined in: [video-view/VideoViewProps.ts:36](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L36)
 
 How the video should be resized to fit the view. Defaults to 'none'.
 - 'contain': Scale the video uniformly (maintain aspect ratio) so that it fits entirely within the view
@@ -2271,10 +2510,10 @@ How the video should be resized to fit the view. Defaults to 'none'.
 ### style?
 
 ```ts
-optional style: ViewStyle;
+optional style?: ViewStyle;
 ```
 
-Defined in: [video-view/VideoView.tsx:28](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L28)
+Defined in: [video-view/VideoViewProps.ts:16](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L16)
 
 The style of the video view - ViewStyle
 
@@ -2289,10 +2528,10 @@ ViewProps.style
 ### surfaceType?
 
 ```ts
-optional surfaceType: SurfaceType;
+optional surfaceType?: SurfaceType;
 ```
 
-Defined in: [video-view/VideoView.tsx:64](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L64)
+Defined in: [video-view/VideoViewProps.ts:52](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L52)
 
 The type of underlying native view. Defaults to 'surface'.
 - 'surface': Uses a SurfaceView on Android. More performant, but cannot be animated or transformed.
@@ -2312,13 +2551,13 @@ android
 
 ***
 
-### willEnterFullscreen()?
+### willEnterFullscreen?
 
 ```ts
-optional willEnterFullscreen: () => void;
+optional willEnterFullscreen?: () => void;
 ```
 
-Defined in: [types/Events.ts:116](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L116)
+Defined in: [types/Events.ts:120](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L120)
 
 Called when the video view will enter fullscreen mode.
 
@@ -2332,13 +2571,13 @@ Called when the video view will enter fullscreen mode.
 
 ***
 
-### willEnterPictureInPicture()?
+### willEnterPictureInPicture?
 
 ```ts
-optional willEnterPictureInPicture: () => void;
+optional willEnterPictureInPicture?: () => void;
 ```
 
-Defined in: [types/Events.ts:124](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L124)
+Defined in: [types/Events.ts:128](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L128)
 
 Called when the video view will enter picture in picture mode.
 
@@ -2352,13 +2591,13 @@ Called when the video view will enter picture in picture mode.
 
 ***
 
-### willExitFullscreen()?
+### willExitFullscreen?
 
 ```ts
-optional willExitFullscreen: () => void;
+optional willExitFullscreen?: () => void;
 ```
 
-Defined in: [types/Events.ts:120](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L120)
+Defined in: [types/Events.ts:124](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L124)
 
 Called when the video view will exit fullscreen mode.
 
@@ -2372,13 +2611,13 @@ Called when the video view will exit fullscreen mode.
 
 ***
 
-### willExitPictureInPicture()?
+### willExitPictureInPicture?
 
 ```ts
-optional willExitPictureInPicture: () => void;
+optional willExitPictureInPicture?: () => void;
 ```
 
-Defined in: [types/Events.ts:128](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L128)
+Defined in: [types/Events.ts:132](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L132)
 
 Called when the video view will exit picture in picture mode.
 
@@ -2396,17 +2635,17 @@ Called when the video view will exit picture in picture mode.
 
 # Interface: VideoViewRef
 
-Defined in: [video-view/VideoView.tsx:67](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L67)
+Defined in: [video-view/VideoViewProps.ts:55](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L55)
 
 ## Properties
 
-### addEventListener()
+### addEventListener
 
 ```ts
 addEventListener: (event, callback) => ListenerSubscription;
 ```
 
-Defined in: [video-view/VideoView.tsx:95](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L95)
+Defined in: [video-view/VideoViewProps.ts:83](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L83)
 
 Adds a listener for a view event.
 
@@ -2431,13 +2670,13 @@ A subscription object that can be used to remove the listener.
 
 ***
 
-### canEnterPictureInPicture()
+### canEnterPictureInPicture
 
 ```ts
 canEnterPictureInPicture: () => boolean;
 ```
 
-Defined in: [video-view/VideoView.tsx:88](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L88)
+Defined in: [video-view/VideoViewProps.ts:76](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L76)
 
 Check if picture in picture mode is supported
 
@@ -2449,13 +2688,13 @@ true if picture in picture mode is supported, false otherwise
 
 ***
 
-### enterFullscreen()
+### enterFullscreen
 
 ```ts
 enterFullscreen: () => void;
 ```
 
-Defined in: [video-view/VideoView.tsx:71](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L71)
+Defined in: [video-view/VideoViewProps.ts:59](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L59)
 
 Enter fullscreen mode
 
@@ -2465,13 +2704,13 @@ Enter fullscreen mode
 
 ***
 
-### enterPictureInPicture()
+### enterPictureInPicture
 
 ```ts
 enterPictureInPicture: () => void;
 ```
 
-Defined in: [video-view/VideoView.tsx:79](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L79)
+Defined in: [video-view/VideoViewProps.ts:67](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L67)
 
 Enter picture in picture mode
 
@@ -2481,13 +2720,13 @@ Enter picture in picture mode
 
 ***
 
-### exitFullscreen()
+### exitFullscreen
 
 ```ts
 exitFullscreen: () => void;
 ```
 
-Defined in: [video-view/VideoView.tsx:75](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L75)
+Defined in: [video-view/VideoViewProps.ts:63](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L63)
 
 Exit fullscreen mode
 
@@ -2497,15 +2736,867 @@ Exit fullscreen mode
 
 ***
 
-### exitPictureInPicture()
+### exitPictureInPicture
 
 ```ts
 exitPictureInPicture: () => void;
 ```
 
-Defined in: [video-view/VideoView.tsx:83](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L83)
+Defined in: [video-view/VideoViewProps.ts:71](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoViewProps.ts#L71)
 
 Exit picture in picture mode
+
+#### Returns
+
+`void`
+
+---
+
+## Interface: WebVideoPlayer
+
+# Interface: WebVideoPlayer
+
+Defined in: [types/WebVideoPlayer.ts:20](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L20)
+
+**`Experimental`**
+
+Extended VideoPlayer interface with web-only methods.
+Use this type when you need access to audio/video track APIs on web.
+
+ Audio/video tracks have ~16% browser support (Safari only, behind flags in Chrome/Firefox).
+These methods return empty arrays on unsupported browsers.
+
+## Example
+
+```ts
+import { useVideoPlayer, type WebVideoPlayer } from 'react-native-video';
+
+const player = useVideoPlayer(source) as WebVideoPlayer;
+const audioTracks = player.getAvailableAudioTracks();
+```
+
+## Extends
+
+- `VideoPlayerBase`
+
+## Properties
+
+### currentTime
+
+```ts
+currentTime: number;
+```
+
+Defined in: [types/VideoPlayerBase.ts:44](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L44)
+
+**`Experimental`**
+
+The duration of the video in seconds (1.0 = 1 sec).
+Returns NaN if the duration is not available.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.currentTime
+```
+
+***
+
+### disableAudioSessionManagement
+
+```ts
+disableAudioSessionManagement: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:113](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L113)
+
+**`Experimental`**
+
+Disables the internal audio session management for this player.
+When disabled, react-native-video will not configure or activate the AVAudioSession,
+allowing other libraries (like audio recording libraries) to manage it.
+
+#### Default
+
+```ts
+false
+```
+
+#### Platform
+
+iOS
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.disableAudioSessionManagement
+```
+
+***
+
+### duration
+
+```ts
+readonly duration: number;
+```
+
+Defined in: [types/VideoPlayerBase.ts:32](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L32)
+
+**`Experimental`**
+
+The current time of the video in seconds (1.0 = 1 sec).
+Returns NaN if the current time is not available.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.duration
+```
+
+***
+
+### ignoreSilentSwitchMode
+
+```ts
+ignoreSilentSwitchMode: IgnoreSilentSwitchMode;
+```
+
+Defined in: [types/VideoPlayerBase.ts:82](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L82)
+
+**`Experimental`**
+
+Controls the silent switch mode of the player.
+
+#### Note
+
+This is only supported on iOS.
+
+- `auto` - uses default behavior for player.
+- `ignore` - ignore the silent switch.
+- `obey` - obey the silent switch.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.ignoreSilentSwitchMode
+```
+
+***
+
+### isPlaying
+
+```ts
+readonly isPlaying: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:120](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L120)
+
+**`Experimental`**
+
+Whether the player is playing.
+
+#### Note
+
+This is a read-only property.
+
+#### Note
+
+To pause/resume the player, you need to use [play](#play) and [pause](#pause) methods.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.isPlaying
+```
+
+***
+
+### loop
+
+```ts
+loop: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:54](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L54)
+
+**`Experimental`**
+
+Whether the player is looped.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.loop
+```
+
+***
+
+### mixAudioMode
+
+```ts
+mixAudioMode: MixAudioMode;
+```
+
+Defined in: [types/VideoPlayerBase.ts:72](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L72)
+
+**`Experimental`**
+
+Controls the audio mixing mode of the player.
+
+- `mixWithOthers` - Mix with other players.
+- `doNotMix` - Do not mix with other players.
+- `duckOthers` - Duck other players.
+- `auto` - uses default behavior for player.
+
+default is `auto`.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.mixAudioMode
+```
+
+***
+
+### muted
+
+```ts
+muted: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:49](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L49)
+
+**`Experimental`**
+
+Whether the player is muted.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.muted
+```
+
+***
+
+### playInBackground
+
+```ts
+playInBackground: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:92](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L92)
+
+**`Experimental`**
+
+Whether the player should play in background.
+
+- `true` - play in background.
+- `false` - pause in background (default).
+
+#### Note
+
+this can override [playWhenInactive](#playwheninactive).
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.playInBackground
+```
+
+***
+
+### playWhenInactive
+
+```ts
+playWhenInactive: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:103](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L103)
+
+**`Experimental`**
+
+Whether the player should play when the app is inactive (user opened control center).
+
+- `true` - play when the app is inactive.
+- `false` - pause when the app is inactive (default).
+
+#### Note
+
+this can be overridden by [playInBackground](#playinbackground).
+
+#### Note
+
+This is only supported on iOS.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.playWhenInactive
+```
+
+***
+
+### rate
+
+```ts
+rate: number;
+```
+
+Defined in: [types/VideoPlayerBase.ts:60](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L60)
+
+**`Experimental`**
+
+Controls the speed at which the player should play.
+
+#### Note
+
+if rate is = 0, it will pause video.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.rate
+```
+
+***
+
+### selectedAudioTrack?
+
+```ts
+readonly optional selectedAudioTrack?: AudioTrack;
+```
+
+Defined in: [types/WebVideoPlayer.ts:23](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L23)
+
+**`Experimental`**
+
+***
+
+### selectedTrack?
+
+```ts
+readonly optional selectedTrack?: TextTrack;
+```
+
+Defined in: [types/VideoPlayerBase.ts:186](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L186)
+
+**`Experimental`**
+
+Get the currently selected text track.
+
+#### Returns
+
+The currently selected text track, or undefined if none is selected
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.selectedTrack
+```
+
+***
+
+### selectedVideoTrack?
+
+```ts
+readonly optional selectedVideoTrack?: VideoTrack;
+```
+
+Defined in: [types/WebVideoPlayer.ts:27](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L27)
+
+**`Experimental`**
+
+***
+
+### showNotificationControls
+
+```ts
+showNotificationControls: boolean;
+```
+
+Defined in: [types/VideoPlayerBase.ts:191](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L191)
+
+**`Experimental`**
+
+Whether to show notification controls (lock screen / control center).
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.showNotificationControls
+```
+
+***
+
+### source
+
+```ts
+readonly source: VideoPlayerSourceBase;
+```
+
+Defined in: [types/VideoPlayerBase.ts:17](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L17)
+
+**`Experimental`**
+
+The source of the video.
+Source is immutable. To change the source, you need to call [replaceSourceAsync](#replacesourceasync) method.
+see VideoPlayerSourceBase
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.source
+```
+
+***
+
+### status
+
+```ts
+readonly status: VideoPlayerStatus;
+```
+
+Defined in: [types/VideoPlayerBase.ts:26](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L26)
+
+**`Experimental`**
+
+The status of the player.
+
+#### Param
+
+The player is idle (source is not loaded)
+
+#### Param
+
+The player is loading.
+
+#### Param
+
+The player is ready to play (source is loaded).
+
+#### Param
+
+The player has an error.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.status
+```
+
+***
+
+### volume
+
+```ts
+volume: number;
+```
+
+Defined in: [types/VideoPlayerBase.ts:38](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L38)
+
+**`Experimental`**
+
+The volume of the video (0.0 = 0%, 1.0 = 100%).
+
+#### Note
+
+If the player is [muted](#muted), the volume will be 0.0.
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.volume
+```
+
+## Methods
+
+### addEventListener()
+
+```ts
+addEventListener(event, callback): ListenerSubscription;
+```
+
+Defined in: [types/VideoPlayerBase.ts:198](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L198)
+
+**`Experimental`**
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `Event` *extends* keyof VideoPlayerEvents \| `"onError"` |
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `event` | `Event` |
+| `callback` | [`AllPlayerEvents`](../type-aliases/AllPlayerEvents.md)\[`Event`\] |
+
+#### Returns
+
+`ListenerSubscription`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.addEventListener
+```
+
+***
+
+### getAvailableAudioTracks()
+
+```ts
+getAvailableAudioTracks(): AudioTrack[];
+```
+
+Defined in: [types/WebVideoPlayer.ts:21](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L21)
+
+**`Experimental`**
+
+#### Returns
+
+[`AudioTrack`](AudioTrack.md)[]
+
+***
+
+### getAvailableTextTracks()
+
+```ts
+getAvailableTextTracks(): TextTrack[];
+```
+
+Defined in: [types/VideoPlayerBase.ts:174](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L174)
+
+**`Experimental`**
+
+Get all available text tracks for the current source.
+
+#### Returns
+
+[`TextTrack`](TextTrack.md)[]
+
+Array of available text tracks
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.getAvailableTextTracks
+```
+
+***
+
+### getAvailableVideoTracks()
+
+```ts
+getAvailableVideoTracks(): VideoTrack[];
+```
+
+Defined in: [types/WebVideoPlayer.ts:25](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L25)
+
+**`Experimental`**
+
+#### Returns
+
+[`VideoTrack`](VideoTrack.md)[]
+
+***
+
+### initialize()
+
+```ts
+initialize(): Promise;
+```
+
+Defined in: [types/VideoPlayerBase.ts:125](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L125)
+
+**`Experimental`**
+
+Manually initialize the player. You don't need to call this method manually, unless you set `initializeOnCreation` to false in [VideoConfig](../type-aliases/VideoConfig.md)
+
+#### Returns
+
+`Promise`\
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.initialize
+```
+
+***
+
+### pause()
+
+```ts
+pause(): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:142](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L142)
+
+**`Experimental`**
+
+Pause playback of player.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.pause
+```
+
+***
+
+### play()
+
+```ts
+play(): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:137](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L137)
+
+**`Experimental`**
+
+Start playback of player.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.play
+```
+
+***
+
+### preload()
+
+```ts
+preload(): Promise;
+```
+
+Defined in: [types/VideoPlayerBase.ts:132](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L132)
+
+**`Experimental`**
+
+Preload the video.
+This is useful to avoid delay when the user plays the video.
+Preloading too many videos can lead to memory issues or performance issues.
+
+#### Returns
+
+`Promise`\
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.preload
+```
+
+***
+
+### release()
+
+```ts
+release(): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:196](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L196)
+
+**`Experimental`**
+
+Releases the player's resources. After calling this, the player is no longer usable.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.release
+```
+
+***
+
+### replaceSourceAsync()
+
+```ts
+replaceSourceAsync(source): Promise;
+```
+
+Defined in: [types/VideoPlayerBase.ts:166](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L166)
+
+**`Experimental`**
+
+Replace the current source of the player.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `source` | \| [`VideoSource`](../type-aliases/VideoSource.md) \| [`VideoConfig`](../type-aliases/VideoConfig.md) \| `VideoPlayerSourceBase` \| `null` | The new source of the video. |
+
+#### Returns
+
+`Promise`\
+
+#### Note
+
+If you want to clear the source, you can pass null.
+see VideoPlayerSourceBase
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.replaceSourceAsync
+```
+
+***
+
+### seekBy()
+
+```ts
+seekBy(time): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:150](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L150)
+
+**`Experimental`**
+
+Seek by given time.
+If the time is negative, it will seek backward.
+time will be clamped if it is out of range (0 ~ [duration](#duration)).
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `time` | `number` | The time to seek from current time in seconds. |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.seekBy
+```
+
+***
+
+### seekTo()
+
+```ts
+seekTo(time): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:158](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L158)
+
+**`Experimental`**
+
+Seek to a specific time in the video.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `time` | `number` | The time to seek to in seconds. |
+
+#### Returns
+
+`void`
+
+#### Note
+
+This have same effect as [currentTime](#currenttime) setter.
+
+#### Note
+
+time will be clamped if it is out of range (0 ~ [duration](#duration)).
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.seekTo
+```
+
+***
+
+### selectAudioTrack()
+
+```ts
+selectAudioTrack(track): void;
+```
+
+Defined in: [types/WebVideoPlayer.ts:22](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L22)
+
+**`Experimental`**
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `track` | [`AudioTrack`](AudioTrack.md) \| `null` |
+
+#### Returns
+
+`void`
+
+***
+
+### selectTextTrack()
+
+```ts
+selectTextTrack(textTrack): void;
+```
+
+Defined in: [types/VideoPlayerBase.ts:180](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerBase.ts#L180)
+
+**`Experimental`**
+
+Select a text track to display.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `textTrack` | [`TextTrack`](TextTrack.md) \| `null` | Text track to select, or null to unselect current track |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+```ts
+VideoPlayerBase.selectTextTrack
+```
+
+***
+
+### selectVideoTrack()
+
+```ts
+selectVideoTrack(track): void;
+```
+
+Defined in: [types/WebVideoPlayer.ts:26](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/WebVideoPlayer.ts#L26)
+
+**`Experimental`**
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `track` | [`VideoTrack`](VideoTrack.md) \| `null` |
 
 #### Returns
 
@@ -2517,7 +3608,7 @@ Exit picture in picture mode
 
 # Interface: onLoadData
 
-Defined in: [types/Events.ts:148](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L148)
+Defined in: [types/Events.ts:152](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L152)
 
 ## Properties
 
@@ -2527,7 +3618,7 @@ Defined in: [types/Events.ts:148](https://github.com/moskalakamil/react-native-v
 currentTime: number;
 ```
 
-Defined in: [types/Events.ts:152](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L152)
+Defined in: [types/Events.ts:156](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L156)
 
 The current time of the video in seconds.
 
@@ -2539,7 +3630,7 @@ The current time of the video in seconds.
 duration: number;
 ```
 
-Defined in: [types/Events.ts:157](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L157)
+Defined in: [types/Events.ts:161](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L161)
 
 The duration of the video in seconds.
 
@@ -2555,7 +3646,7 @@ NaN if the duration is unknown.
 height: number;
 ```
 
-Defined in: [types/Events.ts:161](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L161)
+Defined in: [types/Events.ts:165](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L165)
 
 The height of the video in pixels.
 
@@ -2567,7 +3658,7 @@ The height of the video in pixels.
 orientation: VideoOrientation;
 ```
 
-Defined in: [types/Events.ts:169](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L169)
+Defined in: [types/Events.ts:173](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L173)
 
 The orientation of the video.
 
@@ -2579,7 +3670,7 @@ The orientation of the video.
 width: number;
 ```
 
-Defined in: [types/Events.ts:165](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L165)
+Defined in: [types/Events.ts:169](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L169)
 
 The width of the video in pixels.
 
@@ -2589,17 +3680,17 @@ The width of the video in pixels.
 
 # Interface: onLoadStartData
 
-Defined in: [types/Events.ts:174](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L174)
+Defined in: [types/Events.ts:178](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L178)
 
 ## Properties
 
 ### source
 
 ```ts
-source: VideoPlayerSource;
+source: VideoPlayerSourceBase;
 ```
 
-Defined in: [types/Events.ts:183](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L183)
+Defined in: [types/Events.ts:187](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L187)
 
 The source of the video.
 
@@ -2611,7 +3702,7 @@ The source of the video.
 sourceType: SourceType;
 ```
 
-Defined in: [types/Events.ts:179](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L179)
+Defined in: [types/Events.ts:183](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L183)
 
 The type of the source.
 
@@ -2625,7 +3716,7 @@ The type of the source.
 
 # Interface: onPlaybackStateChangeData
 
-Defined in: [types/Events.ts:186](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L186)
+Defined in: [types/Events.ts:190](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L190)
 
 ## Properties
 
@@ -2635,7 +3726,7 @@ Defined in: [types/Events.ts:186](https://github.com/moskalakamil/react-native-v
 isBuffering: boolean;
 ```
 
-Defined in: [types/Events.ts:194](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L194)
+Defined in: [types/Events.ts:198](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L198)
 
 Whether the video is buffering.
 
@@ -2647,7 +3738,7 @@ Whether the video is buffering.
 isPlaying: boolean;
 ```
 
-Defined in: [types/Events.ts:190](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L190)
+Defined in: [types/Events.ts:194](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L194)
 
 Whether the video is playing.
 
@@ -2657,7 +3748,7 @@ Whether the video is playing.
 
 # Interface: onProgressData
 
-Defined in: [types/Events.ts:197](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L197)
+Defined in: [types/Events.ts:201](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L201)
 
 ## Properties
 
@@ -2667,7 +3758,7 @@ Defined in: [types/Events.ts:197](https://github.com/moskalakamil/react-native-v
 bufferDuration: number;
 ```
 
-Defined in: [types/Events.ts:205](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L205)
+Defined in: [types/Events.ts:209](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L209)
 
 The time that player is able to play with only buffer.
 
@@ -2679,7 +3770,7 @@ The time that player is able to play with only buffer.
 currentTime: number;
 ```
 
-Defined in: [types/Events.ts:201](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L201)
+Defined in: [types/Events.ts:205](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L205)
 
 The current time of the video in seconds.
 
@@ -2689,7 +3780,7 @@ The current time of the video in seconds.
 
 # Interface: onVolumeChangeData
 
-Defined in: [types/Events.ts:220](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L220)
+Defined in: [types/Events.ts:224](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L224)
 
 ## Properties
 
@@ -2699,7 +3790,7 @@ Defined in: [types/Events.ts:220](https://github.com/moskalakamil/react-native-v
 muted: boolean;
 ```
 
-Defined in: [types/Events.ts:228](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L228)
+Defined in: [types/Events.ts:232](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L232)
 
 Whether the player is muted.
 
@@ -2711,7 +3802,7 @@ Whether the player is muted.
 volume: number;
 ```
 
-Defined in: [types/Events.ts:224](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L224)
+Defined in: [types/Events.ts:228](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L228)
 
 The volume of the player (0.0 = 0%, 1.0 = 100%).
 
@@ -2725,7 +3816,7 @@ The volume of the player (0.0 = 0%, 1.0 = 100%).
 type AllPlayerEvents = VideoPlayerEvents & JSVideoPlayerEvents;
 ```
 
-Defined in: [types/Events.ts:100](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L100)
+Defined in: [types/Events.ts:104](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L104)
 
 ---
 
@@ -2737,7 +3828,7 @@ Defined in: [types/Events.ts:100](https://github.com/moskalakamil/react-native-v
 type IgnoreSilentSwitchMode = "auto" | "ignore" | "obey";
 ```
 
-Defined in: [types/IgnoreSilentSwitchMode.ts:1](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/IgnoreSilentSwitchMode.ts#L1)
+Defined in: [types/IgnoreSilentSwitchMode.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/IgnoreSilentSwitchMode.ts#L1)
 
 ---
 
@@ -2749,7 +3840,7 @@ Defined in: [types/IgnoreSilentSwitchMode.ts:1](https://github.com/moskalakamil/
 type LibraryError = "library/deallocated" | "library/application-context-not-found";
 ```
 
-Defined in: [types/VideoError.ts:1](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L1)
+Defined in: [types/VideoError.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L1)
 
 ---
 
@@ -2761,7 +3852,7 @@ Defined in: [types/VideoError.ts:1](https://github.com/moskalakamil/react-native
 type MixAudioMode = "mixWithOthers" | "doNotMix" | "duckOthers" | "auto";
 ```
 
-Defined in: [types/MixAudioMode.ts:1](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/MixAudioMode.ts#L1)
+Defined in: [types/MixAudioMode.ts:1](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/MixAudioMode.ts#L1)
 
 ---
 
@@ -2777,7 +3868,7 @@ type PlayerError =
   | "player/invalid-source";
 ```
 
-Defined in: [types/VideoError.ts:5](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L5)
+Defined in: [types/VideoError.ts:5](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L5)
 
 ---
 
@@ -2789,7 +3880,7 @@ Defined in: [types/VideoError.ts:5](https://github.com/moskalakamil/react-native
 type ResizeMode = "contain" | "cover" | "stretch" | "none";
 ```
 
-Defined in: [types/ResizeMode.ts:9](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/ResizeMode.ts#L9)
+Defined in: [types/ResizeMode.ts:9](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/ResizeMode.ts#L9)
 
 Video resize modes that determine how video content is resized to fit the view
 
@@ -2813,7 +3904,7 @@ type SourceError =
   | "source/unsupported-content-type";
 ```
 
-Defined in: [types/VideoError.ts:11](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L11)
+Defined in: [types/VideoError.ts:11](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L11)
 
 ---
 
@@ -2825,7 +3916,7 @@ Defined in: [types/VideoError.ts:11](https://github.com/moskalakamil/react-nativ
 type SourceType = "local" | "network";
 ```
 
-Defined in: [types/Events.ts:172](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L172)
+Defined in: [types/Events.ts:176](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L176)
 
 ---
 
@@ -2837,7 +3928,7 @@ Defined in: [types/Events.ts:172](https://github.com/moskalakamil/react-native-v
 type TimedMetadataObject = object;
 ```
 
-Defined in: [types/Events.ts:208](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L208)
+Defined in: [types/Events.ts:212](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L212)
 
 ## Properties
 
@@ -2847,7 +3938,7 @@ Defined in: [types/Events.ts:208](https://github.com/moskalakamil/react-native-v
 identifier: string;
 ```
 
-Defined in: [types/Events.ts:210](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L210)
+Defined in: [types/Events.ts:214](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L214)
 
 ***
 
@@ -2857,7 +3948,7 @@ Defined in: [types/Events.ts:210](https://github.com/moskalakamil/react-native-v
 value: string;
 ```
 
-Defined in: [types/Events.ts:209](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L209)
+Defined in: [types/Events.ts:213](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L213)
 
 ---
 
@@ -2869,7 +3960,7 @@ Defined in: [types/Events.ts:209](https://github.com/moskalakamil/react-native-v
 type UnknownError = "unknown/unknown";
 ```
 
-Defined in: [types/VideoError.ts:23](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L23)
+Defined in: [types/VideoError.ts:29](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L29)
 
 ---
 
@@ -2881,17 +3972,17 @@ Defined in: [types/VideoError.ts:23](https://github.com/moskalakamil/react-nativ
 type VideoConfig = object;
 ```
 
-Defined in: [types/VideoConfig.ts:6](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L6)
+Defined in: [types/VideoConfig.ts:6](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L6)
 
 ## Properties
 
 ### bufferConfig?
 
 ```ts
-optional bufferConfig: BufferConfig;
+optional bufferConfig?: BufferConfig;
 ```
 
-Defined in: [types/VideoConfig.ts:28](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L28)
+Defined in: [types/VideoConfig.ts:28](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L28)
 
 The player buffer configuration.
 
@@ -2900,10 +3991,10 @@ The player buffer configuration.
 ### drm?
 
 ```ts
-optional drm: DrmParams;
+optional drm?: DrmParams;
 ```
 
-Defined in: [types/VideoConfig.ts:24](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L24)
+Defined in: [types/VideoConfig.ts:24](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L24)
 
 The DRM parameters to be used.
 
@@ -2912,10 +4003,10 @@ The DRM parameters to be used.
 ### externalSubtitles?
 
 ```ts
-optional externalSubtitles: ExternalSubtitle[];
+optional externalSubtitles?: ExternalSubtitle[];
 ```
 
-Defined in: [types/VideoConfig.ts:56](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L56)
+Defined in: [types/VideoConfig.ts:56](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L56)
 
 The external subtitles to be used.
 
@@ -2951,10 +4042,10 @@ externalSubtitles: [
 ### headers?
 
 ```ts
-optional headers: Record;
+optional headers?: Record;
 ```
 
-Defined in: [types/VideoConfig.ts:20](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L20)
+Defined in: [types/VideoConfig.ts:20](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L20)
 
 The headers to be sent with the request.
 
@@ -2963,10 +4054,10 @@ The headers to be sent with the request.
 ### initializeOnCreation?
 
 ```ts
-optional initializeOnCreation: boolean;
+optional initializeOnCreation?: boolean;
 ```
 
-Defined in: [types/VideoConfig.ts:63](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L63)
+Defined in: [types/VideoConfig.ts:63](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L63)
 
 when the player is created, this flag will determine if native player should be initialized immediately.
 If set to true, the player will be initialized as soon as player is created
@@ -2983,10 +4074,10 @@ true
 ### metadata?
 
 ```ts
-optional metadata: CustomVideoMetadata;
+optional metadata?: CustomVideoMetadata;
 ```
 
-Defined in: [types/VideoConfig.ts:33](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L33)
+Defined in: [types/VideoConfig.ts:33](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L33)
 
 The custom metadata to be associated with the video.
 This metadata can be used by the native player to show information about the video.
@@ -2999,7 +4090,7 @@ This metadata can be used by the native player to show information about the vid
 uri: VideoSource;
 ```
 
-Defined in: [types/VideoConfig.ts:16](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L16)
+Defined in: [types/VideoConfig.ts:16](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L16)
 
 The uri of the video.
 
@@ -3023,10 +4114,11 @@ type VideoErrorCode =
   | PlayerError
   | SourceError
   | VideoViewError
+  | WebError
   | UnknownError;
 ```
 
-Defined in: [types/VideoError.ts:25](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L25)
+Defined in: [types/VideoError.ts:31](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L31)
 
 ---
 
@@ -3038,7 +4130,7 @@ Defined in: [types/VideoError.ts:25](https://github.com/moskalakamil/react-nativ
 type VideoPlayerStatus = "idle" | "loading" | "readyToPlay" | "error";
 ```
 
-Defined in: [types/VideoPlayerStatus.ts:8](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoPlayerStatus.ts#L8)
+Defined in: [types/VideoPlayerStatus.ts:8](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoPlayerStatus.ts#L8)
 
 The status of the player.
 
@@ -3068,7 +4160,7 @@ The player has an error (source is not loaded).
 type VideoSource = number | string;
 ```
 
-Defined in: [types/VideoConfig.ts:4](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoConfig.ts#L4)
+Defined in: [types/VideoConfig.ts:4](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoConfig.ts#L4)
 
 ---
 
@@ -3083,7 +4175,19 @@ type VideoViewError =
   | "view/picture-in-picture-not-supported";
 ```
 
-Defined in: [types/VideoError.ts:18](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/VideoError.ts#L18)
+Defined in: [types/VideoError.ts:18](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L18)
+
+---
+
+## Type Alias: WebError
+
+# Type Alias: WebError
+
+```ts
+type WebError = "web/aborted" | "web/network" | "web/decode" | "web/unsupported-source";
+```
+
+Defined in: [types/VideoError.ts:23](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/VideoError.ts#L23)
 
 ---
 
@@ -3095,7 +4199,7 @@ Defined in: [types/VideoError.ts:18](https://github.com/moskalakamil/react-nativ
 const ALL_PLAYER_EVENTS: keyof AllPlayerEvents[];
 ```
 
-Defined in: [types/Events.ts:246](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L246)
+Defined in: [types/Events.ts:250](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L250)
 
 ---
 
@@ -3107,7 +4211,7 @@ Defined in: [types/Events.ts:246](https://github.com/moskalakamil/react-native-v
 const ALL_VIEW_EVENTS: keyof VideoViewEvents[];
 ```
 
-Defined in: [types/Events.ts:270](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/types/Events.ts#L270)
+Defined in: [types/Events.ts:274](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/types/Events.ts#L274)
 
 ---
 
@@ -3119,11 +4223,11 @@ Defined in: [types/Events.ts:270](https://github.com/moskalakamil/react-native-v
 VideoView: MemoExoticComponent>>;
 ```
 
-Defined in: [video-view/VideoView.tsx:406](https://github.com/moskalakamil/react-native-video/blob/8da799832ada565540234cc491fa35a6b2fab5d3/packages/react-native-video/src/core/video-view/VideoView.tsx#L406)
+Defined in: [video-view/VideoView.tsx:323](https://github.com/moskalakamil/react-native-video/blob/17f8d8d18b79cfc72ca9cf12f389162d00b9d84a/packages/react-native-video/src/core/video-view/VideoView.tsx#L323)
 
 ---
 
-## Expo Plugin
+## Configuration with Expo
 
 # Expo Plugin
 
@@ -3207,7 +4311,7 @@ Once configured in your `app.json` or `app.config.js`, the plugin will automatic
 
 ---
 
-## Manual Configuration
+## Manual Configuration without Expo
 
 # Manual Configuration
 
@@ -3267,7 +4371,7 @@ Use the [Expo plugin](./with-expo.md) to apply exactly the same changes automati
 
 ---
 
-## Installation
+## Installation — iOS, Android, tvOS
 
 # Installation
 
@@ -3281,7 +4385,7 @@ React Native Video is a library that allows you to play various kinds of video i
 
 ### Minimal Package Requirements
 - `react-native` `0.75.0` or higher
-- `react-native-nitro-modules` `0.27.2` or higher 
+- `react-native-nitro-modules` `0.35.0` or higher
 
 ## Installation
 
@@ -3319,7 +4423,7 @@ npx react-native run-android # run on Android
 ```
 
 ## Patch for react-native 
-  For `react-native-nitro-modules` 0.27.X or higher
+  Patch for `react-native-nitro-modules`
 
   ```diff
   diff --git a/node_modules/react-native-nitro-modules/cpp/core/HybridFunction.hpp b/node_modules/react-native-nitro-modules/cpp/core/HybridFunction.hpp
@@ -3375,7 +4479,166 @@ export default function App() {
 
 ---
 
-## Manual Analytics
+## Introduction to React Native Video
+
+import {
+  V7Lead,
+  V7FeatureCards,
+  V7ApiModel,
+  V7NitroSection,
+  V7StatusTimeline,
+  V7OpenSource,
+  V7ProPlugins,
+} from '@site/src/components/Intro';
+
+# Intro
+
+React Native Video is a powerful, cross-platform video player library for React Native. Version 7 introduces a new Player API built on Nitro Modules for type-safe, high-performance native communication. It supports DRM protection (Widevine and FairPlay), a modular plugin architecture, offline video playback, and works on iOS, Android, tvOS, and visionOS with both New and Old Architecture.
+
+## What changed in v7 vs v6
+
+## New API model in practice
+
+### New model: you control the player, the view is optional
+
+## Why Nitro Modules?
+
+### Nitro Modules as the foundation of v7
+
+## Status v7
+
+## Open-source + optional Pro features and services
+
+## Pro plugins
+
+---
+
+## Web Support — Play Video in Browser with React Native
+
+import PlatformsList from '@site/src/components/PlatformsList/PlatformsList';
+
+# Web Support
+
+React Native Video supports the web platform through [video.js](https://videojs.org/) (v10), providing the same `VideoPlayer` and `VideoView` API you use on iOS and Android.
+
+## Setup
+
+Configure your project for web support:
+
+- [With Expo](https://docs.expo.dev/workflow/web/)
+- [Without Expo (bare React Native)](https://necolas.github.io/react-native-web/docs/multi-platform/)
+
+React Native Video handles video.js internally - no additional CSS imports or configuration needed beyond standard React Native Web setup.
+
+## Usage
+
+The API is identical to native:
+
+```tsx
+import { useVideoPlayer, VideoView } from 'react-native-video';
+
+function Player() {
+  const player = useVideoPlayer({
+    uri: 'https://example.com/video.mp4',
+  });
+
+  return (
+    
+  );
+}
+```
+
+### Web-enhanced player
+
+The web platform may offer additional features not available on native. To access them, cast the player to [`WebVideoPlayer`](../api-reference/interfaces/WebVideoPlayer):
+
+```tsx
+import { useVideoPlayer, type WebVideoPlayer } from 'react-native-video';
+
+const player = useVideoPlayer(source) as WebVideoPlayer;
+```
+
+This is optional - the standard `useVideoPlayer` works perfectly on web. The cast simply gives you typed access to extra capabilities when building web-specific features.
+
+## How it works
+
+Web support uses the same API as native - `useVideoPlayer` for creating a player and `VideoView` for displaying video. You can use the player with or without a view:
+
+- **With `VideoView`** - displays video with optional built-in controls (powered by [video.js](https://videojs.org/))
+- **Without `VideoView`** - audio-only playback
+
+## Supported features
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Play / Pause / Seek | ✅ | Full support |
+| Volume / Mute | ✅ | Full support |
+| Loop | ✅ | Full support |
+| Playback rate | ✅ | Full support |
+| Text tracks (subtitles) | ✅ | Including external subtitles |
+| Resize mode | ✅ | contain, cover, stretch, none |
+| Fullscreen | ✅ | Full support |
+| Picture-in-Picture | ✅ | Depends on browser |
+| Media Session | ✅ | Lock screen controls |
+| Preload | ✅ | Full support |
+| Events | ✅ | Core playback events (play/pause, buffering, errors). Some native-only events are not available on web. |
+| HLS streaming | ✅ | Via video.js engine |
+| Audio tracks | ⚠️ | Safari only (experimental in other browsers) |
+| Video tracks | ⚠️ | Safari only (experimental in other browsers) |
+| DRM | ❌ | Not yet available |
+| Ads | ❌ |
+
+## Web-only features
+
+See the [WebVideoPlayer](../api-reference/interfaces/WebVideoPlayer) API reference for web-specific methods.
+
+## Known limitations
+
+- `mixAudioMode`, `ignoreSilentSwitchMode`, `playInBackground`, `playWhenInactive` are no-ops on web
+- Video sources must be URLs (strings) - `require('./video.mp4')` is not supported on web
+- DRM and Ads are not yet supported
+
+---
+
+## Professional Support & Pro Plugins
+
+import {
+  IntroHero,
+  OfferCards,
+  HowItWorks,
+  Services,
+  Extensions,
+  DecisionTable,
+  Contact,
+} from "@site/src/components/Offer";
+
+# Offer
+
+## What you can use
+
+Three ways to work with react-native-video, depending on your needs and timeline:
+
+## How it works
+
+## Services
+
+When you need guaranteed response times and direct maintainer involvement:
+
+## Extensions
+
+Ready-to-use modules and templates for advanced use cases:
+
+## Which option should I choose?
+
+Quick reference guide based on your situation:
+
+## Contact
+
+Ready to discuss your project? Here's what to include:
+
+---
+
+## Manual Analytics with Native Plugins
 
 # Manual Analytics
 
@@ -3672,7 +4935,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ---
 
-## Simple Analytics
+## Simple Analytics with JavaScript Events
 
 # Simple Analytics
 
@@ -3747,7 +5010,7 @@ const handleProgress = (data) => {
 
 ---
 
-## Downloading
+## Download API Reference
 
 # Downloading
 
@@ -4067,7 +5330,7 @@ DRM configuration for downloading protected content.
 
 ---
 
-## DRM Downloading
+## DRM Offline — Widevine & FairPlay Downloads
 
 # DRM Downloading
 
@@ -4199,7 +5462,7 @@ This ensures consistency between online and offline playback.
 
 ---
 
-## Downloading Events
+## Download Events — Progress & Status Tracking
 
 # Downloading Events
 
@@ -4301,7 +5564,7 @@ The `useEvent` hook automatically manages cleanup when the component unmounts, p
 
 ---
 
-## Getting Started
+## Getting Started with Offline Video
 
 # Getting Started
 
@@ -4389,7 +5652,7 @@ The Offline Video SDK is distributed under a commercial license. You can evaluat
 
 ---
 
-## Track Selection
+## Track Selection for Offline Downloads
 
 # Track Selection
 
@@ -4483,7 +5746,7 @@ await downloadStream(videoUrl, {
 
 ---
 
-## DRM
+## DRM — Widevine & FairPlay Content Protection
 
 # DRM
 
@@ -4681,7 +5944,7 @@ If you are looking for implementing offline playback with DRM, make sure to chec
 
 ---
 
-## Handling Player Events
+## Player Events — onLoad, onProgress, onError
 
 # Handling Player Events
 
@@ -4789,7 +6052,7 @@ player.play();
 
 ---
 
-## Player
+## Player — Playback Control & Lifecycle
 
 # Player
 
@@ -4843,7 +6106,7 @@ For detailed information about using the class, see [VideoPlayer](./video-player
 
 ---
 
-## useVideoPlayer
+## useVideoPlayer — React Hook for Video Playback
 
 # useVideoPlayer
 
@@ -4995,7 +6258,7 @@ Quick notes:
 
 ---
 
-## VideoPlayer
+## VideoPlayer Class — Full API Reference
 
 # VideoPlayer
 
@@ -5263,7 +6526,7 @@ player.play();
 
 ---
 
-## Ask for Plugin
+## Request a Custom Plugin
 
 # Ask for Plugin
 
@@ -5409,7 +6672,7 @@ class CustomDRMPlugin: ReactNativeVideoPlugin {
 
 ---
 
-## Plugin Interface
+## Plugin Interface Reference
 
 # Plugin Interface Reference
 
@@ -5763,6 +7026,103 @@ throw LibraryError.DRMPluginNotFound.error()
 
 ---
 
+## Plugin System Overview
+
+# Plugins Overview
+
+The **React Native Video** library offers a robust plugin system to extend and customize video functionality on Android and iOS. With plugins, you can override source handling, implement custom DRM, modify media factories, and respond to player lifecycle events.
+
+:::tip Use in Third Party Library Guide
+If you are looking how to import React Native Video in your native code to use plugins, you can checkout [Use in Third Party Library](./use-in-third-party-library) page.
+:::
+
+## What Are Plugins?
+
+Plugins are modular extensions that hook into the video player's lifecycle and processing pipeline. They allow you to:
+
+-  **Customize video sources** before playback
+-  **Implement custom DRM** for protected content
+-  **Override media factories** (Android only)
+-  **React to player lifecycle events** for analytics, logging, or cleanup
+-  **Control caching behavior** for performance
+
+## Architecture
+
+The plugin system consists of three main components:
+
+| Component                    | Description                                                                                 |
+|:-----------------------------|:-------------------------------------------------------------------------------------------|
+| `PluginsRegistry`            | Singleton that manages plugin registration and coordinates plugin interactions              |
+| `ReactNativeVideoPluginSpec` | Interface/protocol defining the contract all plugins must implement                        |
+| `ReactNativeVideoPlugin`     | Base implementation with convenient defaults; override only the methods you care about     |
+
+:::tip
+Plugins are automatically registered when you instantiate a class that extends `ReactNativeVideoPlugin`.  
+:::
+
+## Core Concepts
+
+### Plugin Lifecycle
+
+Plugins receive notifications for key events:
+
+-  **Player creation/destruction** - react to player instance lifecycle
+-  **Video view creation/destruction** - handle UI component lifecycle
+-  **Source processing** - modify video sources before playback
+-  **DRM requests** - provide custom DRM handling
+-  **Media factory overrides** - customize ExoPlayer components (Android)
+
+:::caution
+All player and view references passed to plugins are **weak references** to prevent memory leaks.
+:::
+
+## Platform Differences
+
+| Feature                        | Android (Kotlin / ExoPlayer)                   | iOS (Swift / AVFoundation)         |
+|:-------------------------------|:-----------------------------------------------|:-----------------------------------|
+| Underlying player              | ExoPlayer                                      | AVFoundation                       |
+| Media factory customization    | Extensive                                      | Limited                            |
+| Cache control                  | Supported                                      | Limited                            |
+| Plugin method style            | Synchronous                                    | Async/await                        |
+| Memory management              | Manual cleanup                                 | Manual cleanup                     |
+
+## Getting Started
+
+### Example: Android Plugin
+
+```kotlin
+// Android
+class MyPlugin : ReactNativeVideoPlugin("MyPluginName") {
+    override fun onPlayerCreated(player: WeakReference) {
+        // Custom logic here
+    }
+}
+```
+
+### Example: iOS Plugin
+
+```swift
+// iOS
+class MyPlugin: ReactNativeVideoPlugin {
+    init() {
+        super.init(name: "MyPluginName")
+    }
+
+    override func onPlayerCreated(player: Weak) {
+        // Custom logic here
+    }
+}
+```
+
+## Next Steps
+
+-  [**Plugin Registry**](./registry) - Learn about plugin management and registration
+-  [**Plugin Interface**](./interface) - Complete API reference for plugin methods
+-  [**Usage Examples**](./examples) - Practical implementations and common patterns
+-  [**Ask for Plugin**](./ask-for-plugin) - Request a custom plugin built by our team
+
+---
+
 ## Plugin Registry
 
 # Plugin Registry
@@ -5953,7 +7313,7 @@ If you need functionality that the library doesn't currently offer, we can build
 
 ---
 
-## Use in Third Party Library
+## Using Plugins in Third-Party Libraries
 
 # Use in Third Party Library
 
@@ -6018,7 +7378,7 @@ dependencies {
 
 ---
 
-## Useful Projects
+## Useful Projects & Community Resources
 
 # Useful Projects
 
@@ -6037,7 +7397,7 @@ If you have a project that could benefit other users, feel free to open a PR to 
 
 ---
 
-## Chapters
+## Video Chapters — Seekbar Markers & Navigation
 
 # Chapters
 
@@ -6129,80 +7489,88 @@ goToChapter("Main Content");
 
 ## Platform Differences
 
-### Android
-
-On Android, chapters integrate directly with ExoPlayer's native controls. Markers appear on the default seekbar at the correct positions - no custom UI is required.
-
-### iOS
-
-AVPlayer has no native API for chapter markers. On iOS, the default seekbar is replaced entirely with a custom one that renders markers at the correct positions. This custom seekbar is part of what the `@react-native-video/chapters` package provides for iOS.
-
-If you plan to build your own controls from scratch, see [Custom Controls](./custom-controls) for the full architecture guide - the chapter marker positions can be calculated as a percentage of total duration and rendered as dots on your own seekbar track.
+- **iOS**: Custom seekbar with visual markers and tooltip
+- **Android**: Visual markers on seekbar with tooltip
 
 ---
 
-## Custom Controls
+## Custom Video UI - Architecture & Implementation Guide
 
-# Custom Controls
+# How to Build Custom UI
 
-The default player controls that ship with AVPlayer (iOS) and ExoPlayer (Android) are functional, but they're a black box. You can't restyle them, you can't move them, and you can't extend them without fighting the platform. For many production applications, that's not enough.
+The built-in `controls={true}` prop in `react-native-video` covers roughly 70% of video use cases. This guide is about the remaining 30% - where default controls hit limits that matter for your product.
 
-This guide covers when and how to build your own video controls - and what you'll run into along the way. `react-native-video` doesn't ship a custom controls UI out of the box. If chapters with seekbar markers are what you need, [we can integrate that](https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=ui&utm_id=custom-controls_chapters#Contact) quickly - see the [Chapters](./chapters) tab for what that looks like. Everything else described here is yours to build, or [ours to build for you](https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=ui&utm_id=custom-controls_intro#Contact).
+We maintain `react-native-video` and have shipped custom video UIs with teams across streaming, education, social, and enterprise. This guide distills what we've learned into a practical blueprint: the architecture we reach for, the traps we've seen teams fall into, and the places where JavaScript simply isn't the right tool.
 
-## Why Custom Controls?
+## When custom UI is the right call
 
-Custom video UI comes up more often than you'd expect:
+Custom UI is a deliberate decision with real engineering cost. It's worth it when:
 
-- **Design system alignment** - your app has a visual identity; the default controls don't follow it
-- **Custom overlays** - live chat, polling, ranked leaderboards, or annotations that sit on top of or around the player
-- **Control placement** - controls below the player (not overlaid), controls in the navigation bar, or persistent controls that don't auto-hide
-- **Thumbnail on seek** - showing a frame preview while scrubbing; not available natively on either platform
-- **Cross-platform consistency** - custom controls can share the same design language across iOS and Android, while still respecting each platform's native conventions to keep interactions feeling smooth and familiar on both
+- **You serve ads.** Default controls don't include a "Skip Ad" button with countdown - critical if you monetize through video ads.
+- **Brand consistency matters.** Streaming/OTT apps and premium products expect a player that matches the rest of the experience. Default AVPlayer (iOS) and ExoPlayer (Android) controls look and feel different from each other out of the box.
+- **You need features the defaults don't expose.** Chapter markers, custom quality selectors, reactions overlay (TikTok/Instagram-style), skip intro/outro buttons, scrubbing preview, watch-party indicators.
+- **Analytics depth.** Own your UI, own the instrumentation - every seek, quality switch, and pause trigger becomes trivially loggable.
 
-## Keeping the Native Feeling
+:::tip Honest advice
+If none of the above applies to your product, `controls={true}` is the right choice. Custom UI is a multi-week investment - don't take it on without a clear product reason.
+:::
 
-Building custom controls doesn't mean giving up native capabilities - and that's exactly the point. The video is still rendered by AVPlayer on iOS and ExoPlayer on Android, the same engines Apple and Google use in their own apps. Your controls sit on top, but the underlying player is fully native.
+## Why custom video UI is unlike most RN work
 
-This matters for features you simply can't get in a WebView-based player. Picture-in-Picture, background audio, and system media controls are OS-level integrations that aren't accessible from a WebView - they only work because the underlying player is native. Custom controls preserve all of that.
+Most React Native features live entirely in the JS layer. Custom video UI doesn't. The moment you need custom subtitles, you're hooking into AVPlayer/ExoPlayer text track APIs. PiP controls are configured natively on both platforms with completely different APIs. AirPlay has no JS equivalent at all. Even something as "simple" as a seekbar that doesn't flicker requires Reanimated worklets running on the UI thread.
 
-But native feeling goes beyond features - and it comes from two places at once. Some expectations are set by the platform itself (AVPlayer, ExoPlayer), others by apps like YouTube or Netflix that have effectively become the new standard. Users don't distinguish between the two. If they're used to double-tapping to seek, or holding to speed up playback, they'll expect it in your app too - regardless of whether it originated from a native API or a custom player someone built years ago. The best implementations borrow from both, picking whichever pattern users have already internalized.
+This means your team needs three things at once: React Native UI skills, native iOS/Android expertise, and deep knowledge of how `react-native-video` works internally - the plugin API, the player lifecycle, the event bridge, the platform-specific rendering pipeline.
 
-Users notice it in the details:
+We built all of that. We maintain `react-native-video`, we wrote the plugin system, and we've shipped custom player UIs across streaming, education, and enterprise products. When something requires a native module or an internal API change, we don't reverse-engineer it - we already know the codebase.
 
-- **Double-tap seek with accumulated jumps** - tapping the left or right side of the player skips backward or forward. Consecutive taps accumulate: two taps = 20 seconds, three = 30. Each tap triggers an animated ripple showing the total. Apps like YouTube and Netflix set this expectation and users bring it everywhere.
-- **Swipe for brightness and volume** - vertical swipe on the left half of the player controls screen brightness, right half controls volume. The spatial split is intuitive but calls for careful gesture zone detection and visual feedback (a HUD that appears without blocking the content).
-- **Variable scrubbing speed via vertical drag** - on iOS native players, dragging the thumb upward while scrubbing slows the scrub rate: 1× at baseline, ½× higher up, ¼× further, and fine scrubbing at the top. This is entirely invisible until you discover it, but once you do, imprecise seeking feels painful without it.
-- **Controls auto-hide at exactly the right moment** - 2 seconds of inactivity on mobile. Not 1.5, not 3. Too fast feels aggressive, too slow clutters the content. And the return must be instant on any touch - no debounce, no delay.
-- **Haptic feedback on meaningful events** - a subtle tap when scrubbing past a chapter marker, or when hitting the beginning or end of a video. iOS native players do this. Apps that skip it feel slightly hollow in comparison.
-- **Backward seeking feels different from forward** - seeking backward through a remote stream is inherently choppier due to keyframe distribution in the encoded video. Native players compensate with visual strategies (fade, lower opacity during seek) so it doesn't feel like a bug. Ignoring this makes backward seeking feel broken.
+  
+    
+      Build in-house when
+      Consider outsourcing when
+    
+  
+  
+    
+      Your team has experience with react-native-video, native modules, and is not afraid of complex animations
+      Your team is strong in RN but lacks experience with native modules or complex animations
+    
+    
+      You have dedicated weeks in your roadmap and requirements are stable
+      You need features that cross the JS/native boundary - custom subtitle rendering, PiP, AirPlay, platform-specific gesture handling
+    
+    
+      Your scope stays in the JS layer - no custom subtitles, no PiP controls, no AirPlay
+      You need multi-platform parity (iOS + Android + tvOS/Android TV + Web) without months of platform-specific debugging
+    
+    
+      You don't need features that touch native player APIs or react-native-video internals
+      Your features need deep integration with react-native-video internals - e.g. custom subtitles done properly go through the plugin registry, not a JS overlay hack
+    
+    
+      You're comfortable reading and extending native player code (AVPlayer / ExoPlayer)
+      You're comparing this vs. licensing a commercial player like Bitmovin, JW Player, or THEOplayer - which often cost more annually than a one-time custom build
+    
+  
 
-### Visual language
+If the second list sounds like you, [let's talk →](https://sdk.thewidlarzgroup.com/ask-for-plugin?contact=true). Otherwise, read on - this guide will give you the blueprint.
 
-Each platform has its own visual conventions for media controls, and matching them is part of what makes an app feel right.
+## Architecture: compound components
 
-On iOS, that means adopting **Liquid Glass** - the translucent, fluid material introduced in iOS 26. Apple's own media controls use it, and users increasingly expect it in polished apps. Reproducing it faithfully with `BlurView` and the right border/opacity treatment goes a long way toward feeling at home on the platform.
+**TL;DR**
+- Use **compound components** (context + sub-components), not a monolithic `` with 40 props
+- Shared state through React context; each sub-component subscribes only to what it needs
+- Boolean prop hell doesn't scale - testing becomes combinatorial, refactoring becomes dangerous
 
-On Android, Material You theming and the platform's motion curves are the equivalent baseline.
+Video players have a lot of state: playing, buffering, seeking, fullscreen, muted, selected audio/subtitle track, chapter index, ad phase, PiP status. That state needs to be visible to many components at many levels of the tree - the seekbar cares about `currentTime`, the fullscreen button cares about orientation, the ads overlay cares about the ad phase.
 
-### Platform-specific interaction patterns
+The naive approach is a monolithic component with a long prop list - often called **"boolean prop hell"**. Every new feature adds props, testing becomes combinatorial, refactoring becomes dangerous:
 
-Beyond visuals, each platform has subtle behavioral conventions that users have internalized without realizing it.
+```tsx
+// Don't do this
 
-On iOS, when controls are auto-hidden, tapping the area where the play/pause button sits doesn't just reveal the controls - it *also toggles playback* at the same time. Users expect this. If your implementation shows the controls on first tap and requires a second tap to play or pause, it feels broken even if nothing is technically wrong.
+```
 
-Android behaves differently - a tap anywhere typically surfaces the controls, and interaction follows as a second step. Building for both platforms means handling these interaction models separately, not assuming one pattern fits both.
-
-That's the goal worth aiming for: custom, but native.
-
-## The Right Architecture: Compound Components
-
-The most common mistake when building custom video controls is managing state in the wrong place - passing `isPlaying`, `currentTime`, `duration`, and a handful of callbacks as props through multiple component layers. This approach breaks quickly as complexity grows.
-
-The community-proven pattern is **Compound Components** - a design pattern where a parent component owns shared state via React Context, and child components compose freely without prop chains.
-
-Fernando Rojo gave a great talk on this at a React Universe conference: [Composition Is All You Need](https://youtu.be/4KvbVq3Eg5w). Highly recommended before starting.
-
-The API you're building toward looks like this:
+The pattern that scales is **compound components** - small, flexible building blocks sharing state through context:
 
 ```tsx
 
@@ -6211,102 +7579,244 @@ The API you're building toward looks like this:
     
     
     
+    
+    
+  
+  
+    
   
 
 ```
 
-`VideoPlayer` maintains a Context with:
-- `isPlaying`, `currentTime`, `duration`, `buffered`, `volume`
-- `play()`, `pause()`, `seek(timeSeconds)`, `setVolume(value)`
+Every sub-component is independently composable. Want chapter markers but no time display? Remove the line. Want a completely different layout on tablet? Rearrange. Want a new feature? Add a new sub-component that reads from the same context - no changes to existing ones.
 
-Each child component reads only what it needs from that context. You can rearrange, replace, or skip any control independently.
+:::info Further reading
+Fernando Rojo's talk **["Composition Is All You Need"](https://www.youtube.com/watch?v=4KvbVq3Eg5w)** from React Universe Conf 2025 is the best resource on why this pattern wins over boolean props. If you're using AI coding assistants, Vercel's [composition patterns agent skill](https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns) codifies this approach.
+:::
 
-## Getting Started
+### State management
 
-**Step 1: Disable native controls**
+The player instance from `useVideoPlayer` is the source of truth for **video state** (current time, duration, buffered ranges). Your context is the source of truth for **UI state** (controls visibility, which menu is open, which tab is selected). Bridge them with `useEvent`:
 
 ```tsx
 
+  
+  {children}
+
 ```
 
-**Step 2: Create the PlayerContext**
+Sub-components read from context and subscribe only to the player events they care about.
 
-Wire `VideoView` callbacks into a Context Provider. At a minimum, `onProgress`, `onLoad`, and `onPlaybackStateChanged` will cover most use cases. Your context value becomes the single source of truth.
-
-**Step 3: Build the smallest possible control**
-
-A Play/Pause button consuming context is a good first milestone. If that renders correctly and responds to player state, your context wiring is correct. Everything else follows the same pattern.
-
-At this point things will likely feel fine. The real performance issues tend to surface later - as the number of controls grows, especially more advanced ones, unnecessary re-renders start to accumulate. A context update that triggers the entire control tree to re-render on every player event is the most common culprit. It's worth keeping an eye on the render count early rather than debugging jank later.
-
-One effective way to avoid this for progress-driven UI is to use `react-native-reanimated` **shared values**. Instead of storing `currentTime` in React state, the playback position lives as a `SharedValue` that updates directly on the UI thread.
-
-## What to Build
-
-### Basic controls (JS-only)
-
-These are achievable without native modules:
-
-- **Play / Pause button** - straightforward context consumer
-- **Skip ±10s buttons** - calls `seek(currentTime ± 10)`
-- **Time display** - formats `currentTime` and `duration`
-- **Fullscreen button** - triggers orientation lock and layout change
-
-### The seekbar
-
-The seekbar looks simple. It isn't.
-
-A production seekbar typically includes:
-- A **progress layer** (current playback position)
-- A **buffered layer** (how much has loaded)
-- A **draggable thumb** with gesture handling
-- Smooth animation during playback (not jumpy with each `onProgress` tick)
-- Debounced seek - updating the player on every gesture frame is too aggressive
-- Gesture responder coordination with parent `ScrollView` components
-
-Using `react-native-reanimated` for the animation layer makes smooth performance significantly more achievable - without it, the thumb tends to visibly stutter on mid-range devices. Even with Reanimated, expect to spend time debugging "jumping" - where the thumb snaps back momentarily as the native `onProgress` event fires during a drag.
-
-For iOS chapters, marker positions can be calculated as percentages of total duration and rendered as dots on the track - accounting for thumb size so markers don't end up hidden underneath it.
-
-### Advanced controls
-
-**Volume slider**
-On iOS, hardware volume is controlled via `MPVolumeView` - system volume isn't accessible from JS directly. On Android, `AudioManager` is reachable via a native bridge. Many teams skip the volume slider altogether or reach for a native wrapper library.
-
-**Resolution / quality selector**
-Switching quality isn't just calling `setSource()`. On iOS, HLS quality selection goes through AVPlayer's `preferredPeakBitRate`. On Android, you manipulate ExoPlayer's `TrackSelector` directly. The UI is a menu - but the state behind it (available tracks, current selection, switching behavior) is non-trivial. The player also needs to handle the brief interruption during quality change.
-
-**Subtitle selector**
-Custom subtitle rendering means displaying timed text on an overlay. You lose all the native positioning, styling, and encoding support that AVPlayer and ExoPlayer provide for free. Expect edge cases around RTL text, multi-line captions, and timing drift.
-
-**AirPlay (iOS)**
-AirPlay works by wrapping Apple's native `MPVolumeView`. The button appearance is constrained - you're embedding a native view, not rendering a custom one. It also won't show up in the iOS simulator. A library like [`react-native-airplay-ios`](https://github.com/gazedash/react-native-airplay-ios) handles the bridging.
-
-**Chromecast**
-Chromecast works through the Google Cast SDK, which means native integration on both platforms. Discovery, connection state, and playback control all go through the SDK. [`react-native-google-cast`](https://github.com/react-native-google-cast/react-native-google-cast) wraps this for React Native - plan for some platform setup time before getting to actual testing.
-
-**Picture-in-Picture**
-iOS and Android have entirely different PiP APIs, activation conditions, and lifecycle behaviors. iOS PiP goes through `AVPictureInPictureController`; Android uses `enterPictureInPictureMode()` with aspect ratio hints. The React Native bridge for both involves careful handling of background/foreground transitions.
-
-:::note Looking for a head start?
-If the list above feels like a lot, [reach out](https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=ui&utm_id=custom-controls_mid#Contact) - we know this stack well and can help you scope and plan it.
+:::warning Re-render trap
+`onProgress` fires multiple times per second. If your handler calls `setState` on a value that cascades through the tree, you'll drop frames on mid-range devices. Keep high-frequency values (current time, buffer position) in **refs** or **Reanimated shared values**, not React state.
 :::
 
-## What Teams Consistently Underestimate
+**Related:** [`useVideoPlayer`](../player/use-video-player) · [Player events](../player/events) · [VideoPlayer class](../player/video-player)
 
-The seekbar that looks like 50 lines ends up being 500 when you handle all edge cases. AirPlay and Chromecast aren't JavaScript problems - they involve native bridging on both platforms. Resolution switching is a state machine, not a prop. Fullscreen means hiding the status bar and navigation bar, locking orientation, and expanding the layout edge-to-edge.
+## Animations: Reanimated is a requirement, not an option
 
-Custom subtitle rendering means reimplementing what the platform provides for free - with support for positioning, styling, timing, and encoding. And all of this needs to work while the app is backgrounded, during interruptions (calls, notifications), and on devices from three years ago.
+React Native's built-in `Animated` API won't cut it for video UI. Player events cross the JS bridge, and driving animations from the JS thread introduces visible jank - especially on the seekbar, where even small delays are noticeable.
 
-:::tip Thinking about building this?
-Building production-grade custom video controls takes significant effort - typically weeks, not days.
-If you'd rather not go through all of this alone, [let's talk](https://www.thewidlarzgroup.com/?utm_source=rnv&utm_medium=docs&utm_campaign=ui&utm_id=custom-controls_contact#Contact)
-- we're the team behind `react-native-video` and custom video UI is exactly the kind of work we take on.
+`react-native-reanimated` with `react-native-gesture-handler` is not a nice-to-have here - it's a hard requirement. Worklets run on the UI thread, shared values update without re-renders, and gesture responses stay smooth regardless of JS thread load.
+
+## When JavaScript isn't enough
+
+**TL;DR - features requiring native code:**
+- **AirPlay / Google Cast pickers** - use existing library or thin native wrapper
+- **Custom subtitle rendering** - JS parser (flexible, heavy) or thin native module (simple, stable)
+- **Custom PiP controls** - iOS `AVPictureInPictureController` / Android `PictureInPictureParams.Builder`
+
+A custom player UI in pure React Native will take you far - but not all the way. Certain features fundamentally require native code, either because the OS doesn't expose them through the RN bridge or because a JS implementation would be unacceptably heavy or brittle.
+
+Here are the ones you're most likely to hit:
+
+### 1. AirPlay / Google Cast pickers
+
+The iOS AirPlay route picker is a native `AVRoutePickerView` - there's no JS equivalent. Same story on Android with Google Cast's MediaRouter SDK. You have two paths:
+
+- **Use an existing library** - `react-native-google-cast` and a handful of AirPlay wrappers exist. Good enough if their styling and behavior match your needs.
+- **Write a thin native wrapper** - if you need specific branding, custom button placement, or non-standard behavior (e.g. pre-connect callbacks), a simple native module wrapping the system picker is usually a 1-2 day job for a native iOS/Android dev.
+
+### 2. Custom subtitle rendering
+
+`react-native-video` exposes the active subtitle track selection, but the rendering itself has a fork in the road:
+
+- **JS parser path.** You take the WebVTT/SRT/TTML file, parse it in JavaScript, and render cues as `` overlays. Upside: total control over styling (font, outline, background, position, fade animations). Downside: every edge case of the format is yours to handle - WebVTT cue settings, TTML regions, X/Y positioning, bidirectional text, ruby annotations for Japanese. Doing this well is weeks of work.
+- **Thin native module path.** A small native layer pulls the currently active cue from AVPlayer/ExoPlayer and exposes it to JS as `{ text, start, end }`. You render it as `` with your own styling. Massively less code, more stable, at the cost of flexibility for very custom formats.
+
+**Rule of thumb:** if you need basic subtitle display with your own styling, go native module. If you're doing something exotic (karaoke highlighting, per-word timing, emoji reactions embedded in subs), go JS parser and accept the cost.
+
+### 3. Picture-in-Picture with custom controls
+
+Default PiP gives you play/pause/close. If product wants chapter jump, skip 10s, or any other custom control inside the PiP window, you're in native territory - and iOS and Android have different APIs (`AVPictureInPictureController` vs. `PictureInPictureParams.Builder`). The JS layer can trigger PiP, but the controls inside it are configured natively.
+
+:::tip Pattern we see often
+Most React Native teams don't have deep native expertise - and for most apps, they shouldn't need to. Video is the exception. If your custom UI crosses into any of the above, budget for a native iOS/Android developer on the project, or [reach out to us](https://sdk.thewidlarzgroup.com/ask-for-plugin?contact=true) - this is the kind of work we do day-in, day-out on top of `react-native-video`.
+:::
+
+## The seekbar: where most custom UIs go wrong
+
+**TL;DR - common pitfalls:**
+- **Flickering** - drive width via `useSharedValue`, not `setState`
+- **Drag conflict** - freeze progress subscription while user drags, commit seek once on release
+- **Gesture ownership** - resolve `ScrollView` vs pan conflicts with `Gesture.Simultaneous()` or `waitFor`
+- **Hitbox** - minimum 44×44pt (iOS) / 48×48dp (Android), even if visual is 4px tall
+- **Android seek latency** - ExoPlayer seek is 200-500ms, always show a seeking indicator
+- **iOS seek latency** - near-instant, don't show an indicator (looks broken)
+
+The seekbar looks like a `` with a colored bar. It is, in our experience, the single hardest UI element in a video player - and the one where we see the most shipped bugs in production apps.
+
+Here's what goes into building one that doesn't embarrass you.
+
+### Flickering
+
+`onProgress` fires ~4 times per second. If you drive the seekbar's width via `setState`, users see a visible drift between smoothly playing video and a bar that jumps in ~250ms increments. The fix: the bar's position should live in a `useSharedValue` and be animated via `useAnimatedStyle`. Updates happen on the UI thread; there's no re-render cascade, no jump.
+
+### Source-of-truth conflict during drag
+
+While the user's finger is on the bar, the bar must show the **finger's position**, not the video's. When they let go, it must sync to video position without jumping.
+
+The simpler approach: freeze the progress subscription while dragging, commit a single seek on release. This is straightforward to implement:
+
+```tsx
+// Sketch - the idea, not a copy-paste
+const progress = useSharedValue(0);       // 0..1
+const isDragging = useSharedValue(false);
+
+// onProgress: only update when NOT dragging
+// pan.onUpdate: drive progress from finger position
+// pan.onEnd: commit seek once, then unfreeze
+```
+
+The more advanced approach: seek continuously as the user drags (scrubbing), so they see the video update in real-time under their finger. This is what YouTube and most native players do. The catch is that by default the video won't load frames fast enough to keep up with the finger - you'll see stale frames and stuttering. Getting smooth scrubbing requires native-side work (keyframe-aware seeking, thumbnail extraction, or frame pre-caching) and is significantly more effort.
+
+### Gesture ownership
+
+In a TikTok-style feed, your seekbar's pan gesture fights with the parent `ScrollView`'s vertical scroll. Resolve with `simultaneousHandlers` / `Gesture.Simultaneous()` or explicit `waitFor` relations - otherwise either the scroll steals the gesture mid-drag, or the drag blocks vertical scroll entirely. We've seen both in production.
+
+### Hitbox vs. visual
+
+Design will give you a 4px-tall bar. Apple HIG says minimum touch target is 44×44pt; Material Design says 48×48dp. Your options: `hitSlop` on the bar, or a transparent overlay view with the larger bounds receiving the gesture. Do neither and ~30% of users will miss on first tap - especially on bezel-less phones where the bottom of the screen is thumb-unfriendly.
+
+### Buffered ranges
+
+`onProgress` includes `playableDuration`. Rendering it as a second, dimmer bar beneath the main one is a common ask. Keep it on its own layer with a lower z-index; don't try to composite it into the same view as the main progress - the math on resize and during drag gets tangled fast.
+
+### Chapter markers on the bar
+
+Chapter markers are just sub-components reading `chapter.startTime / duration` and rendering at the right X offset. The real work is gesture disambiguation - for example: tap on marker seeks to chapter start, tap between markers seeks to that position, drag across markers ignores them and scrubs continuously. The exact behavior depends on your product - not every app wants the same interactions. We typically handle this with a single composite gesture rather than separate tap handlers on each marker.
+
+### iOS vs. Android seek latency
+
+On iOS, `AVPlayer` seeks are near-instant. On Android, `ExoPlayer`'s default seek with tolerance is 200-500ms depending on the stream and keyframe spacing. If your UI doesn't show a "seeking" state during that window, Android users will think the app froze. We always render a subtle loading indicator on the thumb during commit on Android - and skip it on iOS where it would look broken.
+
+:::info Scrubbing preview thumbnails
+Showing a thumbnail of the destination frame above the user's finger during drag (YouTube-style) is a frequent request - and an entire sub-project of its own. It involves thumbnail sprite sheets, WebVTT files mapping time ranges to sprite positions, runtime cropping, finger-vs-edge offset calculation, and sometimes native-side frame extraction for long videos where sprite sheets get too heavy.
+
+It's out of scope for this guide. If it's on your list, [ask us about it →](https://sdk.thewidlarzgroup.com/ask-for-plugin?contact=true) - we've built it multiple times.
+:::
+
+**Related:** [Player events](../player/events) · [VideoPlayer class](../player/video-player) · [Chapters](./chapters)
+
+## Gestures beyond the seekbar
+
+A production video UI has a lot of gestures, and they all have to coexist:
+
+- **Tap** - toggle controls visibility, auto-hide after 3s of inactivity. Sounds trivial; the timer management with mid-flight re-taps and hover states on TV isn't.
+- **Double-tap** - seek ±10s (YouTube pattern), typically with a ripple animation on the tapped side. Watch out for the tap-vs-double-tap latency: if you delay the single tap to check for a double, controls feel sluggish.
+- **Swipe down** - exit fullscreen. Hard part: distinguishing a swipe-to-exit from a scroll in the subtitles overlay or a drag on the seekbar. Use `Gesture.Simultaneous()` carefully.
+- **Pinch** - toggle `contentFit` between `cover` and `contain`. Common on iOS stock Photos/TV apps.
+- **Vertical edge swipes** - volume on the right, brightness on the left (stock iOS Photos pattern). Must not trigger inside the seekbar's hitbox.
+- **System gestures** - iOS back-swipe from the left edge, Android 3-button nav. Your gestures have to coexist, which usually means leaving 20pt dead zones on the edges.
+
+The only stack we recommend for this: **Reanimated worklets + gesture-handler's Gesture API**. Anything else will let you down on the combinatorics.
+
+## Fullscreen and orientation
+
+`react-native-video` provides a native fullscreen mode, but if you're building custom UI, using native fullscreen defeats the purpose - your custom controls disappear and the OS renders its own. Instead, you'll manage fullscreen yourself: expand the player to fill the screen while keeping your UI on top.
+
+This means handling orientation yourself. Some apps only allow landscape fullscreen, others allow both portrait and landscape. Things to keep in mind:
+
+- **Orientation lock.** Auto-rotate to landscape on fullscreen, restore on exit. But if the user has disabled rotation system-wide, you need to force orientation explicitly. On iPad Stage Manager, orientation calls are suggestions at best.
+- **Safe area.** Notches, Dynamic Island, Android navigation bar. Controls must respect safe area insets - in landscape, "safe" is on the sides, not top/bottom.
+- **Status bar and navigation bar.** `StatusBar.setHidden()` on iOS, Android's immersive mode flags. Animate the transition; a popping status bar looks broken.
+- **Transition animation.** Inline to fullscreen should be a smooth expand, not a hard cut. This means Reanimated layout animations or a hand-rolled shared element transition.
+
+### Picture-in-Picture
+
+There are three approaches depending on your product:
+
+- **Default PiP.** Use the built-in `react-native-video` PiP support. You get play/pause/close with OS-default styling. Works outside the app. Least effort, least control.
+- **Styled PiP.** Customize the native PiP controls where the platform allows. Still uses OS-level PiP, so it works outside the app, but styling options are limited - iOS and Android expose different customization APIs.
+- **In-app floating video.** Build a draggable mini-player inside your app (like YouTube's minimized player). This gives you full control over styling and interactions - custom buttons, progress bar, gestures. The trade-off: it only works while the app is in the foreground. Outside the app, PiP won't be available unless you also implement native PiP as a fallback.
+
+**Related:** [VideoView props](../video-view/props) · [VideoView events](../video-view/events) · [VideoView methods](../video-view/methods)
+
+## Ads UI
+
+If you monetize via video ads, custom UI isn't optional - the default controls genuinely don't have what you need. Typical requirements:
+
+- **Skip Ad button with countdown.** Shows after N seconds (usually 5). Advertisers often have strict requirements on position, font size, and contrast - "must be visible and labeled" is a VAST requirement, and non-compliance can kill ad revenue.
+- **Interaction blocking.** Seekbar disabled during ads (IAB guidelines). Pause sometimes blocked depending on ad deal. Volume usually allowed.
+- **Different UI per ad phase.** Pre-roll, mid-roll, and post-roll may have different visuals, different overlays, different transition animations back to content.
+- **Separate ad progress indicator.** You want a distinct bar for the ad itself so it doesn't pollute the content progress bar - otherwise users see the main seekbar reset mid-video and get confused.
+- **Learn More / CTA overlay.** Click tracking hooks into Google IMA's click handling. Get the event wiring wrong and your advertiser reports zero clicks.
+
+Google IMA event wiring into custom UI is non-trivial on its own - VAST alone has hundreds of edge cases across ad servers and creatives.
+
+## Subtitles and audio tracks UI
+
+A few things worth thinking about beyond "render a list":
+
+- **Settings menu architecture.** Bottom sheet vs. modal, single-level vs. nested menu. Depends on how many options you expose (just subtitles and audio? also quality, speed, chapters?) and your design density. Bottom sheets work well on mobile; tablet often wants a popover.
+- **Subtitle rendering: JS vs. native.** As discussed in [*When JavaScript isn't enough*](#when-javascript-isnt-enough), you choose between a JS parser (full styling control, heavy edge-case surface) and a thin native module (less code, rock solid, less flexibility). For most products, native.
+- **Audio track switching.** Mid-playback switching on Android ExoPlayer can cause brief audio glitches; a clean switch usually requires native-side renderer pre-buffering. This is not fixable in JS - if audio switching is a core feature, plan for a native tweak.
+- **Custom subtitle styling.** Font, background color, outline, position, size. Hearing-impaired users have concrete requirements; FCC/WCAG standards for closed captions apply if you ship to the US (21st Century Communications Act).
+
+**Related:** [VideoView props](../video-view/props) · [Player events](../player/events)
+
+## Buffering, loading, and error states
+
+From the user's perspective, these are three different situations - and they need three different UIs:
+
+- **Initial load** - spinner, optionally on top of a poster frame. Never a black screen.
+- **Seek-in-progress** - brief indicator on the seekbar thumb (Android especially, see earlier section).
+- **Mid-playback stall** - the video was playing, now it's not, network is struggling. Different visual from initial load: users know content exists, they want reassurance it's coming back.
+
+:::tip Delay before showing the spinner
+Don't show the buffering indicator immediately. A short delay (e.g. 200ms) prevents flickering when buffering resolves almost instantly - which happens often on fast connections or during short seeks. Without the delay, users see a spinner flash on every seek and it feels broken.
+:::
+
+Other things to handle:
+
+- **Retry UI on error.** After a network failure, offer a "Try again" button. Don't just show a black screen with a cryptic error code.
+- **Network quality indicator.** Optional but appreciated in streaming products (think Learnn). A subtle chevron or badge showing current bitrate tier.
+- **"Tap to unmute" overlay.** iOS Safari and Chrome's autoplay policies force muted autoplay for feeds and auto-playing cards. After first user tap, unmute and hide the overlay.
+
+## Accessibility
+
+Easy to forget, easy to get wrong, impossible to retrofit. Things that matter:
+
+- **VoiceOver / TalkBack labels.** Every button needs `accessibilityLabel`, and it must change with state - "Play" and "Pause" are different labels on the same button.
+- **Focus management.** Hardware keyboard, tvOS Siri Remote, Android TV d-pad. A completely different input paradigm from touch - focus rings, directional navigation, no hover. If you ship to TV, plan to build a separate focus layer.
+- **Minimum touch targets.** 44×44pt (iOS HIG), 48×48dp (Material). Designers will push back; hold the line.
+- **Reduced motion.** `AccessibilityInfo.isReduceMotionEnabled()`. Your Reanimated transitions should respect this - snap instead of animate when the user has it on.
+
+## Shipping it
+
+Custom video UI is a significant investment. The rabbit holes in this guide - seekbar, gestures, fullscreen, PiP, ads, accessibility - add up fast. Many teams underestimate the scope because the first 80% goes quickly; it's the remaining 20% (platform edge cases, gesture conflicts, native integrations) that eats the timeline.
+
+We maintain `react-native-video` and know every edge case in the codebase. If your timeline doesn't have room for a multi-week build, or you want expert help shipping faster, we can help.
+
+:::tip Need a production-grade custom video UI?
+Our team maintains `react-native-video` and has shipped player UIs for streaming, education, and enterprise clients. [Request a custom UI →](https://sdk.thewidlarzgroup.com/ask-for-plugin?contact=true)
 :::
 
 ---
 
-## Updating
+## Migration Guide — Upgrading from v6 to v7
+
+# Updating
 
 ## Upgrading from react-native-video v6 to v7
 
@@ -6471,7 +7981,7 @@ const player = useVideoPlayer('https://example.com/video.mp4', (_player) => {
 
 ---
 
-## Events
+## VideoView Events — Fullscreen & PiP Callbacks
 
 # Events
 
@@ -6500,7 +8010,7 @@ These can be used to update your component's state or UI in response to these ch
 
 ---
 
-## Refs and Imperative Methods
+## VideoView Methods — Fullscreen & PiP Control
 
 # Refs and Imperative Methods
 
@@ -6527,7 +8037,7 @@ Available methods on the `VideoViewRef`:
 
 ---
 
-## Props
+## VideoView Props — Controls, PiP & Resize Mode
 
 # Props
 
@@ -6564,7 +8074,7 @@ Use `TextureView` only when required, as it can be slightly less performant and 
 
 ---
 
-## VideoView Component
+## VideoView — Native Video Rendering Component
 
 # VideoView Component
 

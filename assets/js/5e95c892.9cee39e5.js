@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_react_native_video_docs=self.webpackChunk_react_native_video_docs||[]).push([["1668"],{8347(e,r,s){s.r(r),s.d(r,{default:()=>i});var a=s(4848);s(6540);var c=s(1750),t=s(4326),d=s(6065),n=s(3971),u=s(9433);function i(e){return(0,a.jsx)(t.e3,{className:(0,c.A)(d.G.wrapper.docsPages),children:(0,a.jsx)(u.A,{children:(0,n.v)(e.route.routes)})})}}}]);

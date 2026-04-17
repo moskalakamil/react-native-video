@@ -1,0 +1,40 @@
+# React Native Video
+
+> Cross-platform video player for React Native with DRM, plugins, offline playback. Supports iOS, Android, tvOS, visionOS. Built on Nitro Modules. Also available: llms-v7.txt, llms-v7-full.txt (complete v7 docs), llms-v6.txt, llms-v6-full.txt (legacy v6 docs).
+
+This file contains links to documentation sections following the llmstxt.org standard.
+
+## Table of Contents
+
+- [Configuration with Expo](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/configuration/with-expo): Configure React Native Video with the Expo plugin — automatic native setup for iOS and Android with app.json config options.
+- [Manual Configuration without Expo](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/configuration/without-expo): Manually configure React Native Video in a bare React Native project — iOS and Android native setup without the Expo plugin.
+- [Installation — iOS, Android, tvOS](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/installation): Step-by-step guide to install React Native Video with Expo or bare React Native — system requirements, package setup, and platform configuration.
+- [Introduction to React Native Video](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/intro): React Native Video v7 overview — new Player API, Nitro Modules foundation, plugin architecture, and DRM support for iOS, Android, and tvOS.
+- [Web Support — Play Video in Browser with React Native](https://moskalakamil.github.io/react-native-video/docs/v7/fundamentals/web-support): Use React Native Video on the web with video.js v10. Same useVideoPlayer and VideoView API as iOS and Android — HLS, subtitles, fullscreen, Picture...
+- [Player — Playback Control & Lifecycle](https://moskalakamil.github.io/react-native-video/docs/v7/player/player): Learn how to use the VideoPlayer class in React Native Video v7 to control video playback, manage sources, and handle player lifecycle.
+- [useVideoPlayer — React Hook for Video Playback](https://moskalakamil.github.io/react-native-video/docs/v7/player/use-video-player): Use the useVideoPlayer React hook to create and manage video playback with automatic lifecycle handling in React Native Video.
+- [VideoPlayer Class — Full API Reference](https://moskalakamil.github.io/react-native-video/docs/v7/player/video-player): Complete API reference for the VideoPlayer class — playback control, properties, buffering, DRM, and lifecycle management.
+- [Player Events — onLoad, onProgress, onError](https://moskalakamil.github.io/react-native-video/docs/v7/player/events): Handle video player events like onLoad, onProgress, onError, and onEnd using the useEvent hook in React Native Video.
+- [DRM — Widevine & FairPlay Content Protection](https://moskalakamil.github.io/react-native-video/docs/v7/player/drm): Set up DRM-protected video playback with Widevine (Android) and FairPlay (iOS/visionOS) using the official React Native Video DRM plugin.
+- [VideoView Events — Fullscreen & PiP Callbacks](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/events): VideoView event callbacks for fullscreen changes, picture-in-picture transitions, and UI state updates in React Native Video.
+- [VideoView Methods — Fullscreen & PiP Control](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/methods): Imperative methods for VideoView — programmatic control of fullscreen, picture-in-picture, and other view-level operations.
+- [VideoView Props — Controls, PiP & Resize Mode](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/props): Full reference of VideoView component props — player binding, controls, picture-in-picture, resize mode, and surface type options.
+- [VideoView — Native Video Rendering Component](https://moskalakamil.github.io/react-native-video/docs/v7/video-view/video-view): Render video content with the VideoView component — native controls, fullscreen, and picture-in-picture support in React Native Video.
+- [Request a Custom Plugin](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/ask-for-plugin): Request a custom plugin for your React Native Video application
+- [Plugin Usage Examples](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/examples): Simple examples of implementing common plugin scenarios for React Native Video
+- [Plugin Interface Reference](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/interface): Reference for the React Native Video plugin interface
+- [Plugin System Overview](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/plugins): Overview of the React Native Video plugin system
+- [Plugin Registry](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/registry): Overview of the React Native Video plugin registry and how to use it
+- [Using Plugins in Third-Party Libraries](https://moskalakamil.github.io/react-native-video/docs/v7/plugins/use-in-third-party-library): How to use React Native Video in a third party library
+- [Manual Analytics with Native Plugins](https://moskalakamil.github.io/react-native-video/docs/v7/player/analytics/manual): Manual analytics integration guide using native plugins
+- [Simple Analytics with JavaScript Events](https://moskalakamil.github.io/react-native-video/docs/v7/player/analytics/simple): Simple analytics using JavaScript events
+- [Download API Reference](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/downloading): Complete API reference for Offline Video SDK
+- [DRM Offline — Widevine & FairPlay Downloads](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/drm-downloading): Downloading and playing DRM-protected content offline
+- [Download Events — Progress & Status Tracking](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/events-downloading): Event system for tracking download progress and status
+- [Getting Started with Offline Video](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/getting-started): Installation and setup guide for Offline Video SDK
+- [Track Selection for Offline Downloads](https://moskalakamil.github.io/react-native-video/docs/v7/player/downloading/track-selection): How to select specific tracks for download
+- [Professional Support & Pro Plugins](https://moskalakamil.github.io/react-native-video/docs/v7/offer): Professional support, pro plugins, and custom development services for React Native Video by TheWidlarzGroup.
+- [Useful Projects & Community Resources](https://moskalakamil.github.io/react-native-video/docs/v7/projects): React Native Video Useful Projects
+- [Video Chapters — Seekbar Markers & Navigation](https://moskalakamil.github.io/react-native-video/docs/v7/ui/chapters): Add chapter markers and navigation to video content with VideoView chapters support in React Native Video.
+- [Custom Video UI - Architecture & Implementation Guide](https://moskalakamil.github.io/react-native-video/docs/v7/ui/custom-ui): Learn how to build a custom video player UI with react-native-video v7 using compound components, Reanimated, and gesture-handler.
+- [Migration Guide — Upgrading from v6 to v7](https://moskalakamil.github.io/react-native-video/docs/v7/updating): React Native Video Updating Guide
